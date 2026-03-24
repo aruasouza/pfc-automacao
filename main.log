@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  23 MAR 2026 09:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  24 MAR 2026 08:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -561,6 +561,13 @@ Class memoir Warning: \settocpreprocessor is marked deprecated and will be
 \ABNTEXsignwidth=\skip199
 \ABNTEXsignthickness=\skip256
 \ABNTEXsignskip=\skip257
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count363
+\float@exts=\toks26
+\float@box=\box59
+\@float@everytoks=\toks27
+\@floatcapt=\box60
 ) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -602,15 +609,15 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 116
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks26
-\inpenc@posthook=\toks27
+\inpenc@prehook=\toks28
+\inpenc@posthook=\toks29
 ) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.sty
 Package: lastpage 2025/08/14 v2.1h lastpage: 2.09 or 2e? (HMM)
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage2e.sty
 Package: lastpage2e 2025/08/14 v2.1h Decide which 2e lastpage version to use (HMM)
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpagemodern.sty
 Package: lastpagemodern 2025-08-14 v2.1h Refers to last page's name (HMM; JPG)
-\c@lastpagecount=\count363
+\c@lastpagecount=\count364
 ) 
 )) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
@@ -637,18 +644,18 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
 \Gin@req@width=\dimen258
 ) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2025/07/09 v3.2b Micro-typographical refinements (RS)
-\MT@toks=\toks28
-\MT@tempbox=\box59
-\MT@count=\count364
+\MT@toks=\toks30
+\MT@tempbox=\box61
+\MT@count=\count365
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
 LaTeX Info: Redefining \leftprotrusion on input line 1088.
-\MT@prot@toks=\toks29
+\MT@prot@toks=\toks31
 LaTeX Info: Redefining \rightprotrusion on input line 1107.
 LaTeX Info: Redefining \textls on input line 1449.
 \MT@outer@kern=\dimen259
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
-\MT@listname@count=\count365
+\MT@listname@count=\count366
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-pdftex.def
 File: microtype-pdftex.def 2025/07/09 v3.2b Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 944.
@@ -667,8 +674,8 @@ Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/abntex2\abntex2abrev.sty)
 \minimumbiblabelwidth=\skip259
 \ABCIauxlen=\skip260
-\c@ABCIaux=\count366
-\c@ABCImax=\count367
+\c@ABCIaux=\count367
+\c@ABCImax=\count368
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 ) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
@@ -679,10 +686,10 @@ Package: relsize 2013/03/29 ver 4.1
 \biblabelsep=\skip261
 LaTeX Info: Redefining \newblock on input line 591.
 LaTeX Info: Redefining \cite on input line 618.
-\ABCItoken=\toks30
+\ABCItoken=\toks32
 )
-Package color Info: Redefining color blue on input line 83.
-Package hyperref Info: Option `colorlinks' set `true' on input line 100.
+Package color Info: Redefining color blue on input line 84.
+Package hyperref Info: Option `colorlinks' set `true' on input line 101.
 \main@idxfile=\write4
 \openout4 = `main.idx'.
 
@@ -694,53 +701,53 @@ Package babel Info: 'brazil' activates 'portuges' shorthands.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-Package hyperref Info: Link coloring ON on input line 123.
-\myptabbox=\box60
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+Package hyperref Info: Link coloring ON on input line 124.
+\myptabbox=\box62
 \myptabboxwidth=\skip262
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count368
+\scratchcounter=\count369
 \scratchdimen=\dimen260
-\scratchbox=\box61
-\nofMPsegments=\count369
-\nofMParguments=\count370
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count371
+\scratchbox=\box63
+\nofMPsegments=\count370
+\nofMParguments=\count371
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count372
 \MPscratchDim=\dimen261
-\MPnumerator=\count372
-\makeMPintoPDFobject=\count373
-\everyMPtoPDFconversion=\toks32
+\MPnumerator=\count373
+\makeMPintoPDFobject=\count374
+\everyMPtoPDFconversion=\toks34
 ) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \microtypecontext on input line 123.
-Package microtype Info: Applying patch `item' on input line 123.
-Package microtype Info: Applying patch `toc' on input line 123.
-Package microtype Info: Applying patch `eqnum' on input line 123.
-Package microtype Info: Applying patch `footnote' on input line 123.
-Package microtype Info: Applying patch `verbatim' on input line 123.
-LaTeX Info: Redefining \microtypesetup on input line 123.
+LaTeX Info: Redefining \microtypecontext on input line 124.
+Package microtype Info: Applying patch `item' on input line 124.
+Package microtype Info: Applying patch `toc' on input line 124.
+Package microtype Info: Applying patch `eqnum' on input line 124.
+Package microtype Info: Applying patch `footnote' on input line 124.
+Package microtype Info: Applying patch `verbatim' on input line 124.
+LaTeX Info: Redefining \microtypesetup on input line 124.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -754,7 +761,7 @@ Package microtype Info: No adjustment of character kerning.
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 161.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 162.
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -765,33 +772,33 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1
 
 {C:/Users/aruav/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 211.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 212.
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 211.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 212.
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 211.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 212.
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 211.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 212.
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 211.
+(Font)              <12> on input line 212.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 211.
+(Font)              <8> on input line 212.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 211.
+(Font)              <6> on input line 212.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.211 
+l.212 
        [1
 
 
@@ -831,32 +838,51 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 {C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 Cap\'{\i }tulo 1.
-<imagens/Example.png, id=132, 1003.75pt x 351.3125pt>
-File: imagens/Example.png Graphic file (type png)
-<use imagens/Example.png>
-Package pdftex.def Info: imagens/Example.png  used on input line 22.
-(pdftex.def)             Requested size: 200.74644pt x 70.26125pt.
-) (desenvolvimento/capitulo2.tex [14
+[14
 
- <./imagens/Example.png>]
+]
+<imagens/rock3a.png, id=152, 1204.5pt x 903.375pt>
+File: imagens/rock3a.png Graphic file (type png)
+<use imagens/rock3a.png>
+Package pdftex.def Info: imagens/rock3a.png  used on input line 53.
+(pdftex.def)             Requested size: 455.0pt x 341.24599pt.
+Package babel Info: 'brazil' activates 'portuges' shorthands.
+(babel)             Reported on input line 57.
+ [15] [16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.68 A
+       partir da imagem da placa do carro, o próximo desafio é identificar... <./imagens/rock3a.png>]
+<imagens/diagrama_pipeline.png, id=165, 813.0375pt x 1445.4pt>
+File: imagens/diagrama_pipeline.png Graphic file (type png)
+<use imagens/diagrama_pipeline.png>
+Package pdftex.def Info: imagens/diagrama_pipeline.png  used on input line 90.
+(pdftex.def)             Requested size: 227.5pt x 404.44458pt.
+ [17] [18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.110 
+       <./imagens/diagrama_pipeline.png>] [19]) (desenvolvimento/capitulo2.tex [20]
 Cap\'{\i }tulo 2.
-) (desenvolvimento/capitulo3.tex [15
+) (desenvolvimento/capitulo3.tex [21
 
 ]
 Cap\'{\i }tulo 3.
-) (desenvolvimento/capitulo4.tex [16
+) (desenvolvimento/capitulo4.tex [22
 
 ]
 Cap\'{\i }tulo 4.
-) (desenvolvimento/capitulo5.tex [17
+) (desenvolvimento/capitulo5.tex [23
 
 ]
 Cap\'{\i }tulo 5.
-) (desenvolvimento/capitulo6.tex [18
+) (desenvolvimento/capitulo6.tex [24
 
 ]
 Cap\'{\i }tulo 6.
-) (desenvolvimento/capitulo7.tex [19
+) (desenvolvimento/capitulo7.tex [25
 
 ]
 Cap\'{\i }tulo 7.
@@ -864,19 +890,22 @@ Cap\'{\i }tulo 7.
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [20
+ [26
 
 ]
 bibitemlist
-) [21
+
+LaTeX Warning: Empty `thebibliography' environment on input line 8.
+
+) [27
 
 ]
 AP\^ENDICE A.
-[22
+[28
 
 ]
 ANEXO A.
-(main.ind) [23
+(main.ind) [29
 
 ]
 \tf@lof=\write6
@@ -896,20 +925,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 5FA72C1A58C4B57FAD824D73C43982ED;84.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17916 strings out of 467871
- 294853 string characters out of 5418376
- 772384 words of memory out of 5000000
- 46318 multiletter control sequences out of 15000+600000
- 683648 words of font info for 123 fonts, out of 8000000 for 9000
+ 18053 strings out of 467871
+ 296838 string characters out of 5418376
+ 776625 words of memory out of 5000000
+ 46394 multiletter control sequences out of 15000+600000
+ 689801 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,107p,1038b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on main.pdf (24 pages, 337158 bytes).
+ 99i,13n,107p,1038b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
+Output written on main.pdf (30 pages, 1548568 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 35014 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 394 PDF objects out of 1000 (max. 8388607)
+ 96 named destinations out of 1000 (max. 500000)
+ 37139 words of extra memory for PDF output out of 42996 (max. 10000000)
 

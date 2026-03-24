@@ -5,10 +5,4 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[{van} Gigch e Pipino 1986]{van86}
-\abntrefinfo{{van} Gigch e Pipino}{{van} GIGCH; PIPINO}{1986}
-{{van} GIGCH, J.~P.; PIPINO, L.~L. In search for a paradigm for the discipline
-  of information systems.
-\emph{Future Computing Systems}, v.~1, n.~1, p. 71--97, 1986.}
-
 \end{thebibliography}
