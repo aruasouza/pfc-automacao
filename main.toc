@@ -7,44 +7,52 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{Introdução}{13}{chapter*.20}%
+\contentsline {chapter}{Introdução}{14}{chapter*.20}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{14}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Contexto do trabalho}{14}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Recursos utilizados}{15}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Placa Radxa ROCK 3A}{15}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Metodologia}{16}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Planejamento do modelo de leitura de placas}{16}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Planejamento da execução dos modelos na placa ROCK 3A}{18}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Planejamento das etapas do projeto}{19}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}Preparação dos dados}{19}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}Treinamento do modelo de detecção de placas}{19}{subsection.1.3.5}%
-\contentsline {subsection}{\numberline {1.3.6}Desenvolvimento de algorítmo de pré-processamento e extração de caracteres}{20}{subsection.1.3.6}%
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{15}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Contexto do trabalho}{15}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Recursos utilizados}{16}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Placa Radxa ROCK 3A}{16}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Metodologia}{17}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Planejamento do modelo de leitura de placas}{17}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Planejamento da execução dos modelos na placa ROCK 3A}{19}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Planejamento das etapas do projeto}{20}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Preparação dos dados}{20}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Treinamento do modelo de detecção de placas}{20}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Desenvolvimento de algorítmo de pré-processamento e extração de caracteres}{21}{subsection.1.3.6}%
+\contentsline {subsection}{\numberline {1.3.7}Geração de um \textit {dataset} de caracteres extraídos}{22}{subsection.1.3.7}%
+\contentsline {subsection}{\numberline {1.3.8}Treinamento de modelos de classificação de caracteres}{22}{subsection.1.3.8}%
+\contentsline {subsection}{\numberline {1.3.9}Conversão dos modelos para formato compatível com NPU}{22}{subsection.1.3.9}%
+\contentsline {subsection}{\numberline {1.3.10}Teste dos modelos no computador e na placa}{23}{subsection.1.3.10}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Capítulo 2}}{21}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Análise do problema}}{24}{chapter.2}%
+\contentsline {section}{\numberline {2.1}O objeto do problema}{24}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Dados utilizados}{24}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Modelo de detecção de objetos}{24}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Hardware}{24}{section.2.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Capítulo 3}}{22}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Desenvolvimento}}{25}{chapter.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Capítulo 4}}{23}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Capítulo 4}}{26}{chapter.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Capítulo 5}}{24}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Capítulo 5}}{27}{chapter.5}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Capítulo 6}}{25}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Capítulo 6}}{28}{chapter.6}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Capítulo 7}}{26}{chapter.7}%
+\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Capítulo 7}}{29}{chapter.7}%
 \vspace {\cftbeforechapterskip }
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{27}{section*.25}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{30}{section*.25}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Título Opcional}}{28}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Título Opcional}}{31}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Título Opcional.}}{29}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Título Opcional.}}{32}{appendix.anexochapback.1}%
 \vspace {\cftbeforechapterskip }

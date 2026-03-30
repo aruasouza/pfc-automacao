@@ -120,7 +120,7 @@ As etapas sequenciais, portanto são:
 	\item Desenvolvimento de um algoritmo de pré-processamento e extração de caracteres
 	\item Geração de um dataset de caracteres extraídos
 	\item Treinamento de modelos de classificação de caracteres
-	\item Conversão dos modelos para formato comopatível com NPU
+	\item Conversão dos modelos para formato compatível com NPU
 	\item Teste dos modelos no computador e na placa
 \end{enumerate}
 
@@ -152,6 +152,8 @@ O modelo de detecção de placas de carro entrega a posição da placa na imagem
 
 Além disso, as placas possuem partes que não nos interessam. Apenas os caracteres são relevantes para a leitura, sendo todo o resto (parte superior, inferior, laterais) descartável.
 
+Um outro fato importante é que é possível saber previamente quais caracteres são letras e quais são números com base em sua posição na placa. Tanto a placa Brasil quanto a Mercosul possui uma sequência bem definida de letras e números, de forma que basta saber qual é a classe da placa para que se saiba onde as letras e os números estão posicionados.
+
 Com base nesses fatos, o algoritmo de pré-processamento e extração de caracteres deve:
 
 \begin{itemize}
@@ -160,4 +162,36 @@ Com base nesses fatos, o algoritmo de pré-processamento e extração de caracte
 	\item Fazer uma limpeza e remover todo o ruído desnecessário
 	\item Dividir a placa em pedaços, cada um contendo um caractere
 	\item Padronizar as dimensões das imagens de caracteres
+	\item Separar os caracteres extraídos em letras e números com base na posição
 \end{itemize}
+
+\subsection{Geração de um \textit{dataset} de caracteres extraídos}
+
+Para que seja possível treinar os modelos de classificação dos caracteres é necessário criar um \textit{dataset} de caracteres. Tendo sido realizadas as etapas anteriores, basta aplicar a detecção de placa e extração de caracteres em cada imagem dos dados de treinamento para criar um \textit{dataset} de caracteres. Como sabemos previamente quais placas são do tipo Brasil e quais são Mercosul, assim como também sabemos quais caracteres são números e quais são letras, é possível criar \textit{datasets} separados para cada categoria, resultando em quatro \textit{datasets}:
+
+\begin{itemize}
+	\item Números Brasil
+	\item Letras Brasil
+	\item Números Mercosul
+	\item Letras Mercosul
+\end{itemize}
+
+Sendo que cada um destes ainda é separado em treino e validação.
+
+\subsection{Treinamento de modelos de classificação de caracteres}
+
+Com o \textit{dataset} de caracteres pronto, basta criar uma arquitetura de modelo de visão computacional e treiná-lo com esses dados. Como os dados já vêm pré-processados e a tarefa de classificação de caracteres não é particularmente complexa, basta uma arquitetura simples de redes neurais convolucionais para resolver esse problema.
+
+\subsection{Conversão dos modelos para formato compatível com NPU}
+
+O formato compatível com a NPU do ROCK 3A é o formato RKNN. A prória documentação da placa indica uma biblioteca chamada \textit{rknn toolkit} que oferece a \textit{API} tanto para conversão dos modelos para esse formato quanto para inferência com esses modelos. Porém, a conversão não é tão trivial, pois precisa ser feita em um ambiente \textit{linux} de uma determinada distribuição e versão. Além disso, os modelos precisam ser exportados para o formato ONNX antes de serem convertidos, pois o \textit{rknn toolkit} faz a conversão entre esses dois formatos.
+
+Além desses requisitos obrigatórios para a conversão, existe um requisito opcional, porém recomendado. Este é que durante a conversão para RKNN os modelos sejam quantizados para \textit{uint8}, ou seja, que seus pessos sejam convertidos de números reais do tipo \textit{float} de 32 \textit{bits} para números inteiros positivos de 8 \textit{bits}. Isso é recomendado pois intensifica a performance da NPU.
+
+Para a quantização é necessário criar um \textit{dataset} de quantização. Esse \textit{dataset} só precisa conter dados de entrada, não sendo necessários os rótulos.
+
+\subsection{Teste dos modelos no computador e na placa}
+
+Uma vez que os modelos estão prontos e convertidos é possível testá-los tanto no computador quanto na placa. No computador ainda é possível testá-los na CPU e na GPU. Para avaliar a performance nos diferentes cenários, vamos usar o \textit{dataset} de teste que foi gerado no começo e avaliar em quantas imagens o modelo acerta a placa do carro.
+
+Porém, a principal diferença entre os locais de execução não deve vir no percentual de acerto, e sim no tempo de inferência. Portanto, é necessário medir o tempo, tanto do modelo de detecção de placa quanto nos modelos de classificação de caracteres.

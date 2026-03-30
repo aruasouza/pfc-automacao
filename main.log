@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  24 MAR 2026 08:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  27 MAR 2026 16:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -827,62 +827,68 @@ l.212
 ] [11
 
 
-{C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]) (main.toc) [12
+{C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]) (main.toc
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 23.
+) [12
 
-] (introducao.tex
+] [13] (introducao.tex
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4.
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)) (desenvolvimento/capitulo1.tex [13
+)) (desenvolvimento/capitulo1.tex [14
 
 
 {C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 Cap\'{\i }tulo 1.
-[14
+[15
 
 ]
-<imagens/rock3a.png, id=152, 1204.5pt x 903.375pt>
+<imagens/rock3a.png, id=173, 1204.5pt x 903.375pt>
 File: imagens/rock3a.png Graphic file (type png)
 <use imagens/rock3a.png>
 Package pdftex.def Info: imagens/rock3a.png  used on input line 53.
 (pdftex.def)             Requested size: 455.0pt x 341.24599pt.
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 57.
- [15] [16
+ [16] [17
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.68 A
        partir da imagem da placa do carro, o próximo desafio é identificar... <./imagens/rock3a.png>]
-<imagens/diagrama_pipeline.png, id=165, 813.0375pt x 1445.4pt>
+<imagens/diagrama_pipeline.png, id=186, 813.0375pt x 1445.4pt>
 File: imagens/diagrama_pipeline.png Graphic file (type png)
 <use imagens/diagrama_pipeline.png>
 Package pdftex.def Info: imagens/diagrama_pipeline.png  used on input line 90.
 (pdftex.def)             Requested size: 227.5pt x 404.44458pt.
- [17] [18
+ [18] [19
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.110 
-       <./imagens/diagrama_pipeline.png>] [19]) (desenvolvimento/capitulo2.tex [20]
+       <./imagens/diagrama_pipeline.png>] [20] [21]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 168.
+ [22]) (desenvolvimento/capitulo2.tex [23]
 Cap\'{\i }tulo 2.
-) (desenvolvimento/capitulo3.tex [21
+) (desenvolvimento/capitulo3.tex [24
 
 ]
 Cap\'{\i }tulo 3.
-) (desenvolvimento/capitulo4.tex [22
+) (desenvolvimento/capitulo4.tex [25
 
 ]
 Cap\'{\i }tulo 4.
-) (desenvolvimento/capitulo5.tex [23
+) (desenvolvimento/capitulo5.tex [26
 
 ]
 Cap\'{\i }tulo 5.
-) (desenvolvimento/capitulo6.tex [24
+) (desenvolvimento/capitulo6.tex [27
 
 ]
 Cap\'{\i }tulo 6.
-) (desenvolvimento/capitulo7.tex [25
+) (desenvolvimento/capitulo7.tex [28
 
 ]
 Cap\'{\i }tulo 7.
@@ -890,22 +896,22 @@ Cap\'{\i }tulo 7.
 \tf@brf=\write5
 \openout5 = `main.brf'.
 
- [26
+ [29
 
 ]
 bibitemlist
 
 LaTeX Warning: Empty `thebibliography' environment on input line 8.
 
-) [27
+) [30
 
 ]
 AP\^ENDICE A.
-[28
+[31
 
 ]
 ANEXO A.
-(main.ind) [29
+(main.ind) [32
 
 ]
 \tf@lof=\write6
@@ -928,17 +934,17 @@ Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 18053 strings out of 467871
- 296838 string characters out of 5418376
- 776625 words of memory out of 5000000
- 46394 multiletter control sequences out of 15000+600000
- 689801 words of font info for 141 fonts, out of 8000000 for 9000
+ 18100 strings out of 467871
+ 297399 string characters out of 5418376
+ 779625 words of memory out of 5000000
+ 46409 multiletter control sequences out of 15000+600000
+ 696711 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,107p,1038b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on main.pdf (30 pages, 1548568 bytes).
+<C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso12.pfb>
+Output written on main.pdf (33 pages, 1583151 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
- 37139 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 454 PDF objects out of 1000 (max. 8388607)
+ 107 named destinations out of 1000 (max. 500000)
+ 41299 words of extra memory for PDF output out of 42996 (max. 10000000)
 

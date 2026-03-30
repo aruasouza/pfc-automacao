@@ -257,6 +257,7 @@ INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT .\main.toc
 INPUT .\main.toc
 INPUT main.toc
+INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmsso12.tfm
 INPUT .\introducao.tex
 INPUT .\introducao.tex
 INPUT introducao.tex
@@ -284,6 +285,7 @@ INPUT .\imagens\diagrama_pipeline.png
 INPUT .\imagens\diagrama_pipeline.png
 INPUT .\imagens\diagrama_pipeline.png
 INPUT .\imagens\diagrama_pipeline.png
+INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmsso12.tfm
 INPUT .\desenvolvimento\capitulo2.tex
 INPUT .\desenvolvimento\capitulo2.tex
 INPUT desenvolvimento\capitulo2.tex
@@ -336,3 +338,5 @@ INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmss17.
 INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmss17.pfb
 INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmssbx10.pfb
 INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmssbx10.pfb
+INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsso12.pfb
+INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsso12.pfb
