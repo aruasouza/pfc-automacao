@@ -1,88 +1,130 @@
-% ------------------------------------------------------------------------
-% ------------------------------------------------------------------------
-% Modelo de relatório de estágio DAS - UFSC.
-% Esse modelo usa abnTeX2 (https://www.abntex.net.br/)
+% Modelo UFSC/CTC/DAS para PFCs (08/07/2020)
+% Autores: Matheus Bruhns Bastos e Marcelo De Lellis Costa de Oliveira
+% --------------------------------------------------------
+% Adaptado do arquivo Template-Trabalhos-Academicos-UFSC-A4-v1.3
+% disponibilizado em http://portal.bu.ufsc.br/files/2013/10/Template-Trabalhos-Academicos-UFSC-A4-v1.3.zip
+% Modelo UFSC para Trabalhos Academicos (tese de doutorado, dissertação de
+% mestrado) utilizando a classe abntex2
+%
+% Autor: Alisson Lopes Furlani
+% 	Modificações:
+%	- 27/08/2019: Alisson L. Furlani, add 'glossaries' package
+%   - 30/10/2019: Alisson L. Furlani, adjusted some spacing errors and changed math fonts
+%   - 17/01/2020: Alisson L. Furlani, updated certification page
+%   - 07/02/2020: Alisson L. Furlani, fixed table counter bug
+%   - 11/03/2020: Alisson L. Furlani, changed greek letters in math and fixed citation style
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
 \documentclass[
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
-	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	oneside,			% Para impressão simples. Para impressão frente e verso, use twoside
+	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão no anverso. Oposto a twoside
 	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
 	% -- opções do pacote babel --
 	english,			% idioma adicional para hifenização
+	%french,				% idioma adicional para hifenização
+	%spanish,			% idioma adicional para hifenização
 	brazil				% o último idioma é o principal do documento
 	]{abntex2}
 
-% ---
-% Pacotes básicos 
-% ---
+\usepackage{setup/ufscthesisA4-alf}
 \usepackage{float}
-\usepackage{lmodern}			% Usa a fonte Latin Modern			
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{lastpage}			% Usado pela Ficha catalográfica
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color}				% Controle das cores
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{microtype} 			% para melhorias de justificação
-% ---
-		
-% ---
-% Pacotes de citações
-% ---
-\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
-
-% --- 
-% CONFIGURAÇÕES DE PACOTES
-% --- 
+\addbibresource{aftertext/references.bib} % Seus arquivos de referências
 
 % ---
-% Configurações do pacote backref
-% Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
-% Texto padrão antes do número das páginas
-\renewcommand{\backref}{}
-% Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		Citado na página #2.%
-	\else
-		Citado #1 vezes nas páginas #2.%
-	\fi}%
+% Filtering and Mapping Bibliographies
+% ---
+\DeclareSourcemap{
+	\maps[datatype=bibtex]{
+		% remove fields that are always useless
+		\map{
+			\step[fieldset=abstract, null]
+			\step[fieldset=pagetotal, null]
+		}
+		% remove URLs for types that are primarily printed
+%		\map{
+%			\pernottype{software}
+%			\pernottype{online}
+%			\pernottype{report}
+%			\pernottype{techreport}
+%			\pernottype{standard}
+%			\pernottype{manual}
+%			\pernottype{misc}
+%			\step[fieldset=url, null]
+%			\step[fieldset=urldate, null]
+%		}
+		\map{
+			\pertype{inproceedings}
+			% remove mostly redundant conference information
+			\step[fieldset=venue, null]
+			\step[fieldset=eventdate, null]
+			\step[fieldset=eventtitle, null]
+			% do not show ISBN for proceedings
+			\step[fieldset=isbn, null]
+			% Citavi bug
+			\step[fieldset=volume, null]
+		}
+	}
+}
 % ---
 
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Titulo: subtítulo}
-\autor{Nome do aluno}
+% FIXME Substituir 'Nome completo do autor' pelo seu nome.
+\autor{Aruã Viggiano Souza}
+% FIXME Substituir 'Título do trabalho' pelo título da trabalho.
+\titulo{Inteligência Artificial Embarcada para Leitura de Placas de Veículos}
+% FIXME Substituir 'Subtítulo (se houver)' pelo subtítulo da trabalho.  
+% Caso não tenha substítulo, comente a linha a seguir.
+% \subtitulo{Subtítulo (se houver)}
+% FIXME Substituir 'XXXXXX' pelo nome do seu
+% orientador.
+\orientador{Prof. Eric Aislan Antonelo, Dr.}
+% FIXME Se for orientado por uma mulher, comente a linha acima e descomente a linha a seguir.
+% \orientador[Orientadora]{Nome da orientadora, Dra.}
+% FIXME Substituir 'XXXXXX' pelo nome do seu
+% supervisor no local de realização do PFC. Caso não tenha supervisor, comente a linha a seguir.
+\coorientador{Dennis Kerr Coelho}
+% FIXME Se for supervisionado por uma mulher, comente a linha acima e descomente a linha a seguir.
+% \coorientador[Supervisora]{XXXXXX, Eng.}
+% FIXME Substituir '[ano]' pelo ano (ano) em que seu trabalho foi defendido.
+\ano{2026}
+% FIXME Substituir '[dia] de [mês] de [ano]' pela data em que ocorreu sua defesa.
+%\data{[dia] de [mês] de [ano]}
+% FIXME Substituir 'Local' pela cidade em que ocorreu sua defesa.
 \local{Florianópolis}
-\data{2018}
-\orientador{Nome do orientador}
-\coorientador{Nome do coorientador} % Deixar vazio caso não haja
-\instituicao{%
-  UNIVERSIDADE FEDERAL DE SANTA CATARINA
-  \par
-  CENTRO TECNOLÓGICO
-  \par
-  DEPARTAMENTO DE AUTOMAÇÃO E SISTEMAS}
-\tipotrabalho{Relatório de Estágio}
-
-\preambulo{Relatório submetido à Universidade Federal de Santa Catarina como requisito para a aprovação na disciplina \textbf{DAS 5501 - Estágio em Controle e Automação Industrial} do curso de Graduação em Engenharia de Controle e Automação.}
+\instituicaosigla{UFSC}
+\instituicao{Universidade Federal de Santa Catarina}
+% FIXME Substituir 'Dissertação/Tese' pelo tipo de trabalho (Tese, Dissertação). 
+\tipotrabalho{Relatório final da disciplina DAS5511 (Projeto de Fim de Curso) como Trabalho de Conclusão}
+\formacao{Engenheiro(a) de Controle e Automação}
+% FIXME Substituir '[mestrado/doutorado]' pelo nivel adequado.
+% \nivel{[mestrado/doutorado]}
+% FIXME Substituir 'Programa de Pós-Graduação em XXXXXX' pela curso adequado.
+% \programa{Programa de Pós-Graduação em XXXXXX}
+\centro{Centro Tecnológico}
+\departamento{Departamento de Engenharia de Automação e Sistemas}
+\curso{Curso de Graduação em Engenharia de Controle e Automação}
+\preambulo
+{%
+%\imprimirtipotrabalho~do~\imprimircurso~da~\imprimirinstituicao~como~requisito~para~a~obtenção~do~título~de~\imprimirformacao.
+\imprimirtipotrabalho~do~\imprimircurso~da~\imprimirinstituicao~em~Florianópolis.
+}
 % ---
 
 % ---
 % Configurações de aparência do PDF final
-
+% ---
 % alterando o aspecto da cor azul
 \definecolor{blue}{RGB}{41,5,195}
-
 % informações do PDF
 \makeatletter
 \hypersetup{
@@ -91,26 +133,34 @@
 		pdfauthor={\@author},
     	pdfsubject={\imprimirpreambulo},
 	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		pdfkeywords={ufsc, latex, abntex2}, 
 		colorlinks=true,       		% false: boxed links; true: colored links
-    	linkcolor=black,          	% color of internal links
-    	citecolor=blue,        		% color of links to bibliography
-    	filecolor=magenta,      		% color of file links
-		urlcolor=blue,
+    	linkcolor=black,%blue,          	% color of internal links
+    	citecolor=black,%blue,        		% color of links to bibliography
+    	filecolor=black,%magenta,      		% color of file links
+		urlcolor=black,%blue,
 		bookmarksdepth=4
 }
 \makeatother
-% --- 
+% ---
 
-% --- 
-% Espaçamentos entre linhas e parágrafos 
-% --- 
+% ---
+% compila a lista de abreviaturas e siglas e a lista de símbolos
+% ---
 
-% O tamanho do parágrafo é dado por:
-\setlength{\parindent}{1.3cm}
+% Declaração das siglas
+\siglalista{ABNT}{Associação Brasileira de Normas Técnicas}
 
-% Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+% Declaração dos simbolos
+\simbololista{C}{\ensuremath{C}}{Circunferência de um círculo}
+\simbololista{pi}{\ensuremath{\pi}}{Número pi} 
+\simbololista{r}{\ensuremath{r}}{Raio de um círculo}
+\simbololista{A}{\ensuremath{A}}{Área de um círculo}
+
+% compila a lista de abreviaturas e siglas e a lista de símbolos
+\makenoidxglossaries 
+
+% ---
 
 % ---
 % compila o indice
@@ -123,228 +173,70 @@
 % ----
 \begin{document}
 
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
 % Retira espaço extra obsoleto entre as frases.
 \frenchspacing 
+
+% Espaçamento 1.5 entre linhas
+\OnehalfSpacing
+
+% Corrige justificação
+%\sloppy
 
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
 % ----------------------------------------------------------
-% \pretextual
-
+% \pretextual %a macro \pretextual é acionado automaticamente no início de \begin{document}
 % ---
-% Capa
+% Capa, folha de rosto, ficha bibliografica, errata, folha de apróvação
+% Dedicatória, agradecimentos, epígrafe, resumos, listas
 % ---
-
-\renewcommand{\imprimircapa}{%
-  \begin{capa}%
-    \center
-    \ABNTEXchapterfont\Large\textbf\imprimirinstituicao
-    
-    \vspace*{1cm}
-    
-    {\ABNTEXchapterfont\large\textbf\imprimirautor}
-    
-    \vfill
-    \begin{center}
-    \ABNTEXchapterfont\bfseries\ Relatório de Estágio \\
-    \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
-    \end{center}
-    \vfill
-    
-    \large\imprimirlocal
-    
-    \large\imprimirdata
-    
-    \vspace*{1cm}
-  \end{capa}
-}
-
-\imprimircapa
+\input{beforetext/beforetext}
 % ---
-
-% ---
-% Folha de rosto
-% (o * indica que haverá a ficha bibliográfica)
-% ---
-\makeatletter
-\renewcommand{\folhaderostocontent}{
-  \begin{center}
-  
-    {\ABNTEXchapterfont\large\textbf\imprimirautor}
-    
-    \vspace*{\fill}\vspace*{\fill}
-    
-    \begin{center}
-    	\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
-    \end{center}
-    
-    \vspace*{\fill}
-    
-    \abntex@ifnotempty{\imprimirpreambulo}{%
-      \hspace{.45\textwidth}
-      \begin{minipage}{.5\textwidth}
-      \SingleSpacing
-      \imprimirpreambulo
-      \par
-      {\imprimirorientadorRotulo~\imprimirorientador\par}
-      \abntex@ifnotempty{\imprimircoorientador}{%
-    	{\imprimircoorientadorRotulo~\imprimircoorientador}%
-      }%
-      \end{minipage}%
-      \vspace*{\fill}
-    }%
-    
-    \vspace*{\fill}
-    
-    {\large\imprimirlocal}
-    
-    \par
-    
-    {\large\imprimirdata}
-    
-    \vspace*{1cm}
-  \end{center}
-}
-\makeatother
-
-\imprimirfolhaderosto
-% ---
-
-% ---
-% Inserir folha de aprovação
-% ---
-
-% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
-% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
-% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
-% imagem da página assinada pela banca com o comando abaixo:
-%
-% \includepdf{folhadeaprovacao_final.pdf}
-%
-\makeatletter
-\begin{folhadeaprovacao}
-
-  \begin{center}
-    {\ABNTEXchapterfont\large\imprimirautor}
-
-    \vspace*{\fill}\vspace*{\fill}
-    \begin{center}
-      \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
-    \end{center}
-    \vspace*{\fill}
-    
-    Este relatório de estágio foi julgado no contexto da disciplina DAS5501: Estágio em Controle e Automação Industrial e \textbf{APROVADO} na sua forma final pelo Curso de Engenharia de Controle e Automação.
-    
-    \vspace*{\fill}
-    
-    Florianópolis, 22 de junho de 2018
-  \end{center}
-  
-   \assinatura{\textbf{\imprimirorientador} \\ Orientador \\ Universidade Federal de Santa Catarina}
-   
-   \assinatura{\textbf{Nome do Supervisor} \\ Supervisor na Empresa \\ EMPRESA}
-      
-   \abntex@ifnotempty{\imprimircoorientador}{%
-     \assinatura{\textbf{\imprimircoorientador} \\ Co-orientador \\ Universidade Federal de Santa Catarina}
-   }%
-\makeatother
-   
-        
-\end{folhadeaprovacao}
-% ---
-
-% ---
-% Dedicatória
-% ---
-\begin{dedicatoria}
-   \vspace*{\fill}
-   \centering
-   \noindent
-   \textit{Dedicatória: OPCIONAL} \vspace*{\fill}
-\end{dedicatoria}
-% ---
-
-% ---
-% Agradecimentos
-% ---
-\begin{agradecimentos}
-(OPCIONAL): Essa seção não possui uma estrutura pré-definida. O mais usual é separar em parágrafos. Mencionar apenas pessoas, instituições e outros que tenham tido importância para a realização do trabalho.
-
-\end{agradecimentos}
-% ---
-
-% ---
-% Epígrafe
-% ---
-\begin{epigrafe}
-    \vspace*{\fill}
-	\begin{flushright}
-		\textit{``Epígrafe (Opcional – NBR10520). Elemento opcional, no qual o autor apresenta uma citação, seguida de indicação de autoria, relacionada à matéria tratada no corpo do trabalho.''}
-	\end{flushright}
-\end{epigrafe}
-% ---
-
-% ---
-% RESUMOS
-% ---
-
-% resumo em português
-\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-\begin{resumo}
-	\input{resumo.tex}
-\end{resumo}
-
-% resumo em inglês
-\begin{resumo}[Abstract]
- \begin{otherlanguage*}{english}
-	\input{abstract.tex}
- \end{otherlanguage*}
-\end{resumo}
-
-% Inserir listas. Todas essas listas são opcionais.
-\input{listas.tex}
-
-% ---
-% inserir o sumario
-% ---
-\pdfbookmark[0]{\contentsname}{toc}
-\tableofcontents*
-\cleardoublepage
-% ---
-
-
 
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
 % ----------------------------------------------------------
 \textual
 
-% ----------------------------------------------------------
-% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
-% ----------------------------------------------------------
-\chapter*[Introdução]{Introdução}
-\addcontentsline{toc}{chapter}{Introdução}
-% ----------------------------------------------------------
+% ---
+% 1 - Introdução
+% ---
+\include{chapters/1-chapter}
+% ---
 
-\input{introducao.tex}
+% ---
+% 2 - Capítulo 2
+% ---
+\include{chapters/2-chapter}
+% ---
 
+% ---
+% 3 - Capítulo 3
+% ---
+\include{chapters/3-chapter}
+% ---
 
-% Desenvolvimento
-\input{desenvolvimento/capitulo1.tex}
-\input{desenvolvimento/capitulo2.tex}
-\input{desenvolvimento/capitulo3.tex}
-\input{desenvolvimento/capitulo4.tex}
-\input{desenvolvimento/capitulo5.tex}
-\input{desenvolvimento/capitulo6.tex}
-\input{desenvolvimento/capitulo7.tex}
+% ---
+% 4 - Capítulo 4
+% ---
+\include{chapters/4-chapter}
+% ---
 
+% ---
+% 5 - Capítulo 5
+% ---
+\include{chapters/5-chapter}
+% ---
 
-% ----------------------------------------------------------
-% Finaliza a parte no bookmark do PDF
-% para que se inicie o bookmark na raiz
-% e adiciona espaço de parte no Sumário
-% ----------------------------------------------------------
-\phantompart
+% ---
+% 6 - Conclusão
+% ---
+%\phantompart
+\include{chapters/6-chapter}
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -355,7 +247,17 @@
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
-\bibliography{bibliografia}
+\begingroup
+    \printbibliography[title=REFERÊNCIAS]
+\endgroup
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
 
 % ----------------------------------------------------------
 % Apêndices
@@ -365,10 +267,8 @@
 % Inicia os apêndices
 % ---
 \begin{apendicesenv}
-
-\chapter{Título Opcional}
-Textos elaborados pelo próprio autor, a fim de complementar a sua argumentação
-
+%	\partapendices* 
+	\input{aftertext/apendice_a}
 \end{apendicesenv}
 % ---
 
@@ -381,19 +281,15 @@ Textos elaborados pelo próprio autor, a fim de complementar a sua argumentaçã
 % Inicia os anexos
 % ---
 \begin{anexosenv}
-
-% ---
-\chapter{Título Opcional.}
-% ---
-Documentos não elaborados pelo autor, utilizados de fundamentação (mapas, leis, estatutos).
-
+%	\partanexos*
+	\input{aftertext/anexo_a}
 \end{anexosenv}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
 %---------------------------------------------------------------------
-\phantompart
-\printindex
+%\phantompart
+%\printindex
 %---------------------------------------------------------------------
 
 \end{document}

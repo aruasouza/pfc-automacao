@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  27 MAR 2026 16:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  4 APR 2026 15:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -561,65 +561,15 @@ Class memoir Warning: \settocpreprocessor is marked deprecated and will be
 \ABNTEXsignwidth=\skip199
 \ABNTEXsignthickness=\skip256
 \ABNTEXsignskip=\skip257
-) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count363
-\float@exts=\toks26
-\float@box=\box59
-\@float@everytoks=\toks27
-\@floatcapt=\box60
-) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
-Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+) (setup/ufscthesisA4-alf.sty (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 116.
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
-File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks28
-\inpenc@posthook=\toks29
-) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.sty
-Package: lastpage 2025/08/14 v2.1h lastpage: 2.09 or 2e? (HMM)
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage2e.sty
-Package: lastpage2e 2025/08/14 v2.1h Decide which 2e lastpage version to use (HMM)
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpagemodern.sty
-Package: lastpagemodern 2025-08-14 v2.1h Refers to last page's name (HMM; JPG)
-\c@lastpagecount=\count364
-) 
-)) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
+\inpenc@prehook=\toks26
+\inpenc@posthook=\toks27
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 ) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
@@ -644,18 +594,18 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
 \Gin@req@width=\dimen258
 ) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2025/07/09 v3.2b Micro-typographical refinements (RS)
-\MT@toks=\toks30
-\MT@tempbox=\box61
-\MT@count=\count365
+\MT@toks=\toks28
+\MT@tempbox=\box59
+\MT@count=\count363
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
 LaTeX Info: Redefining \leftprotrusion on input line 1088.
-\MT@prot@toks=\toks31
+\MT@prot@toks=\toks29
 LaTeX Info: Redefining \rightprotrusion on input line 1107.
 LaTeX Info: Redefining \textls on input line 1449.
 \MT@outer@kern=\dimen259
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
-\MT@listname@count=\count366
+\MT@listname@count=\count364
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-pdftex.def
 File: microtype-pdftex.def 2025/07/09 v3.2b Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 944.
@@ -667,284 +617,1078 @@ Package microtype Info: Loading configuration file microtype.cfg.
 File: microtype.cfg 2025/07/09 v3.2b microtype main configuration file (RS)
 )
 LaTeX Info: Redefining \microtypesetup on input line 3065.
-) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\backref.sty
-Package: backref 2025-06-21 v1.45 Bibliographical back referencing
-) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/abntex2\abntex2cite.sty
-Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/abntex2\abntex2abrev.sty)
-\minimumbiblabelwidth=\skip259
-\ABCIauxlen=\skip260
-\c@ABCIaux=\count367
-\c@ABCImax=\count368
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
-) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
-Package: relsize 2013/03/29 ver 4.1
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
+\ESO@tempdima=\dimen260
+\ESO@tempdimb=\dimen261
 )
-\biblabelsep=\skip261
-LaTeX Info: Redefining \newblock on input line 591.
-LaTeX Info: Redefining \cite on input line 618.
-\ABCItoken=\toks32
+\AM@pagewidth=\dimen262
+\AM@pageheight=\dimen263
+\AM@fboxrule=\dimen264
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 )
-Package color Info: Redefining color blue on input line 84.
-Package hyperref Info: Option `colorlinks' set `true' on input line 101.
-\main@idxfile=\write4
-\openout4 = `main.idx'.
+\pdfpages@includegraphics@status=\count365
+\AM@pagebox=\box60
+\AM@global@opts=\toks30
+\AM@pagecnt=\count366
+\AM@toc@title=\toks31
+\AM@lof@heading=\toks32
+\c@AM@survey=\count367
+\AM@templatesizebox=\box61
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count368
+\csq@gtype=\count369
+\csq@glevel=\count370
+\csq@qlevel=\count371
+\csq@maxlvl=\count372
+\csq@tshold=\count373
+\csq@ltx@everypar=\toks33
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
+File: csquotes.cfg 
+)) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen265
+\captionmargin=\dimen266
+\caption@leftmargin=\dimen267
+\caption@rightmargin=\dimen268
+\caption@width=\dimen269
+\caption@indent=\dimen270
+\caption@parindent=\dimen271
+\caption@hangindent=\dimen272
+Package caption Info: memoir document class detected.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-memoir.sto
+File: caption-memoir.sto 2023/09/08 v2.2c Adaption of the caption package to the memoir document class (AR)
+))
+\c@caption@flags=\count374
+\c@continuedfloat=\count375
+Package caption Info: changepage package is loaded.
+\caption@adjustwidth@hsize=\dimen273
+\caption@adjustwidth@linewidth=\dimen274
+Package caption Info: hyperref package is loaded.
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip259
+\LTright=\skip260
+\LTpre=\skip261
+\LTpost=\skip262
+\LTchunksize=\count376
+\LTcapwidth=\dimen275
+\LT@head=\box62
+\LT@firsthead=\box63
+\LT@foot=\box64
+\LT@lastfoot=\box65
+\LT@gbox=\box66
+\LT@cols=\count377
+\LT@rows=\count378
+\c@LT@tables=\count379
+\c@LT@chunks=\count380
+\LT@p@ftn=\toks34
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/base\glossaries.sty
+Package: glossaries 2025/11/09 v4.9 (NLCT)
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks35
+\XKV@tempa@toks=\toks36
+)
+\XKV@depth=\count381
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/mfirstuc\mfirstuc.sty
+Package: mfirstuc 2025/04/03 v2.09 (NLCT)
+\@glsmfirst=\toks37
+\@glsmrest=\toks38
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/xfor\xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks39
+\ex@=\dimen276
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/tracklang\tracklang.sty
+Package: tracklang 2025/03/11 v1.6.6 (NLCT) Track Languages
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/generic/tracklang\tracklang.tex)
+Package tracklang Info: Tracking dialect `english' (language `english') on input line 53.
+Package tracklang Info: Tracking dialect `brazil' (language `portuges') on input line 53.
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/glossaries-english\glossaries-english.ldf
+File: glossaries-english.ldf 2014/11/23 v1.0
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/glossaries-portuges\glossaries-pt-BR.ldf
+File: glossaries-pt-BR.ldf 2014/11/23 v1.0
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/glossaries-portuges\glossaries-portuges-utf8.ldf)) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-base.sty
+Package: datatool-base 2025/12/04 v3.4.3 (NLCT)
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip263
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen277
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count382
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count383
+\leftroot@=\count384
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count385
+\DOTSCASE@=\count386
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box67
+\strutbox@=\box68
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen278
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count387
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count388
+\dotsspace@=\muskip18
+\c@parentequation=\count389
+\dspbrk@lvl=\count390
+\tag@help=\toks40
+\row@=\count391
+\column@=\count392
+\maxfields@=\count393
+\andhelp@=\toks41
+\eqnshift@=\dimen279
+\alignsep@=\dimen280
+\tagshift@=\dimen281
+\tagwidth@=\dimen282
+\totwidth@=\dimen283
+\lineht@=\dimen284
+\@envbody=\toks42
+\multlinegap=\skip264
+\multlinetaggap=\skip265
+\mathdisplay@stack=\toks43
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+\l__datatool_tmpa_int=\count394
+\l__datatool_tmpb_int=\count395
+\l__datatool_tmpc_int=\count396
+\l__datatool_tmpd_int=\count397
+\l__datatool_count_int=\count398
+\l__datatool_tmp_datatype_int=\count399
+\l__datatool_tmpa_dim=\dimen285
+\l__datatool_tmpb_dim=\dimen286
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-l3fp.def
+File: datatool-l3fp.def 2025/12/04 v3.4.3 (NLCT)
+)
+\@dtl@toks=\toks44
+\@dtl@tmpcount=\count400
+\dtl@tmplength=\skip266
+\l__datatool_measure_box=\box69
+\dtl@sortresult=\count401
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-utf8.ldf
+File: datatool-utf8.ldf 2025/12/04 v3.4.3 (NLCT)
+)
+\@dtl@datatype=\count402
+\c_datatool_unknown_int=\count403
+\l__datatool_year_int=\count404
+\l__datatool_month_int=\count405
+\l__datatool_day_int=\count406
+\l__datatool_hour_int=\count407
+\l__datatool_minute_int=\count408
+\l__datatool_second_int=\count409
+\l__datatool_tzhour_int=\count410
+\l__datatool_tzminute_int=\count411
+\l__datatool_julian_int=\count412
+\l__datatool_local_julian_int=\count413
+\l__datatool_prefix_int=\count414
+\l__datatool_suffix_int=\count415
+\@dtl@foreach@level=\count416
+
+
+Package tracklang Warning: No `datatool' support for dialect `english'  on input line 9924.
+
+
+Package tracklang Warning: No `datatool' support for dialect `brazil'  on input line 9924.
+
+
+Package tracklang Warning: No `datatool' support for dialect `brazil'  on input line 9924.
+
+\dtl@codeA=\count417
+\dtl@codeB=\count418
+)
+\gls@level=\count419
+\@gls@tmpb=\toks45
+\gls@tmplen=\skip267
+
+
+Package glossaries Warning: Overriding \printglossary on input line 6495.
+
+\l__glossaries_tmpa_dim=\dimen287
+\l__glossaries_tmpb_dim=\dimen288
+\c@glossarysubentry=\count420
+
+Package glossaries Warning: Overriding `theglossary' environment on input line 7694.
+
+\glskeylisttok=\toks46
+\glslabeltok=\toks47
+\glsshorttok=\toks48
+\glslongtok=\toks49
+(C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\glossary-hypernav.sty
+Package: glossary-hypernav 2025/11/09 v4.9 (NLCT)
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\glossary-list.sty
+Package: glossary-list 2025/11/09 v4.9 (NLCT)
+\glslistdottedwidth=\skip268
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\glossary-long.sty
+Package: glossary-long 2025/11/09 v4.9 (NLCT)
+\glsdescwidth=\skip269
+\glspagelistwidth=\skip270
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\glossary-super.sty
+Package: glossary-super 2025/11/09 v4.9 (NLCT)
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/supertabular\supertabular.sty
+Package: supertabular 2025/06/26 v4.2d the supertabular environment
+\c@tracingst=\count421
+\ST@wd=\dimen289
+\ST@rightskip=\skip271
+\ST@leftskip=\skip272
+\ST@parfillskip=\skip273
+\ST@pageleft=\dimen290
+\ST@headht=\dimen291
+\ST@tailht=\dimen292
+\ST@pagesofar=\dimen293
+\ST@pboxht=\dimen294
+\ST@rowht=\dimen295
+\ST@prevht=\dimen296
+\ST@toadd=\dimen297
+\ST@dimen=\dimen298
+\ST@pbox=\box70
+)) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/styles\glossary-tree.sty
+Package: glossary-tree 2025/11/09 v4.9 (NLCT)
+\l__glossaries_tree_max_known_level_int=\count422
+\l__glossaries_tree_offset_dim=\dimen299
+\l__glossaries_tree_namewidth_dim=\dimen300
+\l__glossaries_tree_symbolwidth_dim=\dimen301
+\l__glossaries_tree_prenamesym_width_dim=\dimen302
+\l__glossaries_tree_presubnamesym_width_dim=\dimen303
+\l__glossaries_tree_namewidth_padding_dim=\dimen304
+\l__glossaries_tree_symbolwidth_padding_dim=\dimen305
+\l__glossaries_tree_namesymbolwidth_dim=\dimen306
+\l__glossaries_tree_namesymbolwidth_padding_dim=\dimen307
+\l__glossaries_tree_level_int=\count423
+\glstreeindent=\skip274
+)) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/mathastext\mathastext.sty
+Package: mathastext 2024/10/26 v1.4e Use the text font in math mode (JFB)
+
+Package mathastext Info: Starting the math mode configuration.
+\mst@exists@muskip=\muskip19
+\mst@forall@muskip=\muskip20
+\mst@prime@muskip=\muskip21
+\mst@do@nonletters=\toks50
+\mst@undo@nonletters=\toks51
+\mst@do@easynonletters=\toks52
+\mst@undo@easynonletters=\toks53
+\symmtoperatorfont=\mathgroup4
+\symmtletterfont=\mathgroup5
+(   mathastext:   ) will use Euler font; command \MTEulerScale
+\symmteulervm=\mathgroup6
+(   mathastext:   ) ! and ?
+(   mathastext:   ) punctuation: , . : ; and \colon
+LaTeX Info: Redefining \relbar on input line 1197.
+LaTeX Info: Redefining \rightarrowfill on input line 1198.
+LaTeX Info: Redefining \leftarrowfill on input line 1201.
+(   mathastext:   ) + and =
+LaTeX Info: Redefining \Relbar on input line 1344.
+(   mathastext:   ) adding = ; and + to \nfss@catcodes
+(   mathastext:   ) parentheses ( ) [ ] and slash /
+(   mathastext:   ) alldelims: < > \backslash \setminus | \vert \mid \{ \}
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 1410.
+LaTeX Info: Redefining \models on input line 1429.
+(   mathastext:   ) \# \mathdollar \% \& 
+(   mathastext:   ) \imath and \jmath 
+LaTeX Font Info:    Overwriting math alphabet `\Mathnormalbold' in version `normal'
+(Font)                  T1/phv/b/it --> T1/phv/b/it on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\Mathnormalbold' in version `bold'
+(Font)                  T1/phv/b/it --> T1/phv/b/it on input line 2934.
+LaTeX Font Info:    Overwriting symbol font `mtletterfont' in version `normal'
+(Font)                  T1/phv/m/it --> T1/phv/m/it on input line 2934.
+LaTeX Font Info:    Overwriting symbol font `mtletterfont' in version `bold'
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 2934.
+LaTeX Font Info:    Overwriting symbol font `mtoperatorfont' in version `normal'
+(Font)                  T1/phv/m/n --> T1/phv/m/n on input line 2934.
+LaTeX Font Info:    Overwriting symbol font `mtoperatorfont' in version `bold'
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\Mathbf' in version `normal'
+(Font)                  T1/phv/b/n --> T1/phv/b/n on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\Mathbf' in version `bold'
+(Font)                  T1/phv/b/n --> T1/phv/b/n on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\Mathit' in version `normal'
+(Font)                  T1/phv/m/it --> T1/phv/m/it on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\Mathit' in version `bold'
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\Mathsf' in version `normal'
+(Font)                  T1/phv/m/n --> T1/phv/m/n on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\Mathsf' in version `bold'
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\Mathtt' in version `normal'
+(Font)                  T1/cmtt/m/n --> T1/cmtt/m/n on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\Mathtt' in version `bold'
+(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 2934.
+LaTeX Font Info:    Overwriting symbol font `mteulervm' in version `bold'
+(Font)                  U/zeur/m/n --> U/zeur/b/n on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\MathEulerBold' in version `normal'
+(Font)                  U/zeur/b/n --> U/zeur/b/n on input line 2934.
+LaTeX Font Info:    Overwriting math alphabet `\MathEulerBold' in version `bold'
+(Font)                  U/zeur/b/n --> U/zeur/b/n on input line 2934.
+(   mathastext:   ) Latin letters in the `normal', resp. `bold',
+(   mathastext:   ) math versions are now set up to use the fonts
+(   mathastext:   ) T1/phv/m/it, resp. T1/phv/b/it.
+(   mathastext:   ) Other characters (digits, ...) and \log-like names will be
+(   mathastext:   ) typeset with the n shape.
+(   mathastext:   ) \hbar
+(   mathastext:   ) minus either as endash, Unicode minus, emdash or hyphen
+(   mathastext:   ) The italic option is in effect.
+(   mathastext:   ) Greek letters will use the Euler font.
+(   mathastext:   ) Use \MathastextEulerScale{<factor>} to scale the font.
+
+Package mathastext Info: Loading is complete.  You can now use \Mathastext to
+(mathastext)             modify the normal and bold math versions.  Use it
+(mathastext)             with optional argument or use \MTDeclareVersion to
+(mathastext)             declare additional math versions.
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
+Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+\symboldmtoperatorfont=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count424
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count425
+\c@listtotal=\count426
+\c@listcount=\count427
+\c@liststart=\count428
+\c@liststop=\count429
+\c@citecount=\count430
+\c@citetotal=\count431
+\c@multicitecount=\count432
+\c@multicitetotal=\count433
+\c@instcount=\count434
+\c@maxnames=\count435
+\c@minnames=\count436
+\c@maxitems=\count437
+\c@minitems=\count438
+\c@citecounter=\count439
+\c@maxcitecounter=\count440
+\c@savedcitecounter=\count441
+\c@uniquelist=\count442
+\c@uniquename=\count443
+\c@refsection=\count444
+\c@refsegment=\count445
+\c@maxextratitle=\count446
+\c@maxextratitleyear=\count447
+\c@maxextraname=\count448
+\c@maxextradate=\count449
+\c@maxextraalpha=\count450
+\c@abbrvpenalty=\count451
+\c@highnamepenalty=\count452
+\c@lownamepenalty=\count453
+\c@maxparens=\count454
+\c@parenlevel=\count455
+\blx@tempcnta=\count456
+\blx@tempcntb=\count457
+\blx@tempcntc=\count458
+\c@blx@maxsection=\count459
+\blx@maxsegment@0=\count460
+\blx@notetype=\count461
+\blx@parenlevel@text=\count462
+\blx@parenlevel@foot=\count463
+\blx@sectionciteorder@0=\count464
+\blx@sectionciteorderinternal@0=\count465
+\blx@entrysetcounter=\count466
+\blx@biblioinstance=\count467
+\labelnumberwidth=\skip275
+\labelalphawidth=\skip276
+\biblabelsep=\skip277
+\bibnamesep=\skip278
+\bibinitsep=\skip279
+\bibparsep=\skip280
+\bibhang=\skip281
+\blx@bcfin=\read4
+\blx@bcfout=\write4
+\blx@langwohyphens=\language80
+\c@mincomprange=\count468
+\c@maxcomprange=\count469
+\c@mincompwidth=\count470
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'abnt.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count471
+\c@savedafterword=\count472
+\c@annotator=\count473
+\c@savedannotator=\count474
+\c@author=\count475
+\c@savedauthor=\count476
+\c@bookauthor=\count477
+\c@savedbookauthor=\count478
+\c@commentator=\count479
+\c@savedcommentator=\count480
+\c@editor=\count481
+\c@savededitor=\count482
+\c@editora=\count483
+\c@savededitora=\count484
+\c@editorb=\count485
+\c@savededitorb=\count486
+\c@editorc=\count487
+\c@savededitorc=\count488
+\c@foreword=\count489
+\c@savedforeword=\count490
+\c@holder=\count491
+\c@savedholder=\count492
+\c@introduction=\count493
+\c@savedintroduction=\count494
+\c@namea=\count495
+\c@savednamea=\count496
+\c@nameb=\count497
+\c@savednameb=\count498
+\c@namec=\count499
+\c@savednamec=\count500
+\c@translator=\count501
+\c@savedtranslator=\count502
+\c@shortauthor=\count503
+\c@savedshortauthor=\count504
+\c@shorteditor=\count505
+\c@savedshorteditor=\count506
+\c@labelname=\count507
+\c@savedlabelname=\count508
+\c@institution=\count509
+\c@savedinstitution=\count510
+\c@lista=\count511
+\c@savedlista=\count512
+\c@listb=\count513
+\c@savedlistb=\count514
+\c@listc=\count515
+\c@savedlistc=\count516
+\c@listd=\count517
+\c@savedlistd=\count518
+\c@liste=\count519
+\c@savedliste=\count520
+\c@listf=\count521
+\c@savedlistf=\count522
+\c@location=\count523
+\c@savedlocation=\count524
+\c@organization=\count525
+\c@savedorganization=\count526
+\c@origlocation=\count527
+\c@savedoriglocation=\count528
+\c@origpublisher=\count529
+\c@savedorigpublisher=\count530
+\c@publisher=\count531
+\c@savedpublisher=\count532
+\c@language=\count533
+\c@savedlanguage=\count534
+\c@origlanguage=\count535
+\c@savedoriglanguage=\count536
+\c@pageref=\count537
+\c@savedpageref=\count538
+\shorthandwidth=\skip282
+\shortjournalwidth=\skip283
+\shortserieswidth=\skip284
+\shorttitlewidth=\skip285
+\shortauthorwidth=\skip286
+\shorteditorwidth=\skip287
+\locallabelnumberwidth=\skip288
+\locallabelalphawidth=\skip289
+\localshorthandwidth=\skip290
+\localshortjournalwidth=\skip291
+\localshortserieswidth=\skip292
+\localshorttitlewidth=\skip293
+\localshortauthorwidth=\skip294
+\localshorteditorwidth=\skip295
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+\c@textcitecount=\count539
+\c@textcitetotal=\count540
+\c@textcitemaxnames=\count541
+\c@biburlbigbreakpenalty=\count542
+\c@biburlbreakpenalty=\count543
+\c@biburlnumpenalty=\count544
+\c@biburlucpenalty=\count545
+\c@biburllcpenalty=\count546
+\biburlbigskip=\muskip22
+\biburlnumskip=\muskip23
+\biburlucskip=\muskip24
+\biburllcskip=\muskip25
+\c@smartand=\count547
+)
+Package biblatex Info: Trying to load bibliography style 'abnt'...
+Package biblatex Info: ... file 'abnt.bbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/bbx\abnt.bbx
+File: abnt.bbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
+File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count548
+\c@bbx:relatedtotal=\count549
+))
+Package biblatex Info: Trying to load citation style 'abnt'...
+Package biblatex Info: ... file 'abnt.cbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/cbx\abnt.cbx
+File: abnt.cbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load citation style 'authoryear-comp'...
+Package biblatex Info: ... file 'authoryear-comp.cbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\authoryear-comp.cbx
+File: authoryear-comp.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\footcites'.
+Package biblatex Info: Redefining '\footcitetexts'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcites'.
+Package biblatex Info: Redefining '\citetitle'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\citeauthor'.
+Package biblatex Info: Redefining '\citeyear'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2025-12-29 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+))
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 115.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/helvet/m/n on input line 115.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/helvet/m/n on input line 115.
+\c@quadro=\count550
+\c@loqdepth=\count551
+\cftbeforequadroskip=\skip296
+\cftquadroindent=\skip297
+\cftquadronumwidth=\skip298
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count552
+\float@exts=\toks54
+\float@box=\box71
+\@float@everytoks=\toks55
+\@floatcapt=\box72
+)
+Package color Info: Redefining color blue on input line 127.
+Package hyperref Info: Option `colorlinks' set `true' on input line 143.
+\main@idxfile=\write5
+\openout5 = `main.idx'.
 
 
 Writing index file main.idx 
-(main.aux
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'brazil'.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 174.
+(C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+) (main.aux
 Package babel Info: 'brazil' activates 'portuges' shorthands.
-(babel)             Reported on input line 12.
-)
+(babel)             Reported on input line 15.
+ (chapters/1-chapter.aux) (chapters/2-chapter.aux) (chapters/3-chapter.aux) (chapters/4-chapter.aux) (chapters/5-chapter.aux) (chapters/6-chapter.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-Package hyperref Info: Link coloring ON on input line 124.
-\myptabbox=\box62
-\myptabboxwidth=\skip262
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+Package hyperref Info: Link coloring ON on input line 174.
+\myptabbox=\box73
+\myptabboxwidth=\skip299
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count369
-\scratchdimen=\dimen260
-\scratchbox=\box63
-\nofMPsegments=\count370
-\nofMParguments=\count371
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count372
-\MPscratchDim=\dimen261
-\MPnumerator=\count373
-\makeMPintoPDFobject=\count374
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count553
+\scratchdimen=\dimen308
+\scratchbox=\box74
+\nofMPsegments=\count554
+\nofMParguments=\count555
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count556
+\MPscratchDim=\dimen309
+\MPnumerator=\count557
+\makeMPintoPDFobject=\count558
+\everyMPtoPDFconversion=\toks57
 ) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \microtypecontext on input line 124.
-Package microtype Info: Applying patch `item' on input line 124.
-Package microtype Info: Applying patch `toc' on input line 124.
-Package microtype Info: Applying patch `eqnum' on input line 124.
-Package microtype Info: Applying patch `footnote' on input line 124.
-Package microtype Info: Applying patch `verbatim' on input line 124.
-LaTeX Info: Redefining \microtypesetup on input line 124.
+LaTeX Info: Redefining \microtypecontext on input line 174.
+Package microtype Info: Applying patch `item' on input line 174.
+Package microtype Info: Applying patch `toc' on input line 174.
+Package microtype Info: Applying patch `eqnum' on input line 174.
+Package microtype Info: Applying patch `footnote' on input line 174.
+Package microtype Info: Applying patch `verbatim' on input line 174.
+LaTeX Info: Redefining \microtypesetup on input line 174.
 Package microtype Info: Generating PDF output.
-Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Character protrusion enabled (level 2),
+(microtype)             factor: 1100.
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
-(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+(microtype)             stretch: 10, shrink: 10, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
 Package microtype Info: Patching command `\showhyphens'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
-)
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 162.
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmss' (encoding: T1).
+(microtype)             `phv' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [1
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: supertabular package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package biblatex Info: Trying to load language 'brazil' -> 'brazil-abnt'...
+Package biblatex Info: ... file 'brazil-abnt.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazil-abnt.lbx
+File: brazil-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)))
+Package biblatex Info: Trying to load language 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'brazil'...
+Package biblatex Info: ... file 'brazil.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
+File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)))
+Package biblatex Info: Trying to load language 'brazil'...
+Package biblatex Info: ... file 'brazil.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
+File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'brazil'...
+Package biblatex Info: ... file 'brazil.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
+File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+))))))
+Package biblatex Info: Trying to load language 'english' -> 'english-abnt'...
+Package biblatex Info: ... file 'english-abnt.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\english-abnt.lbx
+File: english-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `main.bcf'.
 
-{C:/Users/aruav/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 212.
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 212.
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 212.
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 212.
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 212.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 212.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 212.
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (main.bbl)
+Package biblatex Info: Reference section=0 on input line 174.
+Package biblatex Info: Reference segment=0 on input line 174.
+ (beforetext/beforetext.tex
+
+pdfTeX warning: pdflatex (file ./setup/vertical_sigla_fundo_claro.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<setup/vertical_sigla_fundo_claro.pdf, id=3, 327.2225pt x 449.68pt>
+File: setup/vertical_sigla_fundo_claro.pdf Graphic file (type pdf)
+<use setup/vertical_sigla_fundo_claro.pdf>
+Package pdftex.def Info: setup/vertical_sigla_fundo_claro.pdf  used on input line 4.
+(pdftex.def)             Requested size: 52.35297pt x 71.9434pt.
+[1
+
+{C:/Users/aruav/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./setup/vertical_sigla_fundo_claro.pdf>]
+Overfull \hbox (3.9416pt too wide) in paragraph at lines 13--13
+\T1/phv/m/n/10 (-10) Fim de Curso) como Tra-ba-lho de Con-clu-são do Curso
+ []
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.212 
-       [1
+l.13 
+      [1
 
 
 
-] [2
+]
+<beforetext/Ficha_Catalografica.pdf, id=19, 597.55246pt x 845.19763pt>
+File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
+<use beforetext/Ficha_Catalografica.pdf>
+Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf  used on input line 19.
+(pdftex.def)             Requested size: 597.551pt x 845.19557pt.
+<beforetext/Ficha_Catalografica.pdf, id=21, page=1, 597.55246pt x 845.19763pt>
+File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
+<use beforetext/Ficha_Catalografica.pdf, page 1>
+Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
+(pdftex.def)             Requested size: 597.551pt x 845.19557pt.
+File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
+<use beforetext/Ficha_Catalografica.pdf, page 1>
+Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
+(pdftex.def)             Requested size: 597.57834pt x 845.23425pt.
+File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
+<use beforetext/Ficha_Catalografica.pdf, page 1>
+Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
+(pdftex.def)             Requested size: 597.57834pt x 845.23425pt.
+File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
+<use beforetext/Ficha_Catalografica.pdf, page 1>
+Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
+(pdftex.def)             Requested size: 597.57834pt x 845.23425pt.
+File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
+<use beforetext/Ficha_Catalografica.pdf, page 1>
+Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
+(pdftex.def)             Requested size: 597.57834pt x 845.23425pt.
+ [2
 
-
-] [3
+ <./beforetext/Ficha_Catalografica.pdf>]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 50.
+ [3
 
 ] [4
 
+]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 96.
 
-] [5
-
-] (resumo.tex) [6
-
-] (abstract.tex) [7
-
-] (listas.tex (main.lof) [8
-
-] (main.lot) [9
-
-] [10
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+[]\T1/phv/m/n/12 (-8) Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+ []
 
 
-] [11
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
+ []
 
-{C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]) (main.toc
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 23.
-) [12
+[5
 
-] [13] (introducao.tex
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4.
- (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)) (desenvolvimento/capitulo1.tex [14
-
-
-{C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-Cap\'{\i }tulo 1.
-[15
 
 ]
-<imagens/rock3a.png, id=173, 1204.5pt x 903.375pt>
-File: imagens/rock3a.png Graphic file (type png)
-<use imagens/rock3a.png>
-Package pdftex.def Info: imagens/rock3a.png  used on input line 53.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 113.
+ [6
+
+]
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 132.
+ (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `phv' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [7
+
+] [8
+
+] [9
+
+] (main.lof (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+)
+LaTeX Font Info:    Trying to load font information for OMX+helvet on input line 3.
+LaTeX Font Info:    No file OMXhelvet.fd. on input line 3.
+
+
+LaTeX Font Warning: Font shape `OMX/helvet/m/n' undefined
+(Font)              using `OMX/cmex/m/n' instead on input line 3.
+
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 3.
+LaTeX Font Info:    Trying to load font information for U+zeur on input line 3.
+(C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeur.fd
+File: uzeur.fd 2005/01/11 v4.0 (WaS)
+) (C:\Users\aruav\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-eur.cfg
+File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
+)) [10
+
+] (main.loq) [11
+
+] (main.lot) [12
+
+]
+
+Package glossaries Warning: Empty glossary for \printnoidxglossary[type={acronym}]. Rerun may be required (or you may have forgotten to use commands like \gls) on input line 220.
+
+[13
+
+]
+
+Package glossaries Warning: Empty glossary for \printnoidxglossary[type={simbolos}]. Rerun may be required (or you may have forgotten to use commands like \gls) on input line 226.
+
+[14
+
+] (main.toc
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 21.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 21.
+) [15
+
+])
+\openout2 = `chapters/1-chapter.aux'.
+
+ (chapters/1-chapter.tex
+Cap\'{\i }tulo 1.
+[16
+
+
+
+]
+<images/rock3a.png, id=195, 1204.5pt x 903.375pt>
+File: images/rock3a.png Graphic file (type png)
+<use images/rock3a.png>
+Package pdftex.def Info: images/rock3a.png  used on input line 53.
 (pdftex.def)             Requested size: 455.0pt x 341.24599pt.
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 57.
- [16] [17
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.68 A
-       partir da imagem da placa do carro, o prÃ³ximo desafio Ã© identificar... <./imagens/rock3a.png>]
-<imagens/diagrama_pipeline.png, id=186, 813.0375pt x 1445.4pt>
-File: imagens/diagrama_pipeline.png Graphic file (type png)
-<use imagens/diagrama_pipeline.png>
-Package pdftex.def Info: imagens/diagrama_pipeline.png  used on input line 90.
+ [17] [18 <./images/rock3a.png>]
+<images/diagrama_pipeline.png, id=208, 813.0375pt x 1445.4pt>
+File: images/diagrama_pipeline.png Graphic file (type png)
+<use images/diagrama_pipeline.png>
+Package pdftex.def Info: images/diagrama_pipeline.png  used on input line 90.
 (pdftex.def)             Requested size: 227.5pt x 404.44458pt.
- [18] [19
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.110 
-       <./imagens/diagrama_pipeline.png>] [20] [21]
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 168.
- [22]) (desenvolvimento/capitulo2.tex [23]
+ [19] [20 <./images/diagrama_pipeline.png>] [21]
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 168.
+ [22] [23]) [24]
+\openout2 = `chapters/2-chapter.aux'.
+
+ (chapters/2-chapter.tex
 Cap\'{\i }tulo 2.
-) (desenvolvimento/capitulo3.tex [24
+) [25
+
+
+
 
 ]
+\openout2 = `chapters/3-chapter.aux'.
+
+ (chapters/3-chapter.tex
 Cap\'{\i }tulo 3.
-) (desenvolvimento/capitulo4.tex [25
+) [26
+
+
+
 
 ]
+\openout2 = `chapters/4-chapter.aux'.
+
+ (chapters/4-chapter.tex
 Cap\'{\i }tulo 4.
-) (desenvolvimento/capitulo5.tex [26
+) [27
+
+
+
 
 ]
+\openout2 = `chapters/5-chapter.aux'.
+
+ (chapters/5-chapter.tex
 Cap\'{\i }tulo 5.
-) (desenvolvimento/capitulo6.tex [27
+
+Overfull \hbox (26.62846pt too wide) in paragraph at lines 18--19
+[]\T1/phv/m/n/12 (-10) Impacto dos re-sul-ta-dos ob-ti-dos nos pro-ces-sos/projetos/produtos/serviços/clientes
+ []
+
+) [28
+
+
+
 
 ]
+\openout2 = `chapters/6-chapter.aux'.
+
+ (chapters/6-chapter.tex
 Cap\'{\i }tulo 6.
-) (desenvolvimento/capitulo7.tex [28
+) [29
+
+
+
 
 ]
-Cap\'{\i }tulo 7.
-) (main.bbl (main.brf)
-\tf@brf=\write5
-\openout5 = `main.brf'.
 
- [29
+LaTeX Warning: Empty bibliography on input line 251.
 
-]
-bibitemlist
-
-LaTeX Warning: Empty `thebibliography' environment on input line 8.
-
-) [30
-
-]
+(aftertext/apendice_a.tex
 AP\^ENDICE A.
-[31
+) (aftertext/anexo_a.tex [30
+
+
 
 ]
 ANEXO A.
-(main.ind) [32
+) [31
 
 ]
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
-\tf@lot=\write7
-\openout7 = `main.lot'.
+\tf@loq=\write7
+\openout7 = `main.loq'.
 
-\tf@toc=\write8
-\openout8 = `main.toc'.
+\tf@lot=\write8
+\openout8 = `main.lot'.
 
- 
-enddocument/afterlastpage (AED): lastpage setting LastPage.
-(main.aux)
+\tf@toc=\write9
+\openout9 = `main.toc'.
+
+ (main.aux (chapters/1-chapter.aux) (chapters/2-chapter.aux) (chapters/3-chapter.aux) (chapters/4-chapter.aux) (chapters/5-chapter.aux) (chapters/6-chapter.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
-Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
  ) 
 Here is how much of TeX's memory you used:
- 18100 strings out of 467871
- 297399 string characters out of 5418376
- 779625 words of memory out of 5000000
- 46409 multiletter control sequences out of 15000+600000
- 696711 words of font info for 153 fonts, out of 8000000 for 9000
+ 36809 strings out of 467871
+ 691447 string characters out of 5418376
+ 1726799 words of memory out of 5000000
+ 64932 multiletter control sequences out of 15000+600000
+ 668329 words of font info for 164 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,107p,1038b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso12.pfb>
-Output written on main.pdf (33 pages, 1583151 bytes).
+ 99i,17n,117p,2558b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (32 pages, 1462547 bytes).
 PDF statistics:
  454 PDF objects out of 1000 (max. 8388607)
- 107 named destinations out of 1000 (max. 500000)
- 41299 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 102 named destinations out of 1000 (max. 500000)
+ 42391 words of extra memory for PDF output out of 42996 (max. 10000000)
 
