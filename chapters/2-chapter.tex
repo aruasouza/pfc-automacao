@@ -2,7 +2,51 @@
 
 \section{Treinamento de modelos de aprendizado de máquina}
 
+O processo de treinamento de modelos de aprendizado de máquina nada mais é do que uma variação específica do processo padrão de mineração de dados, que consiste no ato de utilizar algoritmos para extrair informações relevantes de um banco de dados \cite{data-mining}.
+
+Este processo já possui uma forma bem definida e aceita conhecida como CRISP-DM (\textit{Cross-Industry Standard Process for Data Mining}) \cite{crisp-dm}. 
+
+O treinamento de modelos de aprendizado de máquina se enquadra como um processo de mineração de dados, pois nada mais é do que encontrar um modelo que, de alguma forma, represente o relacionamento entre diferentes aspectos do conjunto de dados. O modelo, nesse caso, representa a informação que se deseja extrair dos dados.
+
+Um bom modelo descreverá com precisão o relacionamento entre os aspectos desejados do conjunto de dados e será portanto útil para extrair novas informações de novos dados.
+
+\subsection{Etapas do padrão CRISP-DM}
+
+O padrão CRISP-DM nada mais é que uma sequência de etapas a partir das quais é possível extrair informações úteis de um banco de dados, sendo que cada etapa é definida por tarefas e um resultado esperado.
+
+As etapas são:
+
+\begin{enumerate}
+    \item \textbf{Entendimento do problema} \\
+    A primeira fase consiste em entender as características do problema e os requisitos da solução, criando assim uma definição de problema de mineração de dados e um plano preliminar para atingir os objetivos \cite{crisp-dm}.
+    \item \textbf{Entendimento dos dados} \\
+    A fase seguinte envolve se familiarizar com os dados à disposição. Isso envolve descobrir \textit{insights} iniciais nos dados, detectar problemas de qualidade dos dados e identificar subsets interessantes \cite{crisp-dm}.
+    \item \textbf{Preparação dos dados} \\
+    Essa etapa consiste nas atividades necessárias para construir o \textit{dataset} final que será utilizado a partir dos dados brutos. Pode envilver diversas tarefas como limpeza dos dados, seleção de atributos relevantes e transformação dos dados \cite{crisp-dm}.
+    \item \textbf{Modelagem} \\
+    A modelagem envolve selecionar, aplicar e calibrar técnicas diversas de modelagem, buscando encontrar um modelo ótimo para o problema que se deseja resolver \cite{crisp-dm}.
+    \item \textbf{Avaliação} \\
+    Após chegar em um ou mais modelos que aparentam ser apropriados, uma avaliação final deles deve ser feita para concluir se atendem aos requisitos de negócio. Ao final dessa avaliação deve-se chegar em uma conclusão relativa ao uso ou não de cada modelo para o objetivo final \cite{crisp-dm}.
+    \item \textbf{\textit{Deployment}} \\
+    Por fim, a última etapa é o momento em que o conhecimento obtido é preparado para uso pelo cliente do projeto. Essa preparação depende muito dos requisitos, podendo ser em forma de um relatório ou de um sistema automatizado de mineração de dados \cite{crisp-dm}.
+\end{enumerate}
+
+A figura \ref{fig:crisp} mostra um diagrama do processo e demonstra como algumas das etapas possuem uma relação de troca, de forma que o conhecimento ou os desafios encontrados em uma dada etapa podem fazer com que seja necessário voltar para uma etapa anterior.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/crisp.png}
+    \caption{Fases do processo CRISP-DM \cite{crisp-dm}}
+    \label{fig:crisp}
+\end{figure}
+
 \section{Redes Neurais Convolucionais}
+
+A eficácia de redes neurais convolucionais (CNNs) para tarefas de classificação e segmentação de imagens já é comprovada \cite{imagenet-cnn}, sendo uma solução amplamente utilizada em diversas aplicações.
+
+Essa modalidade de rede neural possui como característica as camadas convolucionais, que possui vantagens em relação as camadas \textit{fully connected} tradicionais para terefas de interpretação de imagens ou mesmo de sinais \cite{cnn}.
+
+A limitação das camadas \textit{fully connected} para esse tipo de tarefa se dá pelo fato de que esse tipo de camada produz atributos
 
 \section{Modelos de detecção de objetos}
 
@@ -13,5 +57,3 @@
 \section{NPU}
 
 \section{Quantização}
-
-\section{Dados utilizados}

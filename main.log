@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  4 APR 2026 15:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  7 APR 2026 18:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1554,50 +1554,56 @@ LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/it' tried instead on input line 21.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 21.
-) [15
+ [15
 
-])
+]) [16])
 \openout2 = `chapters/1-chapter.aux'.
 
  (chapters/1-chapter.tex
 Cap\'{\i }tulo 1.
-[16
+[17
 
 
 
 ]
-<images/rock3a.png, id=195, 1204.5pt x 903.375pt>
+<images/rock3a.png, id=237, 1204.5pt x 903.375pt>
 File: images/rock3a.png Graphic file (type png)
 <use images/rock3a.png>
 Package pdftex.def Info: images/rock3a.png  used on input line 53.
 (pdftex.def)             Requested size: 455.0pt x 341.24599pt.
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 57.
- [17] [18 <./images/rock3a.png>]
-<images/diagrama_pipeline.png, id=208, 813.0375pt x 1445.4pt>
+ [18] [19 <./images/rock3a.png>]
+<images/diagrama_pipeline.png, id=250, 813.0375pt x 1445.4pt>
 File: images/diagrama_pipeline.png Graphic file (type png)
 <use images/diagrama_pipeline.png>
 Package pdftex.def Info: images/diagrama_pipeline.png  used on input line 90.
 (pdftex.def)             Requested size: 227.5pt x 404.44458pt.
- [19] [20 <./images/diagrama_pipeline.png>] [21]
+ [20] [21 <./images/diagrama_pipeline.png>] [22]
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 168.
- [22] [23]) [24]
+ [23] [24]) [25]
 \openout2 = `chapters/2-chapter.aux'.
 
  (chapters/2-chapter.tex
 Cap\'{\i }tulo 2.
-) [25
+[26
 
 
 
 
 ]
+<images/crisp.png, id=308, 308.352pt x 313.17pt>
+File: images/crisp.png Graphic file (type png)
+<use images/crisp.png>
+Package pdftex.def Info: images/crisp.png  used on input line 38.
+(pdftex.def)             Requested size: 227.5pt x 231.05882pt.
+ [27 <./images/crisp.png>]) [28]
 \openout2 = `chapters/3-chapter.aux'.
 
  (chapters/3-chapter.tex
 Cap\'{\i }tulo 3.
-) [26
+) [29
 
 
 
@@ -1607,7 +1613,7 @@ Cap\'{\i }tulo 3.
 
  (chapters/4-chapter.tex
 Cap\'{\i }tulo 4.
-) [27
+) [30
 
 
 
@@ -1617,12 +1623,7 @@ Cap\'{\i }tulo 4.
 
  (chapters/5-chapter.tex
 Cap\'{\i }tulo 5.
-
-Overfull \hbox (26.62846pt too wide) in paragraph at lines 18--19
-[]\T1/phv/m/n/12 (-10) Impacto dos re-sul-ta-dos ob-ti-dos nos pro-ces-sos/projetos/produtos/serviços/clientes
- []
-
-) [28
+) [31
 
 
 
@@ -1632,24 +1633,27 @@ Overfull \hbox (26.62846pt too wide) in paragraph at lines 18--19
 
  (chapters/6-chapter.tex
 Cap\'{\i }tulo 6.
-) [29
+) [32
 
 
 
 
 ]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ (aftertext/apendice_a.tex [33
 
-LaTeX Warning: Empty bibliography on input line 251.
 
-(aftertext/apendice_a.tex
+
+]
 AP\^ENDICE A.
-) (aftertext/anexo_a.tex [30
-
-
+) (aftertext/anexo_a.tex [34
 
 ]
 ANEXO A.
-) [31
+) [35
 
 ]
 \tf@lof=\write6
@@ -1678,17 +1682,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36809 strings out of 467871
- 691447 string characters out of 5418376
- 1726799 words of memory out of 5000000
- 64932 multiletter control sequences out of 15000+600000
- 668329 words of font info for 164 fonts, out of 8000000 for 9000
+ 37120 strings out of 467871
+ 697389 string characters out of 5418376
+ 1728167 words of memory out of 5000000
+ 65210 multiletter control sequences out of 15000+600000
+ 668642 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,117p,2558b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (32 pages, 1462547 bytes).
+ <C:\Users\aruav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (36 pages, 1567775 bytes).
 PDF statistics:
- 454 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
- 42391 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 645 PDF objects out of 1000 (max. 8388607)
+ 134 named destinations out of 1000 (max. 500000)
+ 43028 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -496,6 +496,13 @@ OUTPUT chapters\2-chapter.aux
 INPUT .\chapters\2-chapter.tex
 INPUT .\chapters\2-chapter.tex
 INPUT chapters\2-chapter.tex
+INPUT .\images\crisp.png
+INPUT .\images\crisp.png
+INPUT .\images\crisp.png
+INPUT .\images\crisp.png
+INPUT .\images\crisp.png
+INPUT .\images\crisp.png
+INPUT .\images\crisp.png
 INPUT .\chapters\3-chapter.tex
 INPUT .\chapters\3-chapter.tex
 OUTPUT chapters\3-chapter.aux
@@ -520,6 +527,7 @@ OUTPUT chapters\6-chapter.aux
 INPUT .\chapters\6-chapter.tex
 INPUT .\chapters\6-chapter.tex
 INPUT chapters\6-chapter.tex
+INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ectt1200.tfm
 INPUT .\aftertext\apendice_a.tex
 INPUT .\aftertext\apendice_a.tex
 INPUT .\aftertext\apendice_a.tex
@@ -555,6 +563,8 @@ INPUT .\chapters\6-chapter.aux
 INPUT chapters\6-chapter.aux
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT C:\Users\aruav\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
+INPUT C:\Users\aruav\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
 INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvb8a.pfb
 INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvb8a.pfb
 INPUT C:\Users\aruav\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvbo8a.pfb
