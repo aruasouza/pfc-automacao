@@ -138,6 +138,37 @@
       \verb https://ojs.aaai.org/index.php/aimagazine/article/view/1230
       \endverb
     \endentry
+    \entry{cnn-ibm}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4984c214313d73ea0040907c971fcb7a}{%
+           family={{IBM Inc.}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{4984c214313d73ea0040907c971fcb7a}
+      \strng{fullhash}{4984c214313d73ea0040907c971fcb7a}
+      \strng{fullhashraw}{4984c214313d73ea0040907c971fcb7a}
+      \strng{bibnamehash}{4984c214313d73ea0040907c971fcb7a}
+      \strng{authorbibnamehash}{4984c214313d73ea0040907c971fcb7a}
+      \strng{authornamehash}{4984c214313d73ea0040907c971fcb7a}
+      \strng{authorfullhash}{4984c214313d73ea0040907c971fcb7a}
+      \strng{authorfullhashraw}{4984c214313d73ea0040907c971fcb7a}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.ibm.com/}}
+      \field{note}{Acessado em março de 2026}
+      \field{title}{What are convolutional neural networks?}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.ibm.com/think/topics/convolutional-neural-networks
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/think/topics/convolutional-neural-networks
+      \endverb
+    \endentry
     \entry{imagenet-cnn}{inproceedings}{}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=c5e3a676e2ac1164b3afcd539c131fc9}{%
@@ -242,6 +273,125 @@
       \verb{url}
       \verb https://doi.org/10.1109/5.726791
       \endverb
+    \endentry
+    \entry{yolo}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=99bced2e56a5253f3fe98a5f04e6d9b2}{%
+           family={Redmon},
+           familyi={R\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05ca9f19da9ecbd2def4e5514f8043c8}{%
+           family={Divvala},
+           familyi={D\bibinitperiod},
+           given={Santosh},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bd5dadbe57bedc5957c19a3154c4d424}{%
+           family={Girshick},
+           familyi={G\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=396c6ddedb6f986906fc3e4994d19974}{%
+           family={Farhadi},
+           familyi={F\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e1203a0044715040adeb8c5079ee645a}
+      \strng{fullhash}{b5530443e433a4da53dbe3cf155225b4}
+      \strng{fullhashraw}{b5530443e433a4da53dbe3cf155225b4}
+      \strng{bibnamehash}{b5530443e433a4da53dbe3cf155225b4}
+      \strng{authorbibnamehash}{b5530443e433a4da53dbe3cf155225b4}
+      \strng{authornamehash}{e1203a0044715040adeb8c5079ee645a}
+      \strng{authorfullhash}{b5530443e433a4da53dbe3cf155225b4}
+      \strng{authorfullhashraw}{b5530443e433a4da53dbe3cf155225b4}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{title}{You Only Look Once: Unified, Real-Time Object Detection}
+      \field{year}{2016}
+      \field{pages}{779\bibrangedash 788}
+      \range{pages}{10}
+    \endentry
+    \entry{cnn-medium}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8f70e57d70d96dc308cd512ddac3eba0}{%
+           family={Saha},
+           familyi={S\bibinitperiod},
+           given={Sumit},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8f70e57d70d96dc308cd512ddac3eba0}
+      \strng{fullhash}{8f70e57d70d96dc308cd512ddac3eba0}
+      \strng{fullhashraw}{8f70e57d70d96dc308cd512ddac3eba0}
+      \strng{bibnamehash}{8f70e57d70d96dc308cd512ddac3eba0}
+      \strng{authorbibnamehash}{8f70e57d70d96dc308cd512ddac3eba0}
+      \strng{authornamehash}{8f70e57d70d96dc308cd512ddac3eba0}
+      \strng{authorfullhash}{8f70e57d70d96dc308cd512ddac3eba0}
+      \strng{authorfullhashraw}{8f70e57d70d96dc308cd512ddac3eba0}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Medium}
+      \field{title}{A Comprehensive Guide to Convolutional Neural Networks — the ELI5 way}
+      \field{year}{2018}
+    \endentry
+    \entry{object-detection}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=79ecb3ddec80cff3d752091ba8cc0113}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={Zhengxia},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a163a5390bc6150e96c215cfd4d1f35f}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Zhenwei},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=65c428484ceb9cc9d8774f6bc3df701c}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Yuhong},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45f8892411700a9b1d4fcd3acaeeefd0}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Jieping},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bf107765cba8a146a1b2d79cf1bf23a5}
+      \strng{fullhash}{f1e770f272358bcece6b9166dd8c3463}
+      \strng{fullhashraw}{f1e770f272358bcece6b9166dd8c3463}
+      \strng{bibnamehash}{f1e770f272358bcece6b9166dd8c3463}
+      \strng{authorbibnamehash}{f1e770f272358bcece6b9166dd8c3463}
+      \strng{authornamehash}{bf107765cba8a146a1b2d79cf1bf23a5}
+      \strng{authorfullhash}{f1e770f272358bcece6b9166dd8c3463}
+      \strng{authorfullhashraw}{f1e770f272358bcece6b9166dd8c3463}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1905.05055}
+      \field{title}{Object Detection in 20 Years: A Survey}
+      \field{year}{2019}
     \endentry
   \enddatalist
 \endrefsection

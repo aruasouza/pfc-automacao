@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  7 APR 2026 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  10 APR 2026 09:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1566,7 +1566,7 @@ Cap\'{\i }tulo 1.
 
 
 ]
-<images/rock3a.png, id=237, 1204.5pt x 903.375pt>
+<images/rock3a.png, id=254, 1204.5pt x 903.375pt>
 File: images/rock3a.png Graphic file (type png)
 <use images/rock3a.png>
 Package pdftex.def Info: images/rock3a.png  used on input line 53.
@@ -1574,7 +1574,7 @@ Package pdftex.def Info: images/rock3a.png  used on input line 53.
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 57.
  [18] [19 <./images/rock3a.png>]
-<images/diagrama_pipeline.png, id=250, 813.0375pt x 1445.4pt>
+<images/diagrama_pipeline.png, id=267, 813.0375pt x 1445.4pt>
 File: images/diagrama_pipeline.png Graphic file (type png)
 <use images/diagrama_pipeline.png>
 Package pdftex.def Info: images/diagrama_pipeline.png  used on input line 90.
@@ -1593,17 +1593,40 @@ Cap\'{\i }tulo 2.
 
 
 ]
-<images/crisp.png, id=308, 308.352pt x 313.17pt>
+<images/crisp.png, id=325, 308.352pt x 313.17pt>
 File: images/crisp.png Graphic file (type png)
 <use images/crisp.png>
 Package pdftex.def Info: images/crisp.png  used on input line 38.
 (pdftex.def)             Requested size: 227.5pt x 231.05882pt.
- [27 <./images/crisp.png>]) [28]
+ [27 <./images/crisp.png>]
+<images/convolution.png, id=344, 1124.2pt x 633.36626pt>
+File: images/convolution.png Graphic file (type png)
+<use images/convolution.png>
+Package pdftex.def Info: images/convolution.png  used on input line 67.
+(pdftex.def)             Requested size: 364.00139pt x 205.06844pt.
+ [28]
+<images/cnn.png, id=358, 1104.125pt x 373.395pt>
+File: images/cnn.png Graphic file (type png)
+<use images/cnn.png>
+Package pdftex.def Info: images/cnn.png  used on input line 82.
+(pdftex.def)             Requested size: 455.0pt x 153.8735pt.
+ [29 <./images/convolution.png>] [30 <./images/cnn.png>]
+<images/object-detection.png, id=377, 875.27pt x 588.1975pt>
+File: images/object-detection.png Graphic file (type png)
+<use images/object-detection.png>
+Package pdftex.def Info: images/object-detection.png  used on input line 109.
+(pdftex.def)             Requested size: 273.00278pt x 183.46123pt.
+<images/yolo-diagrama.png, id=383, 632.3625pt x 411.33675pt>
+File: images/yolo-diagrama.png Graphic file (type png)
+<use images/yolo-diagrama.png>
+Package pdftex.def Info: images/yolo-diagrama.png  used on input line 130.
+(pdftex.def)             Requested size: 273.00278pt x 177.5806pt.
+ [31 <./images/object-detection.png>]) [32 <./images/yolo-diagrama.png>]
 \openout2 = `chapters/3-chapter.aux'.
 
  (chapters/3-chapter.tex
 Cap\'{\i }tulo 3.
-) [29
+) [33
 
 
 
@@ -1613,7 +1636,7 @@ Cap\'{\i }tulo 3.
 
  (chapters/4-chapter.tex
 Cap\'{\i }tulo 4.
-) [30
+) [34
 
 
 
@@ -1623,7 +1646,7 @@ Cap\'{\i }tulo 4.
 
  (chapters/5-chapter.tex
 Cap\'{\i }tulo 5.
-) [31
+) [35
 
 
 
@@ -1633,7 +1656,7 @@ Cap\'{\i }tulo 5.
 
  (chapters/6-chapter.tex
 Cap\'{\i }tulo 6.
-) [32
+) [36
 
 
 
@@ -1643,17 +1666,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- (aftertext/apendice_a.tex [33
+ (aftertext/apendice_a.tex [37
 
 
 
 ]
 AP\^ENDICE A.
-) (aftertext/anexo_a.tex [34
+) (aftertext/anexo_a.tex [38
 
 ]
 ANEXO A.
-) [35
+) [39
 
 ]
 \tf@lof=\write6
@@ -1682,17 +1705,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37120 strings out of 467871
- 697389 string characters out of 5418376
- 1728167 words of memory out of 5000000
- 65210 multiletter control sequences out of 15000+600000
- 668642 words of font info for 165 fonts, out of 8000000 for 9000
+ 37203 strings out of 467871
+ 699263 string characters out of 5418376
+ 1729730 words of memory out of 5000000
+ 65264 multiletter control sequences out of 15000+600000
+ 669897 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,117p,2558b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\aruav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (36 pages, 1567775 bytes).
+ <C:\Users\aruav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (40 pages, 2765387 bytes).
 PDF statistics:
- 645 PDF objects out of 1000 (max. 8388607)
- 134 named destinations out of 1000 (max. 500000)
- 43028 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 729 PDF objects out of 1000 (max. 8388607)
+ 148 named destinations out of 1000 (max. 500000)
+ 43048 words of extra memory for PDF output out of 51595 (max. 10000000)
 
