@@ -1,6 +1,6 @@
 \chapter{Introdução}
 
-Nos últimos anos a leitura automática de placas de veículos se tornou uma aplicação presente no cotidiano de muitos. Inúmeros estacionamentos de shoppings, supermercados e outros estabelecimentos de grande ou médio porte descobriram nessa tecnologia uma forma de melhorar a experiência do cliente que utiliza o estacionamento. O conceito é simples: quando o carro se aproxima da entrada a placa é imediatamente detectada e ascociada ao \textit{ticket}. Então, quando o cliente se aproxima da cancela de saída, o sistema lê a placa novamante e já consegue verificar qual \textit{ticket} está associado àquele placa e se ele já foi pago ou está na tolerância. Se o \textit{ticket} está liberado a cancela abre e deixa o carro passar sem que o motorista precise aproximar o \textit{ticket} do leitor.
+Nos últimos anos a leitura automática de placas de veículos se tornou uma aplicação presente no cotidiano de muitos. Inúmeros estacionamentos de shoppings, supermercados e outros estabelecimentos de grande ou médio porte descobriram nessa tecnologia uma forma de melhorar a experiência do cliente que utiliza o estacionamento. O conceito é simples: quando o carro se aproxima da entrada a placa é imediatamente detectada e associada ao \textit{ticket}. Então, quando o cliente se aproxima da cancela de saída, o sistema lê a placa novamente e já consegue verificar qual \textit{ticket} está associado àquele placa e se ele já foi pago ou está na tolerância. Se o \textit{ticket} está liberado a cancela abre e deixa o carro passar sem que o motorista precise aproximar o \textit{ticket} do leitor.
 
 Esse sistema gera as seguintes vantagens para os motoristas e para o próprio estabelecimento:
 
@@ -22,7 +22,7 @@ O interesse nesse trabalho surgiu no contexto de um condomínio autônomo focado
 
 O acesso do hóspede ao condomínio se dá por reconhecimento facial, mas no estacionamento é utilizada uma câmera com leitura de placas de veículo integrada. Só de aproximar seu carro, o portão já se abre, pois a placa é reconhecida como pertencente à um hóspede com reserva ativa e quando a estadia chega ao fim, o acesso é imediatamente revogado.
 
-A câmera que torna isso possível é um dispositivo da Intelbrás, modelo VIP 5460 LPR IA, cujo valor de mercado varia entre R\$ 5.700 e R\$ 7.500, longe de um preço acessível para aplicações de menor escala ou casos em que a quantidade de dispositivos necessários é maior.
+A câmera que torna isso possível é um dispositivo da Intelbras, modelo VIP 5460 LPR IA, cujo valor de mercado varia entre R\$ 5.700 e R\$ 7.500, longe de um preço acessível para aplicações de menor escala ou casos em que a quantidade de dispositivos necessários é maior.
 
 Esse trabalho, então, se propõe a realizar uma prova de conceito: Criar um modelo de leitura automática de placas e executá-lo em uma placa de baixo custo. Esse seria o primeiro passo para o desenvolvimento de um protótipo barato de câmera com leitura automática de placas.
 
@@ -67,7 +67,7 @@ O \textit{input} com o qual a solução irá lidar é uma imagem na qual aparece
 
 A partir da imagem da placa do carro, o próximo desafio é identificar onde estão as letras e os números. Modelos de classificação de imagens, principalmente de imagens de caracteres, são extremamente eficazes, mas precisam que a imagem contenha única e exclusivamente o caractere a ser classificado. Dessa forma, a imagem contendo a placa inteira precisa ser quebrada em pedaços, cada um contendo um caractere.
 
-Para que essa divisão da placa em caracteres tenha sucesso, é necessário saber como os caracteres estão dispostos pela placa, o que varia comforme o tipo da placa. No Brasil existem dois de \textit{layout} de placa permitidos: O tipo antigo, ainda em circulação, e o tipo Mercosul, que passou a ser obrigatório para veículos novos no Brasil em 2020.
+Para que essa divisão da placa em caracteres tenha sucesso, é necessário saber como os caracteres estão dispostos pela placa, o que varia conforme o tipo da placa. No Brasil existem dois de \textit{layout} de placa permitidos: O tipo antigo, ainda em circulação, e o tipo Mercosul, que passou a ser obrigatório para veículos novos no Brasil em 2020.
 
 Por fim, o último problema é classificar cada imagem de caractere. Tendo as imagens classificadas, e sendo a sua ordem na placa conhecida, é possível inferir a placa do veículo. Com isso, o problema do modelo estaria resolvido.
 
@@ -146,9 +146,9 @@ Sendo que a classe "Brasil" refere-se ao modelo antigo de placas brasileiras, en
 
 Para essa funcionalidade o método utilizado foi treinar um modelo pré-treinado de detecção de objetos, adaptando-o para a necessidade específica do projeto. A biblioteca Ultralytics, do Python, oferece uma interface para esse tipo de treinamento de modelos de detecção de objetos. Essa interface requer uma organização específica dos dados, que foi realizada na etapa anterior.
 
-\subsection{Desenvolvimento de algorítmo de pré-processamento e extração de caracteres}
+\subsection{Desenvolvimento de algoritmo de pré-processamento e extração de caracteres}
 
-O modelo de detecção de placas de carro entrega a posição da placa na imagem e as coordenadas dos quatro cantos. A partir dessa informação é trivial cortar apenas a parte da imagem que contém a placa. Isso já ajuda bastante no processo de extração dos caracteres, mas não é suficiente. Uma questão importante é que em muitos casos a placa possui certa rotação ou perspectiva, o que pode atrapalhar bastante. Para corrigir isso é possível aplicar uma transformação linear combase nas coordenadas dos quatro cantos que corrige essa distorção.
+O modelo de detecção de placas de carro entrega a posição da placa na imagem e as coordenadas dos quatro cantos. A partir dessa informação é trivial cortar apenas a parte da imagem que contém a placa. Isso já ajuda bastante no processo de extração dos caracteres, mas não é suficiente. Uma questão importante é que em muitos casos a placa possui certa rotação ou perspectiva, o que pode atrapalhar bastante. Para corrigir isso é possível aplicar uma transformação linear com base nas coordenadas dos quatro cantos que corrige essa distorção.
 
 Além disso, as placas possuem partes que não nos interessam. Apenas os caracteres são relevantes para a leitura, sendo todo o resto (parte superior, inferior, laterais) descartável.
 
@@ -184,9 +184,9 @@ Com o \textit{dataset} de caracteres pronto, basta criar uma arquitetura de mode
 
 \subsection{Conversão dos modelos para formato compatível com NPU}
 
-O formato compatível com a NPU do ROCK 3A é o formato RKNN. A prória documentação da placa indica uma biblioteca chamada \textit{rknn toolkit} que oferece a \textit{API} tanto para conversão dos modelos para esse formato quanto para inferência com esses modelos. Porém, a conversão não é tão trivial, pois precisa ser feita em um ambiente \textit{linux} de uma determinada distribuição e versão. Além disso, os modelos precisam ser exportados para o formato ONNX antes de serem convertidos, pois o \textit{rknn toolkit} faz a conversão entre esses dois formatos.
+O formato compatível com a NPU do ROCK 3A é o formato RKNN. A própria documentação da placa indica uma biblioteca chamada \textit{rknn toolkit} que oferece a \textit{API} tanto para conversão dos modelos para esse formato quanto para inferência com esses modelos. Porém, a conversão não é tão trivial, pois precisa ser feita em um ambiente \textit{linux} de uma determinada distribuição e versão. Além disso, os modelos precisam ser exportados para o formato ONNX antes de serem convertidos, pois o \textit{rknn toolkit} faz a conversão entre esses dois formatos.
 
-Além desses requisitos obrigatórios para a conversão, existe um requisito opcional, porém recomendado. Este é que durante a conversão para RKNN os modelos sejam quantizados para \textit{uint8}, ou seja, que seus pessos sejam convertidos de números reais do tipo \textit{float} de 32 \textit{bits} para números inteiros positivos de 8 \textit{bits}. Isso é recomendado pois intensifica a performance da NPU.
+Além desses requisitos obrigatórios para a conversão, existe um requisito opcional, porém recomendado. Este é que durante a conversão para RKNN os modelos sejam quantizados para \textit{uint8}, ou seja, que seus pesos sejam convertidos de números reais do tipo \textit{float} de 32 \textit{bits} para números inteiros positivos de 8 \textit{bits}. Isso é recomendado pois intensifica a performance da NPU.
 
 Para a quantização é necessário criar um \textit{dataset} de quantização. Esse \textit{dataset} só precisa conter dados de entrada, não sendo necessários os rótulos.
 

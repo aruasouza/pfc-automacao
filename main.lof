@@ -7,3 +7,5 @@
 \contentsline {figure}{\numberline {5}{\ignorespaces Rede neural convolucional para classificação de imagens \blx@tocontentsinit {0}\cite {cnn-medium}}}{30}{figure.caption.18}%
 \contentsline {figure}{\numberline {6}{\ignorespaces Exemplo de detecção de objetos}}{31}{figure.caption.19}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de funcionamento do modelo YOLO \blx@tocontentsinit {0}\cite {yolo}}}{32}{figure.caption.20}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Transformação de perspectiva \blx@tocontentsinit {0}\cite {perspective-transform}}}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Exemplo de separação de regiões por componentes conexos}}{35}{figure.caption.22}%

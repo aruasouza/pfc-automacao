@@ -22,7 +22,7 @@ As etapas são:
     \item \textbf{Entendimento dos dados} \\
     A fase seguinte envolve se familiarizar com os dados à disposição. Isso envolve descobrir \textit{insights} iniciais nos dados, detectar problemas de qualidade dos dados e identificar subsets interessantes \cite{crisp-dm}.
     \item \textbf{Preparação dos dados} \\
-    Essa etapa consiste nas atividades necessárias para construir o \textit{dataset} final que será utilizado a partir dos dados brutos. Pode envilver diversas tarefas como limpeza dos dados, seleção de atributos relevantes e transformação dos dados \cite{crisp-dm}.
+    Essa etapa consiste nas atividades necessárias para construir o \textit{dataset} final que será utilizado a partir dos dados brutos. Pode envolver diversas tarefas como limpeza dos dados, seleção de atributos relevantes e transformação dos dados \cite{crisp-dm}.
     \item \textbf{Modelagem} \\
     A modelagem envolve selecionar, aplicar e calibrar técnicas diversas de modelagem, buscando encontrar um modelo ótimo para o problema que se deseja resolver \cite{crisp-dm}.
     \item \textbf{Avaliação} \\
@@ -40,19 +40,25 @@ A figura \ref{fig:crisp} mostra um diagrama do processo e demonstra como algumas
     \label{fig:crisp}
 \end{figure}
 
+\section{Redes Neurais e Backpropagation}
+
+As redes neurais artificiais e o algoritmo de \textit{backpropagation} são alguns dos fundamentos mais importantes da inteligência artificial moderna. As redes neurais permitem a criação de modelos capazes de aproximar relações não lineares e complexas entre dados, sendo que o limite da complexidade dessas relações se dá apenas pela limitação computacional ou do volume de dados utilizados no ajuste do modelo. Já o algoritmo de \textit{backpropagation} permite ajustar o modelo de redes neurais aos dados, minimizando uma função de erro.
+
+Esses conceitos são utilizados para criar modelos de inteligência artificial voltados para visão computacional, processamento de linguagem natural, séries temporais, IA generativa e inúmeras outras aplicações. 
+
 \section{Redes Neurais Convolucionais}
 
 A eficácia de redes neurais convolucionais (CNNs) para tarefas de classificação e segmentação de imagens já é comprovada \cite{imagenet-cnn}, sendo uma solução amplamente utilizada em diversas aplicações.
 
-Essa modalidade de rede neural possui como característica as camadas convolucionais, que possui vantagens em relação as camadas \textit{fully connected} tradicionais para terefas de interpretação de imagens ou mesmo de sinais \cite{cnn}.
+Essa modalidade de rede neural possui como característica as camadas convolucionais, que possui vantagens em relação as camadas \textit{fully connected} tradicionais para tarefas de interpretação de imagens ou mesmo de sinais \cite{cnn}.
 
 A limitação das camadas \textit{fully connected} para esse tipo de tarefa se dá pelo fato de que esse tipo de camada produz sua saída com base no relacionamento entre todos os \textit{inputs} da camada uns com os outros. Isso é ótimo para achar relações entre diferentes atributos quando se trabalha com dados tabulares, por exemplo, mas não é tão bom para encontrar características específicas que podem estar localizadas em diferentes partes de uma imagem.
 
-Para esse tipo de tarefa as camadas convolucionais são mais apropriadas, pois utilizam conectividade local e compartilhamento de pesos, reduzindo drasticamente a quantidade de parâmetros necessários para se ter um resultado satistaftório.
+Para esse tipo de tarefa as camadas convolucionais são mais apropriadas, pois utilizam conectividade local e compartilhamento de pesos, reduzindo drasticamente a quantidade de parâmetros necessários para se ter um resultado satisfatório.
 
-A camada convolucional funciona deslizando pelo \textit{input} um filtro chamado \textit{kernel}, que nada mais é do que uma matriz de pesos de dimensão pequena, como 3x3 ou 5x5. Em cada posição do \textit{kernel} é então feita uma transformação linear de um conjunto local de valores utilizando os pesos do \textit{kernel}. 
+A camada convolucional funciona deslizando pelo \textit{input} um filtro chamado \textit{kernel}, que nada mais é do que uma matriz de pesos de dimensão pequena, como $3x3$ ou $5x5$. Em cada posição do \textit{kernel} é então feita uma transformação linear de um conjunto local de valores utilizando os pesos do \textit{kernel}. 
 
-Fazendo isso em todo o \textit{input} obtêm-se um mapa de características, que destaca padrões identificados em cada parte do \textit{input}. Esse mapa de características pode então ser alimentado para outra camada convolucional e assim por diante. Além disso, para cada \textit{input} pode-se (e deve-se) ter múltiplos \textit{kernels}, de forma a ferar múltiplos mapas de características em cada camada, cada um destacando aspectos distintos do \textit{input}. A imagem \ref{fig:convolution} exemplifica o funcionamento da camada convolucional.
+Fazendo isso em todo o \textit{input} obtêm-se um mapa de características, que destaca padrões identificados em cada parte do \textit{input}. Esse mapa de características pode então ser alimentado para outra camada convolucional e assim por diante. Além disso, para cada \textit{input} pode-se (e deve-se) ter múltiplos \textit{kernels}, de forma a gerar múltiplos mapas de características em cada camada, cada um destacando aspectos distintos do \textit{input}. A imagem \ref{fig:convolution} exemplifica o funcionamento da camada convolucional.
 
 A equação da convolução 2D discreta utilizada nas camadas convolucionais para imagens é:
 
@@ -92,7 +98,7 @@ Isso permite diversas aplicações como:
 
 \begin{itemize}
     \item Rastrear a movimentação de um objeto ao longo de um vídeo
-    \item Verificar quantes instâncias de um dado objeto existem na imagem
+    \item Verificar quantas instâncias de um dado objeto existem na imagem
     \item Extrair da imagem original uma nova imagem contendo apenas o objeto de interesse
 \end{itemize}
 
@@ -100,7 +106,7 @@ A figura \ref{fig:object-detection} exemplifica a tarefa de detecção de objeto
 
 Os modelos mais comuns de detecção de objetos costumam ser divididos em duas categorias: detectores de duas etapas e detectores de uma etapa \cite{object-detection}. Os modelos de duas etapas primeiro dividem a imagem em regiões candidatas, onde a probabilidade de haver objetos é alta, e posteriormente gera as \textit{bounding boxes} e classifica as regiões. Modelos de duas etapas costumam ser mais precisos, mas o tempo de inferência é mais alto.
 
-Modelos de uma etapa, por outro lado, olham para a imagem inteira e tentam classificar as regiões e gerar as \textit{bounding boxes} diretamente. Esses modelos possuem a vantegem de serem mais rápidos, portanto mais apropriados para aplicações de tempo real.
+Modelos de uma etapa, por outro lado, olham para a imagem inteira e tentam classificar as regiões e gerar as \textit{bounding boxes} diretamente. Esses modelos possuem a vantagem de serem mais rápidos, portanto mais apropriados para aplicações de tempo real.
 
 Como tarefas de detecção de objetos são muito utilizadas em aplicações de tempo real, a velocidade de inferência é uma métrica muito importante na avaliação desse tipo de modelo, além da precisão do resultado. Nessa linha, modelos que colocam grande ênfase na velocidade de inferência ganharam grande tração no campo da detecção de objetos. Um desses modelos (ou família de modelos) é o YOLO, do qual falaremos mais para a frente. 
 
@@ -132,7 +138,149 @@ A figura \ref{fig:yolo-diagram} mostra uma representação do funcionamento da r
     \label{fig:yolo-diagram}
 \end{figure}
 
+\subsection{Detecção de pontos chave}
+
 \section{Técnicas de transformação de imagem para visão computacional}
+
+Inúmeros algoritmos de manipulação de imagens são utilizados em visão computacional desde muito antes do surgimento das redes neurais. Alguns desses algoritmos ainda são extremamente relevantes, especialmente no tratamento de imagens que possuem padrões conhecidos.
+
+Essas técnicas são úteis em especial para extrair características das imagens e prepará-las para serem alimentadas por modelos de inteligência artificial, removendo ruídos e destacando as características mais relevantes da imagem.
+
+As principais técnicas utilizada nesse projeto foram:
+
+\begin{itemize}
+    \item Transformação de perspectiva
+    \item Limiarização adaptativa
+    \item Segmentação de caracteres
+    \item Filtragem de componentes conexos
+\end{itemize}
+
+\subsection{Transformação de perspectiva}
+
+A transformação de perspectiva é uma operação utilizada para corrigir a perspectiva de uma figura 2D dentro de uma imagem. Ela permite que objetos inclinados ou rotacionados sejam alinhados com base nas coordenadas dos quatro cantos do objeto. Esse tipo de transformação não preserva paralelismo, comprimento e ângulo, mas preserva colinearidade e incidência \cite{perspective-transform}.
+
+A transformação de perspectiva pode ser expressada como:
+
+\begin{equation}
+    \begin{bmatrix}
+        t_i x' \\
+        t_i y' \\
+        t_i
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        a_1 & a_2 & b_1 \\
+        a_3 & a_4 & b_2 \\
+        c_1 & c_2 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        x \\
+        y \\
+        1
+    \end{bmatrix}
+\end{equation}
+
+Sendo que $x'$ e $y'$ são os pontos transformados, ou seja, as coordenadas $(x,y)$ dos pontos na imagem de saída, enquanto $x$ e $y$ são os pontos originais. O termo $h_i$ é um fator de escala.
+
+A matriz de transformação
+
+\begin{equation}
+    M
+    =
+    \begin{bmatrix}
+        a_1 & a_2 & b_1 \\
+        a_3 & a_4 & b_2 \\
+        c_1 & c_2 & 1
+    \end{bmatrix}
+\end{equation}
+
+é formada por três componentes: A matriz 
+$
+\begin{bmatrix}
+    a_1 & a_2 \\
+    a_3 & a_4
+\end{bmatrix}
+$, responsável por definir transformações como rotação e escala, o vetor 
+$
+\begin{bmatrix}
+    b_1 \\ b_2
+\end{bmatrix}
+$, responsável por definir a translação e o vetor de projeção
+$
+\begin{bmatrix}
+    c_1 & c_2
+\end{bmatrix}
+$.
+
+Como a matriz de transformação possui 8 incógnitas, são necessárias 8 equações para que seja resolvida. Para isso são selecionados quatro pontos $(x,y)$ na imagem original e quatro pontos $(x',y')$ na imagem de saída. Dessa forma é possível obter a matriz de transformação capaz de mapear todos os pontos da imagem original para a imagem final.
+
+A figura \ref{fig:perspective} exemplifica o que ocorre com uma imagem na transformação de perspectiva.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/perspective-transform.png}
+    \caption{Transformação de perspectiva \cite{perspective-transform}}
+    \label{fig:perspective}
+\end{figure}
+
+\subsection{Limiarização adaptativa}
+
+A limiarização é uma técnica muito utilizada em visão computacional para criar máscaras a partir de imagens. Ela consiste em definir um limiar e classificar todos os pixels da imagem em 0 (preto) ou um (branco), dependendo se o valor original do pixel ficava acima ou abaixo do limiar definido. Uma aplicação muito comum desse conceito em visão computacional é a separação de um objeto do fundo da imagem.
+
+Independente da aplicação, a escolha do valor do limiar impacta profundamente a imagem binarizada resultante. Uma escolha mal feita pode fazer com que partes significativas do objeto sejam apagadas ou com que ruídos do fundo se misturem ao objeto. Portanto, a aplicação de uma boa técnica para selecionar o limiar se faz necessária.
+
+Um outro fator relevante a se considerar é que em muitos casos a iluminação faz com que certas partes da imagem sejam mais escuras que outras. Isso faz com que seja interessante utilizar um limiar diferente em diferentes partes da imagem, de forma a evitar distorções por diferença na iluminação.
+
+Um método para determinação desse limiar variável é o método de Sauvola \cite{sauvola}, que determina um limiar ideal para cada pixel da imagem usando os pixels vizinhos como base.
+
+O método funciona calculando a média e desvio padrão local para cada pixel com base em uma janela. A partir disso é então calculado o limiar ideal para aquele pixel.
+
+A média local para um dado pixel de coordenadas $(x,y)$ na imagem $I$ é definida como:
+
+\begin{equation}
+    \mu (x,y) = \frac{1}{W^2} \sum_{i=-\frac{w}{2}}^{\frac{w}{2}} \sum_{j=-\frac{w}{2}}^{\frac{w}{2}} I(x+i,y+j)
+\end{equation}
+
+Sendo que $W$ é o tamanho da janela escolhido.
+
+Já o desvio padrão local desse mesmo pixel é definido como:
+
+\begin{equation}
+    \sigma (x,y) = \sqrt{E[I^2](x,y) - \mu (x,y)^2}
+\end{equation}
+
+Sendo que $E[I^2](x,y)$ é a média local do pixel de coordenadas $(x,y)$ na imagem $I^2$.
+
+Por fim, o Limiar de Sauvola do pixel de coordenadas $(x,y)$ na imagem $I$ é:
+
+\begin{equation}
+    T(x,y) = \mu (x,y) * [1 + k (\frac{\sigma (x,y)}{R} - 1)]
+\end{equation}
+
+Sendo que $R$ é o valor máximo teórico de $\sigma$ e $k$ é um parâmetro de sensibilidade, tipicamente $0.3$.
+
+\subsection{Segmentação de caracteres}
+
+A segmentação de caracteres serve para dividir uma imagem contendo múltiplos caracteres em um grupo de imagens que contém apenas um caractere em cada. Partindo do pressuposto que a imagem original é binarizada, contendo portanto apenas pixels com valores de zero ou um, a segmentação de caracteres pode ser feita a partir da detecção de espaços brancos entre os caracteres \cite{caractere-sep}.
+
+\subsection{Filtragem de componentes conexos}
+
+A filtragem de componentes conexos é um processo que pode ser usado para isolar o objeto de interesse em uma imagem binarizada e remover ruído.
+
+Ao binarizar uma imagem é comum que pixels que não pertencem ao objeto analisado acabem sendo classificados como parte do objeto, o que pode atrapalhar a análise da imagem. As vezes esses pixels estão conectados ao objeto, o que torna mais difícil identificá-los, mas as vezes estão desconectados, o que facilita sua identificação. Quando os pixels de ruído estão desconectados do objeto é possível identificá-los ao separar a imagem em \textit{blobs}, regiões isoladas umas das outras. 
+
+Cada \textit{blob} representa uma região da imagem na qual todos os pixels possuem valor $1$ e possuem conectividade com pelo menos um outro pixel que também pertence àquele \textit{blob}. A figura \ref{fig:blobs} exemplifica a separação de regiões da imagem em \textit{blobs} conexos. Cada cor representa um \textit{blob} diferente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/regions.png}
+    \caption{Exemplo de separação de regiões por componentes conexos}
+    \label{fig:blobs}
+\end{figure}
+
+A imagem separada em \textit{blobs} pode ser representada como uma matriz na qual a cada posição é atribuído um número a depender do \textit{blob} ao qual àquela posição pertence. Esses números são os rótulos das regiões.
+
+Para realizar a filtragem, então basta determinar qual é o \textit{blob} com maior área e eliminar os demais. A área de um \textit{blob} nesse caso nada mais é do que a quantidade de pixels pertencentes à ele.
 
 \section{NPU}
 

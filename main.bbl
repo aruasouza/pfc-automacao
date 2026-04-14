@@ -19,6 +19,47 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{caractere-sep}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5cc04edb9401614a6043e92c5a57f2b6}{%
+           family={Casey},
+           familyi={C\bibinitperiod},
+           given={Richard\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=38f0959fca525c7e663bd8795c1e53f0}{%
+           family={Lecolinet},
+           familyi={L\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{8730e2fa6688e0eec8e00904f20d41c0}
+      \strng{fullhash}{8730e2fa6688e0eec8e00904f20d41c0}
+      \strng{fullhashraw}{8730e2fa6688e0eec8e00904f20d41c0}
+      \strng{bibnamehash}{8730e2fa6688e0eec8e00904f20d41c0}
+      \strng{authorbibnamehash}{8730e2fa6688e0eec8e00904f20d41c0}
+      \strng{authornamehash}{8730e2fa6688e0eec8e00904f20d41c0}
+      \strng{authorfullhash}{8730e2fa6688e0eec8e00904f20d41c0}
+      \strng{authorfullhashraw}{8730e2fa6688e0eec8e00904f20d41c0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{note}{Revisão abrangente de técnicas de segmentação, incluindo histograma de projeção vertical}
+      \field{number}{7}
+      \field{title}{A Survey of Methods and Strategies in Character Segmentation}
+      \field{volume}{18}
+      \field{year}{1996}
+      \field{pages}{690\bibrangedash 706}
+      \range{pages}{17}
+    \endentry
     \entry{crisp-dm}{report}{}{}
       \name{author}{7}{}{%
         {{un=0,uniquepart=base,hash=99b35f567b34a12644cacce964bb7bcc}{%
@@ -347,6 +388,78 @@
       \field{journaltitle}{Medium}
       \field{title}{A Comprehensive Guide to Convolutional Neural Networks — the ELI5 way}
       \field{year}{2018}
+    \endentry
+    \entry{sauvola}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2ffd96783296613aef88095619c21f5d}{%
+           family={Sauvola},
+           familyi={S\bibinitperiod},
+           given={Jaakko},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9f01d72b772651a0eaa57c9b22e31b85}{%
+           family={Pietikäinen},
+           familyi={P\bibinitperiod},
+           given={Matti},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{16f13bc78be8e699c7dc6554906792f8}
+      \strng{fullhash}{16f13bc78be8e699c7dc6554906792f8}
+      \strng{fullhashraw}{16f13bc78be8e699c7dc6554906792f8}
+      \strng{bibnamehash}{16f13bc78be8e699c7dc6554906792f8}
+      \strng{authorbibnamehash}{16f13bc78be8e699c7dc6554906792f8}
+      \strng{authornamehash}{16f13bc78be8e699c7dc6554906792f8}
+      \strng{authorfullhash}{16f13bc78be8e699c7dc6554906792f8}
+      \strng{authorfullhashraw}{16f13bc78be8e699c7dc6554906792f8}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognition}
+      \field{note}{Referência para binarização adaptativa local, análoga à abordagem por faixas do projeto}
+      \field{number}{2}
+      \field{title}{Adaptive Document Image Binarization}
+      \field{volume}{33}
+      \field{year}{2000}
+      \field{pages}{225\bibrangedash 236}
+      \range{pages}{12}
+    \endentry
+    \entry{perspective-transform}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3e463af52b352598004e70112d767daf}{%
+           family={TheAILearner},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{3e463af52b352598004e70112d767daf}
+      \strng{fullhash}{3e463af52b352598004e70112d767daf}
+      \strng{fullhashraw}{3e463af52b352598004e70112d767daf}
+      \strng{bibnamehash}{3e463af52b352598004e70112d767daf}
+      \strng{authorbibnamehash}{3e463af52b352598004e70112d767daf}
+      \strng{authornamehash}{3e463af52b352598004e70112d767daf}
+      \strng{authorfullhash}{3e463af52b352598004e70112d767daf}
+      \strng{authorfullhashraw}{3e463af52b352598004e70112d767daf}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://theailearner.com}}
+      \field{note}{Acessado em março de 2026}
+      \field{title}{Perspective Transformation}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://theailearner.com/tag/cv2-getperspectivetransform/
+      \endverb
+      \verb{url}
+      \verb https://theailearner.com/tag/cv2-getperspectivetransform/
+      \endverb
     \endentry
     \entry{object-detection}{article}{}{}
       \name{author}{4}{}{%
