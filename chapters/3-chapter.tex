@@ -1,11 +1,68 @@
 \chapter{Descrição do Problema e Requisitos Técnicos}
 
-\section{Motivação}
+Neste capítulo será discutido de forma mais aprofundada o problema que esse projeto se propõe a resolver. Isso envolve, além de uma observação detalhada do problema e seus requisitos, o contexto no qual o problema está inserido dentro da empresa e as motivações para resolvê-lo.
 
 \section{Descrição da Empresa}
 
-\section{Análise do Problema}
+A Palmsoft Tecnologia é uma empresa de desenvolvimento de software sob demanda. Produz sites, aplicativos, jogos, soluções de inteligência artificial e outros produtos de software.
 
-\section{Análise dos dados}
+Um dos produtos desenvolvidos pela Palmsoft é o \textit{Aegis Access Control}. Uma plataforma que gerencia controle de acesso em condomínios equipados com fechaduras eletrônicas de desbloqueio por imagem facial.
+
+O objetivo do \textit{Aegis Access Control} é atender proprietários e gestores de apartamentos que fazem aluguel de curto prazo, permitindo que eles automatizem o processo de concessão de permissão de acesso aos imóveis. Quando o hóspede faz uma reserva, o gestor do apartamento acessa uma interface \textit{web} onde ele cadastra o hóspede e as informações da reserva, como data de início e de fim. O hóspede então recebe um \textit{email} com um \textit{link} que o leva à uma página onde ele deve cadastrar uma foto do seu rosto, além de outras informações complementares, como placa do carro. Com base nas informações da reserva, o sistema então libera o acesso do hóspede ao condomínio e ao apartamento específico que foi alugado, apenas durante o período da estadia. Em cada porta do condomínio há um controlador de acesso facial, que destrava a fechadura da porta com base no rosto do usuário. O cadastro do rosto nos controladores de acesso é feito utilizando a foto enviada pelo usuário.
+
+Para completar a experiência, o estacionamento é equipado com uma câmera com leitura automática de placas integrada, conectada ao portão. Da mesma forma que as imagens faciais são enviadas pelo sistema aos controladores de acesso das portas, as placas dos carros dos hóspedes também são enviadas às câmeras. Quando o carro do hóspede se aproxima, então, a câmera lê a placa do veículo, identifica que aquela placa possui acesso ao condomínio e envia um sinal ao portão para que ele abra.
+
+Dessa forma, o hóspede recebe uma experiência completamente automatizada. Chega no condomínio e seu acesso já está liberado sem que precise ter contato com nenhum humano.
+
+Além da experiência do hóspede, essa tecnologia é muito benéfica para os gestores dos apartamentos, que conseguem administrá-los de forma remota. Quando precisam conceder acesso à um prestador de serviço que vai limpar o apartamento, por exemplo, isso também é feito com o mesmo processo.
+
+\section{Motivação}
+
+Dentro do contexto do condomínio autônomo, as câmeras instaladas na garagem são um fator importante, que adiciona conforto à experiência do cliente. Essas câmeras são equipadas com tecnologia de visão computacional capaz de ler a placa de um veículo em questão de milissegundos, com ótima precisão.
+
+Câmeras como essa já são parte do dia a dia de muitas pessoas, em diversas aplicações. Uma delas, muito comum, é a de controle de acesso em estacionamentos pagos, como em shoppings ou supermercados. Elas permitem que o sistema registre a placa do carro de cada cliente e a associe ao seu \textit{ticket} de estacionamento. Uma das vantagens disso é que caso o cliente perca o \textit{ticket} impresso o sistema poderá gerar um novo sem problemas, mantendo o mesmo horário de entrada. Outra vantagem é que quando o cliente se aproxima da cancela de saída a placa do seu carro é rapidamente detectada e o sistema pode conferir se aquele cliente pagou o estacionamento sem que ele precise utilizar o \textit{ticket} impresso na saída. Isso evita congestionamentos na saída e melhora o fluxo de veículos ao poupar tempo. Esse sistema também pode ser utilizado para conferir acesso gratuito à funcionários, permitindo a entrada deles sem retirada de \textit{ticket} com base na placa do carro.
+
+Outra aplicação para esse tipo de câmera é em sistemas de segurança em estacionamentos. Ao detectar placas de carros o sistema pode gerar \textit{logs} de entrada e saída de veículos. Isso ajuda muito na auditoria dos vídeos das câmeras de segurança do estacionamento, pois os momentos mais relevantes ficam registrados. Dessa maneira fica fácil responder perguntas como: "Em qual data e hora o carro com a placa X acessou o estacionamento?". Além disso é possível identificar facilmente acesso de veículos não autorizados à um estacionamento privado.
+
+No condomínio que utiliza a solução do \textit{Aegis Access Control} a câmera utilizada é um dispositivo da Intelbras, modelo VIP 5460 LPR IA, cujo valor de mercado varia entre R\$ 5.700 e R\$ 7.500. O alto valor desse dispositivo motivou a exploração dessa tecnologia para desenvolvimento de alternativas mais acessíveis, que possam ser utilizadas em aplicações onde o custo é um fator determinante.
+
+Um outro fator motivador é que a Palmsoft Tecnologia demonstrou interesse em testar a performance de \textit{hardware} de baixo custo para aplicações de inteligência artificial, com o objetivo de validar o equipamento para desenvolvimento de produtos nessa área. Para isso, foi adquirida uma placa Rock 3A, da radxa, equipada com uma NPU de 0.8 TOPs.
+
+Portanto, juntando a motivação do desenvolvimento de uma alternativa barata para câmera com leitura automática de placas de carro com a de validar uma placa de baixo custo para aplicações de inteligência artificial, foi pensado um projeto que desenvolvesse um modelo de leitura de placas de carro e validasse sua execução na placa Rock 3A.
+
+O objetivo desse projeto, portanto, não é criar um protótipo funcional, mas criar e validar um algoritmo de leitura de placas de carro, que recebe uma imagem e retorna os caracteres da placa do veículo contido na imagem (se houver), e analisar a performance desse algoritmo ao ser executado na placa Rock 3A, validando assim a possibilidade da criação de um produto que utilize o algoritmo criado nesse \textit{hardware}.
+
+\section{Análise do problema}
+
+O objetivo geral deste projeto pode ser definido como:
+
+\begin{center}
+    \textit{"Desenvolver um software de leitura automática de placas de veículos e validar a viabilidade funcional de uma solução de baixo custo que execute esse software em uma placa Rock 3A."}
+\end{center}
+
+O problema, portanto pode ser dividido em duas partes:
+
+\begin{itemize}
+    \item Desenvolver o \textit{software} de leitura automática de placas de veículos
+    \item Validar a placa Rock 3A como um \textit{hardware} viável para execução desse \textit{software}
+\end{itemize}
+
+A primeira parte envolve o desenvolvimento de um algoritmo complexo de visão computacional capaz de ler os caracteres da placa de um carro ao longo de múltiplas etapas, exigindo conhecimento técnico acerca dos diferentes modelos de inteligência artificial para processamento de imagens e técnicas de visão computacional.
+
+Já a segunda parte envolve executar e avaliar a performance do algoritmo no \textit{hardware}. Para isso é necessária compreensão do dispositivo a ser utilizado, os requisitos para executar modelos de redes neurais na NPU e as configurações necessárias.
+
+\subsection{Criação do algoritmo de leitura automática de placas de carros}
+
+O \textit{software} de leitura automática de placas de veículos a ser desenvolvido nada mais é do que um algoritmo que recebe uma imagem como entrada e devolve uma sequência de caracteres correspondente à placa do carro contido na imagem (se houver). Esse algoritmo deve ser possível de ser executado na placa Rock 3A, portanto deve se observar as limitações desse \textit{hardware} que serão discutidas posteriormente.
+
+As características desejáveis do algoritmo são principalmente:
+
+\begin{itemize}
+    \item \textbf{Acurácia:} O algoritmo deve inferir corretamente a maioria das placas dos carros contidos nas imagens entregues a ele. Um leitor automático de placas que comete muitos erros não tem utilidade, portanto a proporção de placas inferidas corretamente em relação ao total de imagens analisadas deve ser o mais alta possível.
+    \item \textbf{Velocidade:} Para muitas aplicações a velocidade é crítica, especialmente quando se deseja inferir a placa de carros passantes. Portanto, o tempo necessário para que o algoritmo processe uma imagem e retorne o resultado deve ser mínimo.
+\end{itemize}
+
+
+\subsection{Teste do algoritmo desenvolvido na placa Rock 3A}
 
 \section{Requisitos da solução}

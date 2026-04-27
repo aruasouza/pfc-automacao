@@ -1,5 +1,19 @@
 \chapter{Fundamentação teórica}
 
+Neste capítulo é discutida a fundamentação teórica dos principais conceitos, técnicas e tecnologias utilizados no projeto, incluindo:
+
+\begin{itemize}
+    \item Treinamento de modelos de aprendizado de máquina
+    \item Redes neurais e \textit{backpropagation}
+    \item Redes neurais convolucionais
+    \item Modelos de detecção de objetos
+    \item Técnicas de transformação de imagens para visão computacional
+    \item \textit{Neural Processing Unit}
+    \item Quantização de redes neurais
+\end{itemize}
+
+Essa fundamentação forma a base necessária para a criação, desenvolvimento e validação do algoritmo de leitura de placas de carro desenvolvido nesse projeto, além de sua execução no \textit{hardware} específico disponível.
+
 \section{Treinamento de modelos de aprendizado de máquina}
 
 O processo de treinamento de modelos de aprendizado de máquina nada mais é do que uma variação específica do processo padrão de mineração de dados, que consiste no ato de utilizar algoritmos para extrair informações relevantes de um banco de dados \cite{data-mining}.
@@ -45,6 +59,77 @@ A figura \ref{fig:crisp} mostra um diagrama do processo e demonstra como algumas
 As redes neurais artificiais e o algoritmo de \textit{backpropagation} são alguns dos fundamentos mais importantes da inteligência artificial moderna. As redes neurais permitem a criação de modelos capazes de aproximar relações não lineares e complexas entre dados, sendo que o limite da complexidade dessas relações se dá apenas pela limitação computacional ou do volume de dados utilizados no ajuste do modelo. Já o algoritmo de \textit{backpropagation} permite ajustar o modelo de redes neurais aos dados, minimizando uma função de erro.
 
 Esses conceitos são utilizados para criar modelos de inteligência artificial voltados para visão computacional, processamento de linguagem natural, séries temporais, IA generativa e inúmeras outras aplicações. 
+
+O tipo clássico de redes neurais é composto por uma série de camadas de processamento. Cada camada processa a saída da camada anterior em sequencia até chegar no \textit{output} final. A saída $a_{(c)}$ de uma camada $c$ é definida por:
+
+\begin{equation}
+    a_{(c)} = f(z_{(c)})
+\end{equation}
+
+Sendo que $f$ é a função de ativação da camada e $z_{(c)}$ é definido como:
+
+\begin{equation}
+    z_{(c)} = W_{(c)} \times a_{(c-1)} + b_{(c)}
+\end{equation}
+
+Sendo:
+
+\begin{itemize}
+    \item $W_{(c)}$ a matriz de pesos da camada
+    \item $a_{(c-1)}$ a saída da camada anterior
+    \item $b_{(c)}$ o vetor de viés da camada
+\end{itemize}
+
+A função de ativação $f$ é responsável por conferir não-linearidade à camada, pois sem ela a camada não passaria de uma transformação linear capaz apenas de representar relações lineares entre os dados, limitando muito sua aplicabilidade.
+
+Existem diversas funções de ativação que podem ser usadas, mas as mais comuns são:
+
+\begin{itemize}
+    \item \textbf{Sigmoide:} $\sigma (x) = \frac{1}{1+e^{-x}}$
+    \item \textbf{Tangente hiperbólica:} $tanh(x) = \frac{e^x-e^{-x}}{e^x+e^{-x}}$
+    \item \textbf{ReLU (\textit{Rectified Linear Unit}):} $ReLU(x) = 
+    \begin{cases}
+        x \; ; \quad x>0 \\
+        0 \; ; \quad x \le 0
+    \end{cases}$
+\end{itemize}
+
+A matriz de pesos $W_{(c)}$ e o vetor de viés $b_{(c)}$ são compostos por valores ajustáveis que devem ser modificados até que o modelo esteja satisfatório.
+
+Para que os pesos do modelo sejam ajustados é utilizado o algoritmo de \textit{backpropagation} para calcular o gradiente da função de erro em relação aos pesos da rede. A função de erro varia conforme o objetivo daquela rede neural e da função de ativação da última camada.
+
+Para calcular o gradiente, então, é necessário calcular o delta $\delta_{(c)}$ de cada camada.
+
+Pa a camada de saída da rede ($C$) o delta é dado por:
+
+\begin{equation}
+    \delta_{(C)} = \hat{y} - y
+\end{equation}
+
+Sendo que $\hat{y}$ é o valor predito e $y$ é o valor esperado (verdadeiro).
+
+Para as demais camadas o delta é definido como:
+
+\begin{equation}
+    \delta_{(c)} = W_{(c+1)}^T \times \delta_{c+1} \odot f'(z_{(c)})
+\end{equation}
+
+E por fim, o gradiente da função de erro $L$ em relação aos pesos fica:
+
+\begin{gather}
+    \frac{\partial L}{\partial W_{(c)}} = \delta_{(c)} \times a_{(c-1)}^T \\
+    \frac{\partial L}{\partial b_{(c)}} = \delta_{(c)}
+\end{gather}
+
+Nota-se que, enquanto a saída de uma camada é calculada com base na saída da camada anterior, o gradiente de uma camada é calculado com base no delta da camada seguinte. Essa propagação retroativa dos erros é o motivo de o algoritmo de cálculo do gradiente ser chamado de \textit{backpropagation} \cite{backprop}.
+
+O último fator importante a ser discutido no que diz respeito às redes neurais artificiais é o algoritmo de atualização dos pesos com base no gradiente. Existem diversos algoritmos diferentes que podem ser utilizados, porém o mais clássico e simples é o SGD (\textit{stochastic Gradient Descent}), no qual a um peso $v_{(c)}$ é atribuído:
+
+\begin{equation}
+    v_{(c)} \leftarrow v_{(c)} - \eta \frac{\partial L}{\partial v_{(c)}}
+\end{equation}
+
+Onde $\eta$ é a taxa de aprendizagem.
 
 \section{Redes Neurais Convolucionais}
 
@@ -139,6 +224,19 @@ A figura \ref{fig:yolo-diagram} mostra uma representação do funcionamento da r
 \end{figure}
 
 \subsection{Detecção de pontos chave}
+
+Dentro da área da detecção de objetos à também uma subdivisão chamada detecção de pontos chave. Essa tarefa consiste em, além de detectar um objeto, detectar também a posição de uma série de pontos importantes do objeto. Esses pontos podem ser importantes em vários contextos pois oferecem informação adicional a respeito da posição ou formato do objeto.
+
+Uma aplicação muito comum da detecção de pontos chave é estimar a posição de seres humanos. Ao identificar a posição de diversas partes do corpo como ombros, cotovelos, mãos, etc. relativas umas às outras, é possível inferir a posição da pessoa e se ela está tomando certas ações, como andar ou sentar.
+
+A figura \ref{fig:kp-det} mostra um exemplo de detecção de uma série de pontos chave no corpo humano.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/kp_detection.png}
+    \caption{Exemplo de detecção de pontos chave em um corpo humano}
+    \label{fig:kp-det}
+\end{figure}
 
 \section{Técnicas de transformação de imagem para visão computacional}
 
@@ -282,6 +380,50 @@ A imagem separada em \textit{blobs} pode ser representada como uma matriz na qua
 
 Para realizar a filtragem, então basta determinar qual é o \textit{blob} com maior área e eliminar os demais. A área de um \textit{blob} nesse caso nada mais é do que a quantidade de pixels pertencentes à ele.
 
-\section{NPU}
+\section{\textit{Neural Processing Unit}}
 
-\section{Quantização}
+A unidade de processamento NPU (\textit{Neural Processing Unit}) é um processador especializado em redes neurais. Ele é otimizado para operações matriciais e convolucionais, que são algumas das operações mais comuns nas redes neurais.
+
+O intuito da NPU é permitir a execução de modelos de redes neurais de forma eficiente em aplicações embarcadas, que não costumam ser munidas de CPUs ou GPUs poderosas. Para isso a NPU sacrifica flexibilidade em prol da performance em uma tarefa específica.
+
+A arquitetura de uma NPU consiste basicamente em um grid de \textit{processing engines} (PE), sendo que cada uma performa a computação de um neurônio (multiplicação, acumulação e sigmoide). A figura \ref{fig:npu} mostra a arquitetura da NPU \cite{npu}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/npu.jpg}
+    \caption{A NPU. (a) NPU de 8 \textit{processing engines}; (b) Fila de uma \textit{processing engine} \cite{npu}}
+    \label{fig:npu}
+\end{figure}
+
+\section{Quantização de redes neurais}
+
+No contexto de redes neurais artificiais a quantização é o processo de converter os pesos e ativações da rede, que originalmente são valores reais (normalmente de 32 \textit{bits}), para valores inteiros, normalmente de 8 \textit{bits}. Esse processo reduz a precisão numérica, mas pode gerar ganhos significativos de performance, além de reduzir o espaço em memória ocupado pelo modelo \cite{quantization}.
+
+Em um possível esquema de quantização proposto por \cite{quantization} a relação entre um valor quantizado $q$ e um valor real $r$ é definida como:
+
+\begin{equation}
+    r = S(q - Z)
+\end{equation}
+
+Onde $S$ e $Z$ são os parâmetros de quantização, que são diferentes para cada vetor de pesos e ativações da rede. O parâmetro $Z$ (\textit{zero-point}) representa o valor de $q$ quando $r=0$, permitindo que o erro da quantização seja nulo para $r=0$. Já a constante $S$ (\textit{scale}) é um valor real positivo.
+
+É possível realizar a quantização após o treinamento do modelo, mas em muitos casos é recomendado que o modelo seja treinado já aplicando uma forma de quantização simulada, para que aprenda a compensar os erros de quantização.
+
+Para se obter o valor quantizado $q$ dado um valor real $r$ é aplicado o seguinte algoritmo:
+
+\begin{gather}
+    clamp(r;a,b) := min(max(r,a),b) \\
+    s(a,b,n) := \frac{b-a}{n-1} \\
+    q(r;a,b,n) := \nint*{\frac{clamp(r;a,b)-a}{s(a,b,n)}} s(a,b,n) + a
+\end{gather}
+
+Onde:
+
+\begin{itemize}
+    \item $r$ é o valor real sendo quantizado
+    \item $[a;b]$ é o \textit{range} de quantização, os valores mínimo e máximo esperados para $r$
+    \item $n$ é o número de níveis de quantização (256 para 8 \textit{bits})
+    \item $\nint{.}$ representa arredondamento para o inteiro mais próximo
+\end{itemize}
+
+Quantizando desta forma é possível obter um bom balanço entre performance e acurácia do modelo \cite{quantization}.

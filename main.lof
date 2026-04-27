@@ -2,10 +2,12 @@
 \babel@toc {brazil}{}\relax 
 \contentsline {figure}{\numberline {1}{\ignorespaces Placa Radxa ROCK 3A}}{19}{figure.caption.14}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Diagrama das etapas da leitura de placas}}{21}{figure.caption.15}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Fases do processo CRISP-DM \blx@tocontentsinit {0}\cite {crisp-dm}}}{27}{figure.caption.16}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Camada convolucional \blx@tocontentsinit {0}\cite {cnn-ibm}}}{29}{figure.caption.17}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Rede neural convolucional para classificação de imagens \blx@tocontentsinit {0}\cite {cnn-medium}}}{30}{figure.caption.18}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Exemplo de detecção de objetos}}{31}{figure.caption.19}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de funcionamento do modelo YOLO \blx@tocontentsinit {0}\cite {yolo}}}{32}{figure.caption.20}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Transformação de perspectiva \blx@tocontentsinit {0}\cite {perspective-transform}}}{33}{figure.caption.21}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Exemplo de separação de regiões por componentes conexos}}{35}{figure.caption.22}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Fases do processo CRISP-DM \blx@tocontentsinit {0}\cite {crisp-dm}}}{28}{figure.caption.16}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Camada convolucional \blx@tocontentsinit {0}\cite {cnn-ibm}}}{31}{figure.caption.17}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Rede neural convolucional para classificação de imagens \blx@tocontentsinit {0}\cite {cnn-medium}}}{32}{figure.caption.18}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Exemplo de detecção de objetos}}{33}{figure.caption.19}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de funcionamento do modelo YOLO \blx@tocontentsinit {0}\cite {yolo}}}{34}{figure.caption.20}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Exemplo de detecção de pontos chave em um corpo humano}}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Transformação de perspectiva \blx@tocontentsinit {0}\cite {perspective-transform}}}{36}{figure.caption.22}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Exemplo de separação de regiões por componentes conexos}}{38}{figure.caption.23}%
+\contentsline {figure}{\numberline {11}{\ignorespaces A NPU. (a) NPU de 8 \textit {processing engines}; (b) Fila de uma \textit {processing engine} \blx@tocontentsinit {0}\cite {npu}}}{39}{figure.caption.24}%
