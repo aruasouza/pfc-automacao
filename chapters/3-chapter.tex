@@ -62,7 +62,102 @@ As características desejáveis do algoritmo são principalmente:
     \item \textbf{Velocidade:} Para muitas aplicações a velocidade é crítica, especialmente quando se deseja inferir a placa de carros passantes. Portanto, o tempo necessário para que o algoritmo processe uma imagem e retorne o resultado deve ser mínimo.
 \end{itemize}
 
-
 \subsection{Teste do algoritmo desenvolvido na placa Rock 3A}
 
+Para realizar a etapa de testes do algoritmo na placa Rock 3A é necessário entender as características e limitações desse dispositivo. Além disso, escolhas devem ser feitas na etapa de desenvolvimento do algoritmo considerando as características dessa placa, para que não hajam problemas de incompatibilidade.
+
+A placa Rock 3A é um computador de placa única (SBC - Single Board Computer) desenvolvida pela Radxa, projetada para aplicações de inteligência artificial e processamento de imagens. Esta placa foi escolhida para validação devido ao seu custo acessível e às suas capacidades de processamento de IA.
+
+As principais especificações técnicas da Rock 3A incluem:
+
+\begin{itemize}
+    \item \textbf{Processador:} Rockchip RK3568 quad-core ARM Cortex-A55 de até 2.0GHz
+    \item \textbf{NPU:} Unidade de Processamento Neural de 0.8 TOPs (Tera Operations Per Second)
+    \item \textbf{Memória RAM:} Disponível em versões de 2GB, 4GB e 8GB LPDDR4
+    \item \textbf{Armazenamento:} Slot para cartão microSD e conector eMMC
+    \item \textbf{Conectividade:} Wi-Fi 802.11 b/g/n/ac, Bluetooth 5.0, Ethernet Gigabit
+    \item \textbf{Interfaces:} Múltiplas portas USB, HDMI, GPIO de 40 pinos
+    \item \textbf{Suporte a câmeras:} Interface MIPI CSI para conexão de câmeras
+\end{itemize}
+
+A presença da NPU (\textit{Neural Processing Unit}) de 0.8 TOPs é particularmente relevante para este projeto, pois permite a aceleração de operações de redes neurais, potencialmente melhorando significativamente a performance do algoritmo de leitura de placas em comparação com processamento puramente baseado em CPU.
+
+As limitações da placa que devem ser consideradas no desenvolvimento incluem:
+
+\begin{itemize}
+    \item \textbf{Capacidade de processamento limitada:} Comparada a soluções mais caras, a Rock 3A possui recursos computacionais limitados
+    \item \textbf{Memória restrita:} Dependendo da versão, a quantidade de RAM pode ser um fator limitante para modelos de IA mais complexos
+    \item \textbf{Compatibilidade de software:} Nem todos os frameworks de IA possuem suporte otimizado para a arquitetura ARM e NPU específica
+\end{itemize}
+
+A escolha da Rock 3A para este projeto se justifica pela necessidade de validar uma solução de baixo custo que possa ser viável comercialmente, mantendo um equilíbrio entre performance e custo-benefício para aplicações de leitura automática de placas veiculares.
+
+\subsubsection{\textit{Neural Processing Unit} da placa Rock 3A}
+
+A NPU da Rock 3A é otimizada para operações de inferência, não sendo adequada para treinamento de modelos. Ela oferece melhor performance quando utilizada com modelos quantizados para \textit{uint8}, formato que reduz significativamente o uso de memória e acelera as operações matemáticas, mantendo uma precisão aceitável para a maioria das aplicações.
+
+Para utilizar a NPU da Rock 3A, é necessário trabalhar com o \textit{framework} RKNN (\textit{Rockchip Neural Network}), que é o SDK (\textit{Software Development Kit}) oficial fornecido pela Rockchip para desenvolvimento de aplicações de inteligência artificial em seus processadores. O RKNN oferece ferramentas para conversão de modelos treinados em \textit{frameworks} populares como TensorFlow, PyTorch e ONNX para o formato nativo da NPU.
+
+Os principais requisitos para executar modelos de redes neurais na NPU da Rock 3A incluem:
+
+\begin{itemize}
+    \item \textbf{Conversão de formato:} Os modelos devem ser convertidos para o formato RKNN utilizando o \textit{toolkit} oficial
+    \item \textbf{Quantização:} Os modelos devem ser quantizados para \textit{uint8} para otimizar a performance na NPU
+    \item \textbf{Compatibilidade de operações:} Nem todas as operações de redes neurais são suportadas pela NPU, sendo necessário verificar a compatibilidade das camadas utilizadas
+    \item \textbf{Limitações de memória:} O modelo convertido deve respeitar as limitações de memória da NPU
+    \item \textbf{Formato de entrada:} As imagens de entrada devem estar no formato e resolução adequados para o modelo convertido
+\end{itemize}
+
+A utilização da NPU oferece vantagens significativas em termos de eficiência energética e velocidade de inferência quando comparada ao processamento puramente baseado em CPU, tornando-a adequada para aplicações que requerem processamento de imagens em tempo real com restrições de energia e custo.
+
 \section{Requisitos da solução}
+
+Considerando as características e especificações do projeto discutidas até então, os requisitos funcionais e não funcionais do projeto podem ser definidos como:
+
+\subsection{RF1: \textit{Software} de Detecção Automática de Placas}
+
+O \textit{software} deve ter a capacidade de receber imagens de automóveis como carros, caminhões e ônibus, analisá-las e retornar os caracteres da placa do veículo contido na imagem.
+
+\subsubsection{Requisitos não funcionais:}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| m{2cm} | m{3.5cm} | m{8cm} |}
+        \hline
+        Código & Nome & Descrição \\
+        \hline \hline
+        NF1.1 & Acurácia & O percentual de placas inferidas corretamente deve ser suficiente para que a ferramenta seja útil. Preferencialmente acima de 80\%. \\
+        \hline
+        NF1.2 & Velocidade & O tempo necessário para realizar a inferência deve ser apropriado para uma aplicação de tempo real, não maior que 1 segundo por imagem. \\
+        \hline
+        NF1.3 & Flexibilidade & O sistema deve funcionar tanto para placas do modelo antigo, quanto para placas do modelo novo (Mercosul), abrangendo todas as variações possíveis dentro destes modelos. \\
+        \hline
+        NF1.4 & Especificidade & O algoritmo deve ser capaz de identificar qual é o modelo da placa, entre o modelo antigo e o novo (Mercosul). \\ 
+        \hline
+        NF1.3 & Compatibilidade & O \textit{software} deve ser compatível com a placa Rock 3A. \\
+        \hline
+    \end{tabular}
+    \caption{Requisitos não funcionais de RF1}
+    \label{tab:rf1_table}
+\end{table}
+
+\subsection{RF2: Execução na Placa Rock 3A}
+
+O algoritmo de leitura automática de placas de veículos deve ser executado na placa Rock 3A da Radxa.
+
+\subsubsection{Requisitos não funcionais:}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| m{2cm} | m{3.5cm} | m{8cm} |}
+        \hline
+        Código & Nome & Descrição \\
+        \hline \hline
+        NF2.1 & \textit{Neural Processing Unit} & A execução dos modelos de redes neurais na placa Rock 3A deve ser realizada na NPU. \\
+        \hline
+        NF2.2 & Quantização & Os modelos executados na NPU devem ser quantizados para \textit{uint8} para otimizar o tempo de inferência. \\
+        \hline
+    \end{tabular}
+    \caption{Requisitos não funcionais de RF2}
+    \label{tab:rf2_table}
+\end{table}

@@ -45,40 +45,47 @@
 \contentsline {section}{\numberline {3.3}Análise do problema}{43}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Criação do algoritmo de leitura automática de placas de carros}{43}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Teste do algoritmo desenvolvido na placa Rock 3A}{44}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Requisitos da solução}{44}{section.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}\textit {Neural Processing Unit} da placa Rock 3A}{45}{subsubsection.3.3.2.1}%
+\contentsline {section}{\numberline {3.4}Requisitos da solução}{46}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}RF1: \textit {Software} de Detecção Automática de Placas}{46}{subsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.1}Requisitos não funcionais:}{46}{subsubsection.3.4.1.1}%
+\contentsline {subsection}{\numberline {3.4.2}RF2: Execução na Placa Rock 3A}{46}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}Requisitos não funcionais:}{47}{subsubsection.3.4.2.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Solução Proposta e Metodologia Utilizada}}{45}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Análise dos dados}{45}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Características do objeto}{45}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Características do \textit {dataset} utilizado}{45}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}\textit {Pipeline} de leitura de placas}{45}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Modelo de detecção de objetos}{45}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Algoritmo de extração de caracteres}{45}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Modelos de classificação de caracteres}{45}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Metodologia de construção}{45}{section.4.6}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Solução Proposta e Metodologia Utilizada}}{48}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Metodologia de desenvolvimento}{48}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Análise dos dados}{50}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Características do objeto}{50}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Características do \textit {dataset} utilizado}{51}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}\textit {Pipeline} de leitura de placas}{52}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Modelo de detecção de objetos}{52}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Algoritmo de extração de caracteres}{52}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Modelos de classificação de caracteres}{52}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Conversão para execução na placa Rock 3A}{52}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Metodologia de teste}{52}{section.4.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Desenvolvimento e Análise dos Resultados Obtidos}}{46}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Preparação dos dados}{46}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Treinamento do modelo de detecção de placas}{46}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Implementação do algoritmo de extração de caracteres}{46}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Criação do dataset de caracteres}{46}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Treinamento dos modelos de classificação de caracteres}{46}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Quantização e transformação dos modelos para formato compatível com o \textit {hardware}}{46}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{46}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Testes realizados}{46}{section.5.8}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Desenvolvimento e Análise dos Resultados Obtidos}}{53}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Preparação dos dados}{53}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Treinamento do modelo de detecção de placas}{53}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Implementação do algoritmo de extração de caracteres}{53}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Criação do dataset de caracteres}{53}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Treinamento dos modelos de classificação de caracteres}{53}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Quantização e transformação dos modelos para formato compatível com o \textit {hardware}}{53}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{53}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Testes realizados}{53}{section.5.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{47}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{54}{chapter.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{48}{section*.28}%
+\contentsline {chapter}{REFERÊNCIAS}{55}{section*.34}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{50}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{57}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{51}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{58}{appendix.anexochapback.1}%
