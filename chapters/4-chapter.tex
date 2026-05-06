@@ -101,13 +101,215 @@ A figura \ref{fig:inputexemplo} é um exemplo de imagem do \textit{dataset} com 
 
 \section{\textit{Pipeline} de leitura de placas}
 
+O desenvolvimento do \textit{pipeline} de leitura de placas já faz parte da etapa de modelagem do método CRISP-DM. O objetivo do \textit{pipeline} é receber imagens de veículos e devolver uma sequência de caracteres correspondente à placa de identificação do veículo contido na imagem.
 
+Essa tarefa não é um problema trivial de visão computacional, e dificilmente pode ser resolvida simplesmente alimentando as imagens a um modelo de redes neurais artificiais. A complexidade se dá principalmente pelos seguintes fatos:
 
-\section{Modelo de detecção de objetos}
+\begin{itemize}
+    \item A placa pode estar localizada em locais variados da imagem e ter diferentes tamanhos
+    \item A quantidade de placas possíveis é aproximadamente $4.6 \times 10^8$ para placas do padrão Mercosul e $1.8 \times 10^8$ para placas no padrão antigo, sendo impossível treinar um modelo no qual cada placa seja tratada como uma classe distinta
+    \item A maior parte do conteúdo de cada imagem é apenas ruído que não pode ser aproveitado para a leitura da placa
+\end{itemize}
 
-\section{Algoritmo de extração de caracteres}
+Por conta da complexidade, o problema requer uma solução refinada. Com base nisso, o \textit{pipeline} proposto para a leitura de placas pode ser dividido em três blocos sequenciais:
 
-\section{Modelos de classificação de caracteres}
+\begin{enumerate}
+    \item \textbf{Detecção e classificação da placa} \\
+    O bloco de detecção e classificação da placa deve extrair da imagem de entrada a localização exata da imagem, permitindo que todo o resto da imagem possa ser descartado ne etapa seguinte. Além disso, esse bloco deve classificar a placa entre os modelos Brasil e Mercosul e identificar as coordenadas cartesianas dos quatro canto da placa.
+    \item \textbf{Processamento da placa} \\
+    Este bloco deve realizar transformações na imagem utilizando as informações obtidas pelo modelo de detecção. Essas transformações envolvem cortar a imagem, para remover tudo o que não seja a placa, e também outras operações de processamento que facilitem a leitura dos caracteres no bloco seguinte.
+    \item \textbf{Leitura da placa} \\
+    Por fim, o último bloco do \textit{pipeline} recebe a imagem processada e aplica o algoritmo de leitura para efetivamente extrair os caracteres da placa.
+\end{enumerate}
+
+A seguir serão exploradas as soluções propostas para cada bloco.
+
+\subsection{Modelo de detecção de objetos e pontos-chave}
+
+Para a tarefa de detecção e classificação da placa, a solução proposta foi utilizar um modelo de detecção de objetos da família YOLO, mais especificamente o YOLO26-pose, desenvolvido pela Ultralytics.
+
+Os modelos da família YOLO são notórios por serem precisos e rápidos na detecção de objetos. Nessa linha, os modelos YOLO26 foram desenvolvidos pensando especificamente em IA de borda, sendo portanto otimizados para entregar excelente performance com baixa latência e utilizando o mínimo de recursos.
+
+Uma das variantes disponíveis do YOLO26 é o YOLO26-pose, que além de realizar detecção de objetos também realiza detecção de pontos-chave na imagem, sendo portanto ideal para o caso de uso desse projeto.
+
+O YOLO26-pose ainda possui 5 tamanhos, apresentados na tabela \ref{tab:yolo26_table}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| m{3cm} | m{3cm} | m{3cm} | m{3cm} |}
+        \hline
+        Tamanho & Parâmetros (M) & Velocidade CPU (ms) & mAPpose 50-95(e2e) \\
+        \hline \hline
+        \textit{nano} & $2.9$ & $40.3$ & $57.2$ \\
+        \hline
+        \textit{small} & $10.4$ & $85.3$ & $63.0$ \\
+        \hline
+        \textit{medium} & $21.5$ & $218.0$ & $68.8$ \\
+        \hline
+        \textit{large} & $25.9$ & $275.4$ & $70.4$ \\
+        \hline
+        \textit{extra large} & $57.6$ & $565.4$ & $71.6$ \\
+        \hline
+    \end{tabular}
+    \caption{Tamanhos do modelo de detecção de objetos YOLO26-pose}
+    \label{tab:yolo26_table}
+\end{table}
+
+A métrica mAPpose 50-95(e2e) representa a precisão média para estimativa de pose (pontos chave). Nota-se que quanto maior o modelo mais alta é a precisão, porém mais alta também é a latência. Para este projeto, como estamos lidando com um objeto relativamente simples (placas de carro) e o \textit{hardware} é bastante limitado, foi escolhida a versão \textit{nano} do modelo, que prioriza velocidade de inferência e economia de recursos.
+
+\subsection{Algoritmo de processamento da imagem}
+
+Uma vez detectada a placa, incluindo as coordenadas dos seus 4 cantos na imagem, torna-se possível realizar diversas transformações na imagem para facilitar a tarefa de leitura dos caracteres da placa. Essas transformações devem ter como objetivo extrair o máximo de informação e remover o máximo de ruído possível, de forma a entregar para a etapa seguinte dados mais limpos, informativos e padronizados.
+
+Com esse objetivo, a sequência proposta de transformações é a seguinte:
+
+\begin{enumerate}
+    \item Conversão da imagem para escala de cinza
+    \item Extração da placa com base na \textit{bounding box}
+    \item Transformação de perspectiva
+    \item Remoção das bordas
+    \item Binarização
+    \item Separação dos caracteres
+    \item Limpeza das imagens de caracteres
+\end{enumerate}
+
+A seguir é discutida cada uma dessas etapas.
+
+\subsubsection{Conversão para escala de cinza}
+
+Enquanto as cores poderiam ser úteis para detectar a placa na imagem original, elas já não têm muito propósito a partir desse ponto, pois as placas praticamente não têm cores, e quando têm elas não são relevantes. Por conta disso, as cores são informação desnecessária que só complicaria as etapas posteriores, de forma que é melhor eliminá-las.
+
+Ao converter a imagem para escala de cinza (figura \ref{fig:inputgray}) ela passa a ser representada por uma matriz $h \times w$ (sendo $h$ a altura da imagem e $w$ a largura), ao invés de três matrizes, como era quanto tinha cores.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/exemplo-gray.png}
+    \caption{Imagem em escala de cinza}
+    \label{fig:inputgray}
+\end{figure}
+
+\subsubsection{Extração da placa com base na \textit{bounding box}}
+
+A \textit{bounding box} de um objeto em uma imagem nada mais é do que os limites superior, inferior, direito e esquerdo do objeto. Com essas quatro informações é possível formar um retângulo que, idealmente, contém o objeto inteiro sem ser maior do que o necessário.
+
+Uma das saídas do modelo de detecção de objetos é a \textit{bounding box} de cada objeto detectado na imagem. É importante notar que é possível que mais de um objeto seja detectado em uma dada imagem, caso no qual apenas a melhor detecção será utilizada, ou seja, a que tiver a confiança mais alta.
+
+Com base na \textit{bounding box} obtida e na imagem em escala de cinza é gerada uma nova imagem, formada pelos pixels da imagem contidos dentro da \textit{bounding box}. Essa nova imagem tem, portanto, as mesmas dimensões da \textit{bounding box}.
+
+A figura \ref{fig:extracaoplaca} exemplifica o processo de extração da placa com base na \textit{bounding box} inferida pelo modelo de detecção de objetos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/extracao_placa.png}
+    \caption{Extração da placa com base na \textit{bounding box}}
+    \label{fig:extracaoplaca}
+\end{figure}
+
+\subsubsection{Transformação de perspectiva}
+
+Após extrair a imagem da placa, o próximo passo é utilizar a transformação de perspectiva, de forma que esta fique sem rotação e sem perspectiva. Essa operação tem grande potencial de padronização das imagens de placa, anulando variações que possam ocorrer referentes à posição do carro.
+
+Essa transformação é feita com base nas coordenadas dos quatro cantos da placa, que definem o plano inicial, assim como as coordenadas dos quatro cantos na imagem final.
+
+Para realizar isso é necessário primeiro realizar uma transformação nas coordenadas dos cantos para que o ponto de referência deixe de ser a origem da imagem inicial (do carro inteiro) e passe a ser a origem da imagem da placa.
+
+Para isso, basta aplicar as equações:
+
+\begin{gather}
+    x_2 = x_1 - x_{min} \\
+    y_2 = y_1 - y_{min}
+\end{gather}
+
+Onde $(x_1,y_1)$ são as coordenadas de um ponto referente à imagem do carro e $(x_2,y_2)$ são as coordenadas referentes à imagem recortada da placa. $(x_{min},y_{min})$ são os limite inferior de $x$ e $y$ na \textit{bounding box}.
+
+Por fim, basta definir as dimensões da imagem após a transformação. Essa definição é relativamente arbitrária, porém é ideal que a imagem final possua um tamanho grande o bastante para que não haja queda na resolução e que as proporções da largura e altura não sejam muito diferentes das proporções de uma placa de carro padrão, para que não ocorra muita distorção na imagem. Foi proposta então as dimensões de $500 \times 200$ px.
+
+A figura \ref{fig:pespectransform} exemplifica o que acontece com a imagem da placa após a transformação. Além de a placa se ajustar muito melhor na imagem, suas dimensões ficam padronizadas em $500 \times 200$ px.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/trans-perspec.png}
+    \caption{Transformação de perspectiva com base nos quatro cantos da placa}
+    \label{fig:pespectransform}
+\end{figure}
+
+\subsubsection{Remoção das bordas}
+
+Com as dimensões da imagem padronizadas e a perspectiva corrigida, é possível, com base em conhecimento empírico acerca das características dimensionais da placa, reduzir ainda mais a imagem ao remover bordas desnecessárias, mantendo, na medida do possível, apenas os caracteres.
+
+Essa operação é diferente em placas do modelo Brasil e Mercosul, pois estes modelos são diferentes nas dimensões das bordas. Nas placas do modelo Brasil são removidos 40 pixels do topo e 10 pixels da parte de baixo, além de 10 pixels na esquerda e na direita. Já nas placas do modelo Mercosul são removidos 40 pixels do topo, da esquerda e da direita, além de 10 pixels da parte de baixo. As figuras \ref{fig:corte-br} e \ref{fig:corte-me} mostram as medidas removidas das placas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/corte-placa-br.png}
+    \caption{Medidas para remoção de bordas das placas do padrão antigo}
+    \label{fig:corte-br}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/corte-placa-me.png}
+    \caption{Medidas para remoção de bordas das placas do padrão Mercosul}
+    \label{fig:corte-me}
+\end{figure}
+
+A figura \ref{fig:corteplacas} demonstra a transformação de remoção de bordas nas duas modalidades de placas. Essa operação ajuda a destacar a parte da imagem que realmente interessa à análise e remover o restante.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/corte-placas.png}
+    \caption{Remoção de bordas das placas}
+    \label{fig:corteplacas}
+\end{figure}
+
+\subsubsection{Binarização}
+
+Com as bordas removidas, é então aplicada binarização na imagem da placa, para obter-se uma versão simplificada na qual os caracteres possuem destaque maior.
+
+Para isso, é aplicada uma técnica de limiarização adaptativa que classifica cada pixel da imagem em escala de cinza como 0 ou 1, a depender do valor do pixel e dos pixels nos arredores. O algoritmo utilizado é o método de Sauvola com os parâmetros $k=0.005$ e o tamanho de janela de 201 px. A utilização desse método evita que placas que não estão iluminadas de forma igual em toda a sua extensão tenham a qualidade da binarização comprometida.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/placa-binarizada.png}
+    \caption{Imagem de placa binarizada com o método de Sauvola}
+    \label{fig:placabin}
+\end{figure}
+
+\subsubsection{Separação dos caracteres}
+
+A separação dos caracteres da imagem da placa binarizada é realizada em duas etapas: Primeiro é feita uma separação estimada, usando as dimensões conhecidas da placa como base, depois a separação é refinada com base nas características da imagem binarizada.
+
+A separação inicial é simples. Sabe-se que cada placa possui 7 caracteres distribuídos de forma uniforme, portanto basta dividir a placa em 7 segmentos de igual largura para se obter uma boa estimativa das divisões dos caracteres, ao menos nas placas do modelo Mercosul. Nas placas do modelo antigo a distribuição não é uniforme por conta do hífen que separa as letras dos números. Para resolver isso, as placas desse modelo primeiro são divididas em duas: uma composta pelas 200 primeiras colunas de pixels da imagem e outra composta pelas 290 últimas colunas. Depois disso, a primeira parte é dividida em três partes iguais e a segunda parte em quatro partes iguais.
+
+Após essa divisão inicial, a divisão é refinada. Como em tese, após a binarização, todo pixel que pertence a um caractere possui valor 1 e os demais pixels possuem valor 0, é feita uma varredura nos arredores do ponto de corte estimado procurando pela coluna com menos pixels com valor 1. No cenário ideal, será encontrado um ponto de corte em que todos os pixels possuem valor 0.
+
+Por fim, a imagem é dividida em 7 pedaços com base nos melhores pontos de corte encontrados. Para padronizar as dimensões, os pedaços são expandidos horizontalmente com pixels de valor 0 até que a largura e altura possuam o mesmo valor.
+
+A figura \ref{fig:sepchars} mostra as etapas e o resultado da separação de caracteres para os dois modelos de placa.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/seperacao-chars.png}
+    \caption{Separação de caracteres para os dois modelos de placa}
+    \label{fig:sepchars}
+\end{figure}
+
+\subsubsection{Limpeza das imagens de caracteres}
+
+A última etapa deste bloco é a limpeza das imagens de caracteres extraídas. Muitas dessas imagens acabam sendo geradas com ruído, que não tem nenhuma utilidade e pode atrapalhar a classificação dos caracteres. Esse ruído são pixels que não pertencem ao caractere em questão mas acabam sendo classificados como 1 na binarização.
+
+Quando esses pixels estão desconectados do caractere é possível identificá-los com base na continuidade. Esse processo envolve basicamente classificar cada pixel de valor 1 da imagem como pertencente à um objeto, e em seguida eliminar todos os objetos com exceção daquele com maior área, que deve ser o caractere.
+
+Após essa eliminação as imagens passam a conter consideravelmente menos ruído, como pode ser observado na figura \ref{fig:charclean}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/clean-objects.png}
+    \caption{Exemplo de limpeza de imagem de caractere com base em continuidade de objetos}
+    \label{fig:charclean}
+\end{figure}
+
+\subsection{Modelos de classificação de caracteres}
 
 \section{Conversão para execução na placa Rock 3A}
 
