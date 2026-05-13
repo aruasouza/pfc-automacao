@@ -83,13 +83,25 @@ A detecção e classificação são uma única etapa pois modelos de detecção 
 
 Para que a extração e classificação dos caracteres funcione bem, é vital que haja um pré-processamento da imagem da placa extraída pela detecção, com objetivo de remover ao máximo o ruído da imagem e deixando-a o mais limpa possível.
 
-O diagrama da figura \ref{fig:pipeline} mostra todas essas etapas assim como sus entradas e saídas.
+Uma outra possibilidade é tratar o problema de extração e classificação dos caracteres como um único problema a ser resolvido por um modelo mais robusto de inteligência artificial que realiza as duas tarefas de uma só vez. Essa alternativa é mais simples mas pode gerar bons resultados se a quantidade de dados disponível para ajuste do modelo for suficiente.
+
+Os diagramas das figuras \ref{fig:pipeline} e \ref{fig:pipelinesimples} demonstram as etapas do algoritmo em ambas as metodologias. O método 1 separa a extração e classificação dos caracteres e o método 2 os executa juntos.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{images/diagrama_pipeline.png}
-    \caption{Diagrama das etapas da leitura de placas}
-    \label{fig:pipeline}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{images/diagrama_pipeline.png}
+        \caption{Diagrama das etapas da leitura de placas (método 1)}
+        \label{fig:pipeline}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{images/pipeline_simples.png}
+        \caption{Diagrama das etapas da leitura de placas (método 2)}
+        \label{fig:pipelinesimples}
+    \end{minipage}
 \end{figure}
 
 \subsection{Planejamento da execução dos modelos na placa ROCK 3A}
@@ -118,7 +130,7 @@ As etapas sequenciais, portanto são:
 	\item Preparação dos dados a serem utilizados para treinamento e teste do modelo
 	\item Treinamento de um modelo de detecção de placas (apenas identifica o tipo e a posição da placa)
 	\item Desenvolvimento de um algoritmo de pré-processamento e extração de caracteres
-	\item Geração de um dataset de caracteres extraídos
+	\item Geração de um \textit{dataset} de caracteres extraídos e um \textit{dataset} de placas extraídas
 	\item Treinamento de modelos de classificação de caracteres
 	\item Conversão dos modelos para formato compatível com NPU
 	\item Teste dos modelos no computador e na placa
@@ -165,9 +177,9 @@ Com base nesses fatos, o algoritmo de pré-processamento e extração de caracte
 	\item Separar os caracteres extraídos em letras e números com base na posição
 \end{itemize}
 
-\subsection{Geração de um \textit{dataset} de caracteres extraídos}
+\subsection{Geração de \textit{datasets} de caracteres e placas}
 
-Para que seja possível treinar os modelos de classificação dos caracteres é necessário criar um \textit{dataset} de caracteres. Tendo sido realizadas as etapas anteriores, basta aplicar a detecção de placa e extração de caracteres em cada imagem dos dados de treinamento para criar um \textit{dataset} de caracteres. Como sabemos previamente quais placas são do tipo Brasil e quais são Mercosul, assim como também sabemos quais caracteres são números e quais são letras, é possível criar \textit{datasets} separados para cada categoria, resultando em quatro \textit{datasets}:
+Para que seja possível treinar os modelos de classificação dos caracteres é necessário criar \textit{datasets} correspondentes aos modelos que se deseja ajustar. No caso dos modelos que realizam classificação de caracteres já extraídos é necessário criar um \textit{dataset} de imagens de caracteres. Para isso, tendo sido realizadas as etapas anteriores, basta aplicar a detecção de placa e extração de caracteres em cada imagem dos dados de treinamento. Como sabemos previamente quais placas são do tipo Brasil e quais são Mercosul, assim como também sabemos quais caracteres são números e quais são letras, é possível criar \textit{datasets} separados para cada categoria, resultando em quatro \textit{datasets}:
 
 \begin{itemize}
 	\item Números Brasil
@@ -176,11 +188,24 @@ Para que seja possível treinar os modelos de classificação dos caracteres é 
 	\item Letras Mercosul
 \end{itemize}
 
-Sendo que cada um destes ainda é separado em treino e validação.
+Já no caso dos modelos de classificação e extração de caracteres, o \textit{dataset} de treinamento não pode conter caracteres extraídos, e sim placas de carro extraídas das imagens originais a partir do \textit{output} do modelo de detecção de placas. Para esse modelo, muito do processamento realizado nas imagens de placas não é necessário, mas a correção de perspectiva ainda é interessante de ser utilizada para corrigir distorções e padronizar as dimensões das imagens de placas.
+
+O \textit{dataset} de placas, portanto, é formado por imagens de placas com dimensões fixas, que podem ainda ser divididos em:
+
+\begin{itemize}
+	\item Placas Brasil
+	\item Placas Mercosul
+\end{itemize}
 
 \subsection{Treinamento de modelos de classificação de caracteres}
 
-Com o \textit{dataset} de caracteres pronto, basta criar uma arquitetura de modelo de visão computacional e treiná-lo com esses dados. Como os dados já vêm pré-processados e a tarefa de classificação de caracteres não é particularmente complexa, basta uma arquitetura simples de redes neurais convolucionais para resolver esse problema.
+O treinamento dos modelos de classificação de caracteres é dividido em duas partes, uma para a criação dos modelos de classificação de caracteres extraídos e outra para os modelos de extração e classificação. Os modelos de caracteres extraídos utilizam o \textit{dataset} de imagens de caracteres para seu ajuste, enquanto os modelos de extração e classificação utilizam os \textit{datasets} de placas.
+
+A tarefa de classificar caracteres isolados não é particularmente complexa, portanto uma rede neural convolucional simples já é suficiente para esse problema. Como os dados de caracteres estão separados por modelo de placa e por tipo (letra/número) foram criados quatro modelos diferentes, um para cada combinação. Todos possuem a mesma arquitetura, exceto pela camada de saída, que possui 26 classes nos modelos de letras e 10 classes nos modelos de números.
+
+Os modelos de extração e classificação, por outro lado, deve ser muito mais complexos, pois são incumbidos de uma tarefa muito mais difícil. Esses modelos devem receber na entrada uma imagem de uma placa de carro e convertê-la em 7 caracteres, cada um sendo representado por um vetor de 26 ou 10 valores, dependendo se aquele caractere é uma letra ou um número.
+
+Como existem dois modelos de placa e cada um possui um padrão de letras e números, foram criados dois modelos dessa modalidade, um para cada padrão de placa.
 
 \subsection{Conversão dos modelos para formato compatível com NPU}
 

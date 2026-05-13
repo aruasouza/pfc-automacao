@@ -1,17 +1,17 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[106] biber-MSWIN64:342> INFO - === 
-[149] Biber.pm:421> INFO - Reading 'main.bcf'
-[249] Biber.pm:1002> INFO - Found 16 citekeys in bib section 0
-[260] Biber.pm:4487> INFO - Processing section 0
-[270] Biber.pm:4678> INFO - Looking for bibtex file 'aftertext/references.bib' for section 0
-[325] bibtex.pm:1713> INFO - LaTeX decoding ...
-[343] bibtex.pm:1519> INFO - Found BibTeX data source 'aftertext/references.bib'
-[462] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[462] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[463] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
-[463] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
-[482] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[495] bbl.pm:779> INFO - Output to main.bbl
-[496] Biber.pm:132> WARN - legacy month field 'Feb' in entry 'dataset' is not an integer - this will probably not sort properly.
-[496] Biber.pm:134> INFO - WARNINGS: 1
+[95] biber-MSWIN64:342> INFO - === 
+[139] Biber.pm:421> INFO - Reading 'main.bcf'
+[243] Biber.pm:1002> INFO - Found 16 citekeys in bib section 0
+[253] Biber.pm:4487> INFO - Processing section 0
+[262] Biber.pm:4678> INFO - Looking for bibtex file 'aftertext/references.bib' for section 0
+[329] bibtex.pm:1713> INFO - LaTeX decoding ...
+[345] bibtex.pm:1519> INFO - Found BibTeX data source 'aftertext/references.bib'
+[452] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[453] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[453] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[453] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[469] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[480] bbl.pm:779> INFO - Output to main.bbl
+[481] Biber.pm:132> WARN - legacy month field 'Feb' in entry 'dataset' is not an integer - this will probably not sort properly.
+[481] Biber.pm:134> INFO - WARNINGS: 1

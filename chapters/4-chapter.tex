@@ -21,7 +21,7 @@ As etapas do projeto definidas a permitir do padrão CRISP-DM são portanto:
     Para obter um bom entendimento dos dados é necessário explorar as características tanto do \textit{dataset} utilizado quanto do objeto de interesse a ser analisado, as placas de veículos. Esse estudo será feito na próxima seção deste capítulo.
     \item \textbf{Preparação dos dados} \\
     A preparação dos dados envolve duas etapas distintas, pois esse projeto lida com dois conjuntos de dados, sendo o segundo derivado do primeiro. O primeiro conjunto são as imagens dos carros e anotações das placas, e a preparação desses dados envolve separar o \textit{dataset} em conjuntos de treino, validação e teste, além de organizá-los e transformá-los para que fiquem no padrão COCO \cite{coco}. Essa organização e transformação é necessária para que o modelo de detecção de placas seja treinado. \\ 
-    A segunda etapa da preparação dos dados ocorre posteriormente e envolve a criação de um segundo conjunto de dados gerado a partir do primeiro. Esse segundo conjunto de dados deve ser um \textit{dataset} de imagens de caracteres de placas de carro, voltado para o treinamento de um modelo de classificação de caracteres. Para realização dessa tarefa, porém, é necessário que já tenha havido um avanço na modelagem, de forma que a etapa de preparação dos dados e de modelagem possuem alternância.
+    A segunda etapa da preparação dos dados ocorre posteriormente e envolve a criação de um segundo conjunto de dados gerado a partir do primeiro. Esse segundo conjunto de dados deve ser um \textit{dataset} de imagens de caracteres de placas de carro e também um \textit{dataset} de imagens de placas de carro inteiras, voltados para o treinamento de modelos de classificação de caracteres. Para realização dessa tarefa, porém, é necessário que já tenha havido um avanço na modelagem, de forma que a etapa de preparação dos dados e de modelagem possuem alternância.
     \item \textbf{Modelagem} \\
     A modelagem, por sua vez, pode ser dividida em três etapas principais. A primeira é a seleção e treinamento de um modelo de detecção de objetos para a detecção das placas, etapa essa que depende da preparação do primeiro conjunto de dados, contendo as imagens dos carros e anotações das placas. \\
     A segunda etapa, que depende da primeira, é o desenvolvimento de um algoritmo para extração dos caracteres das placas identificadas pelo modelo de detecção de objetos, utilizando técnicas clássicas de visão computacional. Após essa etapa é possível (e necessária) a realização da segunda parte da preparação dos dados, que gera o \textit{dataset} de caracteres extraídos. \\
@@ -138,7 +138,7 @@ O YOLO26-pose ainda possui 5 tamanhos, apresentados na tabela \ref{tab:yolo26_ta
     \centering
     \begin{tabular}{| m{3cm} | m{3cm} | m{3cm} | m{3cm} |}
         \hline
-        Tamanho & Parâmetros (M) & Velocidade CPU (ms) & mAPpose 50-95(e2e) \\
+        Tamanho & Parâmetros (milhões) & Velocidade CPU (ms) & mAPpose 50-95(e2e) \\
         \hline \hline
         \textit{nano} & $2.9$ & $40.3$ & $57.2$ \\
         \hline
@@ -311,6 +311,66 @@ Após essa eliminação as imagens passam a conter consideravelmente menos ruíd
 
 \subsection{Modelos de classificação de caracteres}
 
+Os modelos de classificação de caracteres têm a atribuição de receber uma imagem contendo um único caractere e classificá-lo entre as classes possíveis para aquele modelo. Como já é previamente conhecido, com base na posição dos caracteres, quando um caractere é uma letra ou um número, é possível criar modelos separados para classificação de letras e de números. Além disso, como também é sabido qual o modelo da placa, já que isso é inferido pelo modelo de detecção de objetos, é possível também que cada modelo seja especializado em caracteres do modelo Brasil ou do modelo Mercosul.
+
+As figuras \ref{fig:brletras} e \ref{fig:brnumeros} mostram os diagramas das redes neurais utilizadas na classificação de letras e na classificação de números. A única diferença entre as duas é que a saída da rede de números é um vetor de 10 elementos, representando os 10 algarismos existentes, enquanto a rede de letras é um vetor de 26 valores, representando cada letra do alfabeto.
+
+Os tipos de camadas utilizadas na rede neural seguindo a notação das figuras \ref{fig:brletras} e \ref{fig:brnumeros} foram:
+
+\begin{itemize}
+    \item \textbf{Conv}: Camada convolucional
+    \item \textbf{Gemm}: Camada linear \textit{fully connected}
+\end{itemize}
+
+Além disso foram utilizadas as operações:
+
+\begin{itemize}
+    \item \textbf{Relu}: Rectified Linear Unit
+    \item \textbf{MaxPool}: Max pooling
+    \item \textbf{Reshape}: Modificação da forma do tensor
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=0.3\linewidth]{images/br-letras.onnx.png}
+        \caption{Diagrama da rede neural de classificação de letras}
+        \label{fig:brletras}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=0.3\linewidth]{images/br-numeros.onnx.png}
+        \caption{Diagrama da rede neural de classificação de números}
+        \label{fig:brnumeros}
+    \end{minipage}
+\end{figure}
+
+\subsection{Modelos de extração e classificação de caracteres}
+
+Os modelos de extração e classificação de caracteres podem substituir o algoritmo de extração de caracteres e modelos de classificação de caracteres ao juntar ambas as tarefas em uma única solução integrada. Esses modelos devem extrair e classificar os caracteres diretamente da placa cortada da imagem original após a detecção pelo YOLO. A única transformação a ser feita na placa antes de alimentar para esse modelo é a transformação de perspectiva, pois esta garante uma padronização muito maior das placas enviadas ao modelo.
+
+A saída desses modelos é um conjunto de 7 vetores, cada um representando um dos caracteres da placa. Cada vetor é composto por 10 ou 26 valores, a depender se aquele vetor representa um número ou uma letra, o que depende da posição do caractere que aquele vetor representa.
+
+Como as placas dos modelos Brasil e Mercosul possuem configurações diferentes, devem ser feitos dois modelos, um para cada tipo de placa. Esses modelos possuem uma arquitetura consideravelmente mais complexa que os modelos de classificação de caracteres isolados, podendo ser dividida em três blocos principais:
+
+\begin{itemize}
+    \item \textbf{\textit{Backbone:}} \\
+    O primeiro bloco da arquitetura é composto por múltiplas camadas convolucionais, funções de ativação ReLU, max poolings e conexões residuais. A função desse bloco é extrair \textit{features} da imagem que serão utilizadas na classificação.
+    \item \textbf{\textit{Average Pooling} adaptativo:} \\
+    Esse bloco é a peça central da arquitetura, que divide a parte de extração de \textit{features} da parte de classificação efetiva. A função desse bloco é nada mais que a separação dos caracteres, pois ele garante que sua saída serão 7 vetores, cada um contendo todas as \textit{features} extraídas de um dos caracteres.
+    \item \textbf{Cabeçalho:}
+    Por fim, o último bloco é onde ocorre a classificação dos caracteres. Os 7 vetores que saem do \textit{average pooling} adaptativo são divididos e cada um segue um caminho diferente, onde passam por uma camadas linear \textit{fully connected} e ativação ReLU, depois mais uma camada linear, cada vetor terminando com 10 ou 26 valores.
+\end{itemize}
+
 \section{Conversão para execução na placa Rock 3A}
 
+Para execução do modelo YOLO e dos modelos de classificação de caracteres na NPU placa Rock 3A, segundo a documentação da mesma, é necessário que esses modelos sejam convertidos para um formato compatível. Esse formato é o RKNN, desenvolvido para chips da Rockchip, como o utilizado na placa Rock 3A.
+
+A Rockship disponibiliza um software que permite a conversão de modelos no formato ONNX para RKNN. Ele possibilita também que o modelo seja quantizado para \textit{uint8} durante a conversão. Para isso é necessário criar \textit{datasets} de quantização, que serão utilizados pelos algoritmos de quantização e garantirão que o modelo quantizado se mantenha dentro de certos parâmetros.
+
+O \textit{dataset} de quantização não envolve rótulos, apenas imagens que podem ser utilizadas como entrada no modelo. No caso do YOLO, os dados de quantização devem ser parte das imagens de carros do \textit{dataset} de treino desse modelo.
+
 \section{Metodologia de teste}
+
