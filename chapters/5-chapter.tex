@@ -1,16 +1,55 @@
 \chapter{Desenvolvimento e Análise dos Resultados Obtidos}
 
+Neste capítulo será discutido o que foi efetivamente feito para realização da solução proposta no capítulo 4, assim como a concretização da metodologia utilizada. Também são apresentadas as tecnologias utilizadas e problemas encontrados.
+
+As etapas de desenvolvimento foram:
+
+\begin{enumerate}
+    \item Preparação dos dados
+    \item Treinamento do modelo de detecção de placas
+    \item Implementação do algoritmo de extração de caracteres
+    \item Criação dos \textit{datasets} de caracteres e de placas
+    \item Treinamento dos modelos de classificação de caracteres
+    \item Quantização e transformação dos modelos para formato compatível com o \textit{hardware}
+    \item Preparação do \textit{hardware}
+    \item Realização dos testes
+\end{enumerate}
+
 \section{Preparação dos dados}
 
 \section{Treinamento do modelo de detecção de placas}
 
+\begin{verbatim}
+<classe> <x centro> <y centro> <largura> <altura> <x ponto 1> <y ponto 1> <visibilidade ponto 1> ... <x ponto n> <y ponto n> <visibilidade ponto n>
+\end{verbatim}
+
 \section{Implementação do algoritmo de extração de caracteres}
 
-\section{Criação do dataset de caracteres}
+\section{Criação dos \textit{datasets} de caracteres e de placas}
 
 \section{Treinamento dos modelos de classificação de caracteres}
 
+\subsection{Classificação de caracteres isolados}
+
+\subsection{Extração e classificação simultânea}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/training_curves_br.png}
+    \caption{Curvas de treinamento do modelo de classificação em placas do tipo "Brasil"}
+    \label{fig:train_br}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/training_curves_me.png}
+    \caption{Curvas de treinamento do modelo de classificação em placas do tipo "Mercosul"}
+    \label{fig:train_me}
+\end{figure}
+
 \section{Quantização e transformação dos modelos para formato compatível com o \textit{hardware}}
+
+\subsection{Criação dos datasets de quantização}
 
 \section{Preparação do \textit{hardware}}
 

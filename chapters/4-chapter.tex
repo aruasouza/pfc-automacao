@@ -374,3 +374,13 @@ O \textit{dataset} de quantização não envolve rótulos, apenas imagens que po
 
 \section{Metodologia de teste}
 
+Os testes para verificar a eficácia do algoritmo obtido se basearam em executar o programa em um conjunto de dados de teste, que foi separado no início do desenvolvimento da solução. Os dados de teste não foram utilizados em nenhuma etapa do desenvolvimento da solução além da própria etapa de teste, para não gerar viés nos resultados. As medições feitas nos testes foram:
+
+\begin{itemize}
+    \item Percentual de imagens do conjunto de teste inferidas corretamente
+    \item Tempo de detecção das placas com o modelo YOLO
+    \item Tempo de processamento da imagem da placa (com ou sem extração de caracteres)
+    \item Tempo de classificação dos caracteres
+\end{itemize}
+
+Os testes foram realizados tanto em um PC quanto na placa Rock 3A, e foram testados os dois modelos de algoritmo desenvolvidos.
