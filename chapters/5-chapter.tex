@@ -20,7 +20,9 @@ As etapas de desenvolvimento foram:
 \section{Treinamento do modelo de detecção de placas}
 
 \begin{verbatim}
-<classe> <x centro> <y centro> <largura> <altura> <x ponto 1> <y ponto 1> <visibilidade ponto 1> ... <x ponto n> <y ponto n> <visibilidade ponto n>
+<classe> <x centro> <y centro> <largura> <altura> <x ponto 1> 
+<y ponto 1> <visibilidade ponto 1> ... <x ponto n> <y ponto n> 
+<visibilidade ponto n>
 \end{verbatim}
 
 \section{Implementação do algoritmo de extração de caracteres}
@@ -31,19 +33,47 @@ As etapas de desenvolvimento foram:
 
 \subsection{Classificação de caracteres isolados}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/me-numeros.png}
+    \caption{Curvas de treinamento do modelo de classificação de números em placas do tipo Mercosul}
+    \label{fig:menumerostrain}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/me-letras.png}
+    \caption{Curvas de treinamento do modelo de classificação de letras em placas do tipo Mercosul}
+    \label{fig:meletrastrain}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/br-numeros.png}
+    \caption{Curvas de treinamento do modelo de classificação de números em placas do tipo Brasil}
+    \label{fig:brnumerostrain}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/br-letras.png}
+    \caption{Curvas de treinamento do modelo de classificação de letras em placas do tipo Brasil}
+    \label{fig:brletrastrain}
+\end{figure}
+
 \subsection{Extração e classificação simultânea}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/training_curves_br.png}
-    \caption{Curvas de treinamento do modelo de classificação em placas do tipo "Brasil"}
+    \includegraphics[width=1.0\linewidth]{images/training_curves_br.png}
+    \caption{Curvas de treinamento do modelo de classificação em placas do tipo Brasil}
     \label{fig:train_br}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/training_curves_me.png}
-    \caption{Curvas de treinamento do modelo de classificação em placas do tipo "Mercosul"}
+    \includegraphics[width=1.0\linewidth]{images/training_curves_me.png}
+    \caption{Curvas de treinamento do modelo de classificação em placas do tipo Mercosul}
     \label{fig:train_me}
 \end{figure}
 

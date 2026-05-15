@@ -1,0 +1,35 @@
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Placa Radxa ROCK 3A}}{19}{figure.caption.14}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Diagrama das etapas da leitura de placas (método 1)}}{21}{figure.caption.15}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Diagrama das etapas da leitura de placas (método 2)}}{21}{figure.caption.15}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Fases do processo CRISP-DM \blx@tocontentsinit {0}\cite {crisp-dm}}}{28}{figure.caption.16}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Camada convolucional \blx@tocontentsinit {0}\cite {cnn-ibm}}}{31}{figure.caption.17}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Rede neural convolucional para classificação de imagens \blx@tocontentsinit {0}\cite {cnn-medium}}}{32}{figure.caption.18}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Exemplo de detecção de objetos}}{33}{figure.caption.19}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Diagrama de funcionamento do modelo YOLO \blx@tocontentsinit {0}\cite {yolo}}}{34}{figure.caption.20}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Exemplo de detecção de pontos chave em um corpo humano}}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Transformação de perspectiva \blx@tocontentsinit {0}\cite {perspective-transform}}}{36}{figure.caption.22}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Exemplo de separação de regiões por componentes conexos}}{38}{figure.caption.23}%
+\contentsline {figure}{\numberline {12}{\ignorespaces A NPU. (a) NPU de 8 \textit {processing engines}; (b) Fila de uma \textit {processing engine} \blx@tocontentsinit {0}\cite {npu}}}{39}{figure.caption.24}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Modelo de placa veicular do Brasil de 1990}}{50}{figure.caption.27}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Modelo de placa veicular do Brasil de 1990 para veículos que realizam transporte pago}}{51}{figure.caption.28}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Modelo de placa veicular do padrão Mercosul}}{51}{figure.caption.29}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Exemplo de imagem do \textit {dataset} com as marcações dos 4 cantos da placa}}{52}{figure.caption.30}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Imagem em escala de cinza}}{55}{figure.caption.32}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Extração da placa com base na \textit {bounding box}}}{56}{figure.caption.33}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Transformação de perspectiva com base nos quatro cantos da placa}}{57}{figure.caption.34}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Medidas para remoção de bordas das placas do padrão antigo}}{57}{figure.caption.35}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Medidas para remoção de bordas das placas do padrão Mercosul}}{58}{figure.caption.36}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Remoção de bordas das placas}}{58}{figure.caption.37}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Imagem de placa binarizada com o método de Sauvola}}{59}{figure.caption.38}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Separação de caracteres para os dois modelos de placa}}{60}{figure.caption.39}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Exemplo de limpeza de imagem de caractere com base em continuidade de objetos}}{60}{figure.caption.40}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Diagrama da rede neural de classificação de letras}}{62}{figure.caption.41}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Diagrama da rede neural de classificação de números}}{62}{figure.caption.41}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Curvas de treinamento do modelo de classificação de números em placas do tipo Mercosul}}{66}{figure.caption.42}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Curvas de treinamento do modelo de classificação de letras em placas do tipo Mercosul}}{66}{figure.caption.43}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Curvas de treinamento do modelo de classificação de números em placas do tipo Brasil}}{67}{figure.caption.44}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Curvas de treinamento do modelo de classificação de letras em placas do tipo Brasil}}{67}{figure.caption.45}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Brasil}}{67}{figure.caption.46}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Mercosul}}{68}{figure.caption.47}%
