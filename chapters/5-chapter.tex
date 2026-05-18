@@ -17,7 +17,23 @@ As etapas de desenvolvimento foram:
 
 \section{Preparação dos dados}
 
-\section{Treinamento do modelo de detecção de placas}
+O primeiro passo da preparação dos dados foi a separação em conjuntos de treino, validação e teste, cada qual com um propósito diferente: 
+
+\begin{itemize}
+    \item \textbf{Treino:} O conjunto de treino é utilizado para ajustar os modelos, que irão se adaptar para minimizar o erro de inferência nesses dados. 
+    \item \textbf{Validação:} Este conjunto é utilizado para, durante o treinamento dos modelos, garantir que o ajuste feito com os dados de treino se generalizam para dados não utilizados no treinamento.
+    \item \textbf{Teste:} Estes dados não são utilizados em nenhum momento durante o desenvolvimento e ajustes dos modelos. Sua função é serem utilizados nos testes finais para verificar a eficácia do modelo desenvolvido.
+\end{itemize}
+
+O \textit{dataset} original continha 10 mil imagens de carros, sendo que destas 5 mil eram com placas do tipo Brasil e 5 mil do tipo Mercosul. Os dados foram então divididos da seguinte forma: 70\% para o conjunto de treino, 20\% para o conjunto de validação e 10\% para o conjunto de teste. Os dados colocados em cada conjunto foram selecionados aleatoriamente, mas garantindo que cada conjunto teria 50\% de imagens com placas Mercosul e 50\% com placas Brasil.
+
+\subsection{Organização dos dados}
+
+O treinamento do modelo de detecção de placas foi realizado com a biblioteca Ultralytics do python. Essa biblioteca, além de oferecer diversos modelo da família YOLO, já inclui o algoritmo de treinamento, necessitando apenas que o usuário deixe os dados organizados em um formato específico. Esse formato inclui deixar os dados de treino e validação em pastas separadas, além de escrever os arquivos de anotações em um formato específico.
+
+Os arquivos de anotações são os arquivos que contém as informações das \textit{bounding boxes} e pontos-chave das imagens. O Ultralytics exige que eles sejam arquivos do tipo txt com o mesmo nome do arquivo de imagem ao qual se referem. Por exemplo, a imagem $img\_000001.jpg$ deve ter um arquivo $img\_000001.txt$ correspondente que contém as anotações daquela imagem.
+
+O arquivo de anotações pode ter múltiplas linhas, cada um correspondendo a um objeto na imagem. Cada linha é composta da seguinte forma:
 
 \begin{verbatim}
 <classe> <x centro> <y centro> <largura> <altura> <x ponto 1> 
@@ -25,7 +41,62 @@ As etapas de desenvolvimento foram:
 <visibilidade ponto n>
 \end{verbatim}
 
+A classe é o número da classe daquele objeto. No caso do projeto existem duas classes: placa Brasil (0) e placa Mercosul (1). O $x centro$ e $y centro$ correspondem às coordenadas $(x,y)$ do centro do objeto. A largura e altura, como o nome sugere, são a largura e altura do objeto. Por fim, cada ponto-chave é composto por três informações: coordenada $x$, coordenada $y$ e visibilidade. Como em todas as imagens a placa está com os quatro cantos visíveis, a visibilidade é sempre 2, que é o valor que representa pontos visíveis. Toda sas coordenadas, assim como altura e largura são normalizadas para que fiquem entre 0 e 1.
+
+\section{Treinamento do modelo de detecção de placas}
+
+Com os dados preparados nas pastas, basta criar um arquivo de configuração no format YAML e escrever um simples script em python para iniciar o treinamento do modelo desejado. O arquivo de configuração deve conter as seguintes especificações:
+
+\begin{itemize}
+    \item O caminho para a pasta que contém os dados
+    \item O sub caminho para as pastas que contém os dados de treino e validação
+    \item O número de classes
+    \item Os nomes das classes
+    \item O formato dos pontos-chave
+    \item Índice espelhado dos pontos-chave
+\end{itemize}
+
+No caso deste projeto o número de classes é 2, cujos nomes foram definidos como \textit{placa\_br} e \textit{placa\_me}. O formato dos pontos-chave deve ser uma tupla contendo dois valores: O número de pontos-chave por objeto e a dimensão dos pontos-chave, que é 3 (largura, altura, visibilidade). O índice espelhado dos pontos-chave é uma lista de índices de 0 a n sendo que n é a quantidade de pontos-chave por objeto. A ordenação dos índices deve indicar como os índices devem ser tratados caso a imagem seja espelhada horizontalmente. Isso é necessário pois o Ultralytics faz isso com algumas imagens durante o processo de treinamento.
+
+Com o arquivo de configuração preparado é possível executar o script de treinamento, que é bastante simples. Precisa primeiro importar a biblioteca Ultralytics e criar um objeto da classe YOLO, que recebe como argumento o nome do modelo YOLO desejado, que no caso é \textit{yolo26n-pose}. Em seguida basta chamar o método \textit{train}, indicando o caminho para o arquivo de configuração que foi criado, o tamanho do \textit{batch} desejado, o número de épocas e o dispositivo no qual executar o modelo.
+
+Foram treinadas 100 épocas no dispositivo \textit{cuda} (GPU do computador). O tamanho do \textit{batch} foi deixado como -1, que faz com que o próprio Ultralytics defina o melhor tamanho de \textit{batch} com base na capacidade da GPU. As 100 épocas se mostraram suficientes para ajustar o modelo, que ao final do treinamento estava com um erro bem pequeno e estável, tanto na detecção dos objetos como na classificação e detecção dos pontos-chave.
+
+A figura \ref{fig:yolotrain} mostra três curvas do erro do modelo ao longo do treinamento. A primeira é o erro do ajuste da \textit{bounding box}, a segunda é o erro dos pontos-chave e a terceira é o erro de classificação.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/yolo-train.png}
+    \caption{Curvas de treinamento do modelo de detecção de placas}
+    \label{fig:yolotrain}
+\end{figure}
+
+\subsection{Exportação do modelo YOLO}
+
+Findado o treinamento o Ultralytics automaticamente exporta um arquivo com os pesos do modelo ajustados. Porém esse formato é compatível apenas para realizar inferência com a própria biblioteca Ultralytics. Para obter o modelo em um formato com mais portabilidade, basta criar um novo script, carregar o modelo treinado e utilizar o método \textit{export} para obter o modelo em um arquivo do tipo ONNX. Esse formato permite inferência em diversas plataformas através da biblioteca \textit{onnx runtime}, mas também permite que o modelo seja carregado pelo software que realiza a conversão para o formato RKNN, compatível com a NPU da placa Rock 3A.
+
 \section{Implementação do algoritmo de extração de caracteres}
+
+Após o ajuste do modelo de detecção de placas, foi criado o script de processamento das imagens e extração dos caracteres. Esse script foi feito em python, e utilizou a biblioteca \textit{onnx runtime} para realizar inferência com o modelo de detecção de placas exportado para formato ONNX.
+
+As etapas do script são as seguintes:
+
+\begin{enumerate}
+    \item Inferência com o modelo de detecção de placas
+    \item Criação de uma nova imagem contendo apenas a placa, cortada da imagem original com base na \textit{bounding box} gerada pelo modelo de detecção
+    \item Conversão da imagem cortada para escala de cinza
+    \item Correção de perspectiva
+    \item Remoção das bordas da placa com base no tipo de placa verificado pelo modelo de detecção
+    \item Binarização da imagem
+    \item Separação dos caracteres
+    \item Limpeza das imagens dos caracteres
+\end{enumerate}
+
+A seguir será discutida em mais detalhes a implementação de cada etapa do script.
+
+\subsection{Inferência com o modelo de detecção de placas}
+
+O modelo YOLO que foi treinado com a biblioteca Ultralytics e exportado para formato ONNX
 
 \section{Criação dos \textit{datasets} de caracteres e de placas}
 

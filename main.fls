@@ -705,6 +705,13 @@ OUTPUT chapters\5-chapter.aux
 INPUT .\chapters\5-chapter.tex
 INPUT .\chapters\5-chapter.tex
 INPUT chapters\5-chapter.tex
+INPUT .\images\yolo-train.png
+INPUT .\images\yolo-train.png
+INPUT .\images\yolo-train.png
+INPUT .\images\yolo-train.png
+INPUT .\images\yolo-train.png
+INPUT .\images\yolo-train.png
+INPUT .\images\yolo-train.png
 INPUT .\images\me-numeros.png
 INPUT .\images\me-numeros.png
 INPUT .\images\me-numeros.png
