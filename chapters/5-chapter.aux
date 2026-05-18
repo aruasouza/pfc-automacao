@@ -10,30 +10,33 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Exportação do modelo YOLO}{68}{subsection.5.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Implementação do algoritmo de extração de caracteres}{68}{section.5.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Inferência com o modelo de detecção de placas}{68}{subsection.5.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Criação dos \textit  {datasets} de caracteres e de placas}{69}{section.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Treinamento dos modelos de classificação de caracteres}{69}{section.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Classificação de caracteres isolados}{69}{subsection.5.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Curvas de treinamento do modelo de classificação de números em placas do tipo Mercosul}}{69}{figure.caption.43}\protected@file@percent }
-\newlabel{fig:menumerostrain}{{29}{69}{Curvas de treinamento do modelo de classificação de números em placas do tipo Mercosul}{figure.caption.43}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Curvas de treinamento do modelo de classificação de letras em placas do tipo Mercosul}}{69}{figure.caption.44}\protected@file@percent }
-\newlabel{fig:meletrastrain}{{30}{69}{Curvas de treinamento do modelo de classificação de letras em placas do tipo Mercosul}{figure.caption.44}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Curvas de treinamento do modelo de classificação de números em placas do tipo Brasil}}{69}{figure.caption.45}\protected@file@percent }
-\newlabel{fig:brnumerostrain}{{31}{69}{Curvas de treinamento do modelo de classificação de números em placas do tipo Brasil}{figure.caption.45}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Curvas de treinamento do modelo de classificação de letras em placas do tipo Brasil}}{70}{figure.caption.46}\protected@file@percent }
-\newlabel{fig:brletrastrain}{{32}{70}{Curvas de treinamento do modelo de classificação de letras em placas do tipo Brasil}{figure.caption.46}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Extração e classificação simultânea}{70}{subsection.5.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Brasil}}{70}{figure.caption.47}\protected@file@percent }
-\newlabel{fig:train_br}{{33}{70}{Curvas de treinamento do modelo de classificação em placas do tipo Brasil}{figure.caption.47}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Mercosul}}{70}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:train_me}{{34}{70}{Curvas de treinamento do modelo de classificação em placas do tipo Mercosul}{figure.caption.48}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}Quantização e transformação dos modelos para formato compatível com o \textit  {hardware}}{71}{section.5.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Criação dos datasets de quantização}{71}{subsection.5.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.7}Preparação do \textit  {hardware}}{71}{section.5.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.8}Testes realizados}{71}{section.5.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Criação de nova imagem contendo apenas a placa}{70}{subsection.5.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Correção de perspectiva}{70}{subsection.5.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Remoção das bordas das placas}{71}{subsection.5.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Criação dos \textit  {datasets} de caracteres e de placas}{71}{section.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Treinamento dos modelos de classificação de caracteres}{71}{section.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Classificação de caracteres isolados}{71}{subsection.5.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Curvas de treinamento do modelo de classificação de números em placas do tipo Mercosul}}{71}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:menumerostrain}{{29}{71}{Curvas de treinamento do modelo de classificação de números em placas do tipo Mercosul}{figure.caption.43}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Curvas de treinamento do modelo de classificação de letras em placas do tipo Mercosul}}{71}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:meletrastrain}{{30}{71}{Curvas de treinamento do modelo de classificação de letras em placas do tipo Mercosul}{figure.caption.44}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Curvas de treinamento do modelo de classificação de números em placas do tipo Brasil}}{72}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:brnumerostrain}{{31}{72}{Curvas de treinamento do modelo de classificação de números em placas do tipo Brasil}{figure.caption.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Curvas de treinamento do modelo de classificação de letras em placas do tipo Brasil}}{72}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:brletrastrain}{{32}{72}{Curvas de treinamento do modelo de classificação de letras em placas do tipo Brasil}{figure.caption.46}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Extração e classificação simultânea}{72}{subsection.5.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Brasil}}{72}{figure.caption.47}\protected@file@percent }
+\newlabel{fig:train_br}{{33}{72}{Curvas de treinamento do modelo de classificação em placas do tipo Brasil}{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Mercosul}}{73}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:train_me}{{34}{73}{Curvas de treinamento do modelo de classificação em placas do tipo Mercosul}{figure.caption.48}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Quantização e transformação dos modelos para formato compatível com o \textit  {hardware}}{73}{section.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Criação dos datasets de quantização}{73}{subsection.5.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}Preparação do \textit  {hardware}}{73}{section.5.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.8}Testes realizados}{73}{section.5.8}\protected@file@percent }
 \@setckpt{chapters/5-chapter}{
-\setcounter{page}{72}
+\setcounter{page}{74}
 \setcounter{equation}{20}
-\setcounter{enumi}{8}
+\setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -79,14 +82,14 @@
 \setcounter{cmsm@mctr}{0}
 \setcounter{bsm@mctr}{0}
 \setcounter{workm@mctr}{0}
-\setcounter{sheetsequence}{73}
-\setcounter{lastsheet}{77}
-\setcounter{lastpage}{76}
+\setcounter{sheetsequence}{75}
+\setcounter{lastsheet}{79}
+\setcounter{lastpage}{78}
 \setcounter{figure}{34}
 \setcounter{lofdepth}{1}
 \setcounter{table}{3}
 \setcounter{lotdepth}{1}
-\setcounter{Item}{45}
+\setcounter{Item}{48}
 \setcounter{Hfootnote}{0}
 \setcounter{bookmark@seq@number}{0}
 \setcounter{memhycontfloat}{0}

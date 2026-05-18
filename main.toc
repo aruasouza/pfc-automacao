@@ -79,27 +79,30 @@
 \contentsline {subsection}{\numberline {5.2.1}Exportação do modelo YOLO}{68}{subsection.5.2.1}%
 \contentsline {section}{\numberline {5.3}Implementação do algoritmo de extração de caracteres}{68}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Inferência com o modelo de detecção de placas}{68}{subsection.5.3.1}%
-\contentsline {section}{\numberline {5.4}Criação dos \textit {datasets} de caracteres e de placas}{69}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Treinamento dos modelos de classificação de caracteres}{69}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Classificação de caracteres isolados}{69}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Extração e classificação simultânea}{70}{subsection.5.5.2}%
-\contentsline {section}{\numberline {5.6}Quantização e transformação dos modelos para formato compatível com o \textit {hardware}}{71}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Criação dos datasets de quantização}{71}{subsection.5.6.1}%
-\contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{71}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Testes realizados}{71}{section.5.8}%
+\contentsline {subsection}{\numberline {5.3.2}Criação de nova imagem contendo apenas a placa}{70}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Correção de perspectiva}{70}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Remoção das bordas das placas}{71}{subsection.5.3.4}%
+\contentsline {section}{\numberline {5.4}Criação dos \textit {datasets} de caracteres e de placas}{71}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Treinamento dos modelos de classificação de caracteres}{71}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Classificação de caracteres isolados}{71}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Extração e classificação simultânea}{72}{subsection.5.5.2}%
+\contentsline {section}{\numberline {5.6}Quantização e transformação dos modelos para formato compatível com o \textit {hardware}}{73}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Criação dos datasets de quantização}{73}{subsection.5.6.1}%
+\contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{73}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Testes realizados}{73}{section.5.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{72}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{74}{chapter.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{73}{section*.52}%
+\contentsline {chapter}{REFERÊNCIAS}{75}{section*.52}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{75}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{77}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{76}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{78}{appendix.anexochapback.1}%

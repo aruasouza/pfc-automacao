@@ -41,7 +41,7 @@ O arquivo de anotações pode ter múltiplas linhas, cada um correspondendo a um
 <visibilidade ponto n>
 \end{verbatim}
 
-A classe é o número da classe daquele objeto. No caso do projeto existem duas classes: placa Brasil (0) e placa Mercosul (1). O $x centro$ e $y centro$ correspondem às coordenadas $(x,y)$ do centro do objeto. A largura e altura, como o nome sugere, são a largura e altura do objeto. Por fim, cada ponto-chave é composto por três informações: coordenada $x$, coordenada $y$ e visibilidade. Como em todas as imagens a placa está com os quatro cantos visíveis, a visibilidade é sempre 2, que é o valor que representa pontos visíveis. Toda sas coordenadas, assim como altura e largura são normalizadas para que fiquem entre 0 e 1.
+A classe é o número da classe daquele objeto. No caso do projeto existem duas classes: placa Brasil (0) e placa Mercosul (1). O $x \; centro$ e $y \; centro$ correspondem às coordenadas $(x,y)$ do centro do objeto. A largura e altura, como o nome sugere, são a largura e altura do objeto. Por fim, cada ponto-chave é composto por três informações: coordenada $x$, coordenada $y$ e visibilidade. Como em todas as imagens a placa está com os quatro cantos visíveis, a visibilidade é sempre 2, que é o valor que representa pontos visíveis. Toda sas coordenadas, assim como altura e largura são normalizadas para que fiquem entre 0 e 1.
 
 \section{Treinamento do modelo de detecção de placas}
 
@@ -84,7 +84,6 @@ As etapas do script são as seguintes:
 \begin{enumerate}
     \item Inferência com o modelo de detecção de placas
     \item Criação de uma nova imagem contendo apenas a placa, cortada da imagem original com base na \textit{bounding box} gerada pelo modelo de detecção
-    \item Conversão da imagem cortada para escala de cinza
     \item Correção de perspectiva
     \item Remoção das bordas da placa com base no tipo de placa verificado pelo modelo de detecção
     \item Binarização da imagem
@@ -96,7 +95,53 @@ A seguir será discutida em mais detalhes a implementação de cada etapa do scr
 
 \subsection{Inferência com o modelo de detecção de placas}
 
-O modelo YOLO que foi treinado com a biblioteca Ultralytics e exportado para formato ONNX
+O modelo YOLO foi treinado com a biblioteca Ultralytics e exportado para formato ONNX, podendo agora ser utilizado para inferência com a biblioteca do python \textit{onnx runtime}. A implementação da inferência, então, incluiu carregar o arquivo do modelo e criar uma função que recebe a imagem e devolve a inferência.
+
+A função não se limita simplesmente a alimentar a imagem ao modelo, pois é necessário algum pré-processamento da imagem antes disso. Primeiramente a imagem deve ser redimensionada para o formato $640 \times 640$ px, que é a dimensão utilizada pelo YOLO. Em seguida os valores dos pixels devem ser normalizados para que fiquem entre 0 e 1.
+
+O redimensionamento foi feito com a biblioteca de manipulação de imagens OpenCV, assim como o próprio carregamento da imagem. O OpenCV carrega a imagem como um tensor de dimensão (H,W,C), onde H é a altura da imagem, W é a largura e C é o número de canais, que é 3 para imagens coloridas e 1 para imagens em escala de cinza. Cada valor representa a intensidade de um pixel em um dado canal (para imagens coloridas os canais são vermelho, verde, azul), que é representada por um número inteiro de 0 a 255 (8 \textit{bits}).
+
+O OpenCV oferece uma função para redimensionamento de imagem, já a normalização pode ser feito simplesmente dividindo o tensor por 255. Com isso, a imagem fica pronta para ser alimentada ao modelo.
+
+A última etapa dessa implementação é a interpretação da saída do modelo. Ao alimentar o modelo com a imagem, ele devolve uma saída no formato de uma matriz $300x18$. Cada linha dessa matriz representa uma detecção representada por 18 valores. A única detecção que nos interessa é a primeira, pois as detecções são ordenadas em ordem de confiança. O modelo é obrigado a gerar 300 detecções pela forma como foi construído, mas a maioria delas não representa nenhum objeto. Como nosso objetivo é analisar apenas uma placa por imagem, pegamos apenas a primeira detecção e descartamos as demais, de forma que se houver mais de uma placa, apenas a mais visível será analisada.
+
+Dos 18 valores que representam a detecção a interpretação é a seguinte:
+
+\begin{itemize}
+    \item Os 4 primeiros valores representam a \textit{bounding box} do objeto na seguinte ordem: $x_1,y_1,x_2,y_2$
+    \item O quinto valor representa a confiança da detecção, que vai de 0 a 1
+    \item A classe do objeto (\textit{placa\_br} ou \textit{placa\_me}) é representada pelo sexto valor
+    \item As coordenadas dos pontos-chave são os valores seguintes
+\end{itemize}
+
+Como a imagem foi redimensionada para $640 \times 640$ é necessário converter as coordenadas dos pontos-chave e da \textit{bounding box} para a dimensão da imagem original. Para isso basta multiplicar as coordenadas $x$ pela largura da imagem original e as coordenadas $y$ pela altura e dividir todas por por 640. Assim temos as coordenadas nas dimensões da imagem original.
+
+\subsection{Criação de nova imagem contendo apenas a placa}
+
+Com base na \textit{bounding box} gerada pelo modelo, é possível cortar a imagem original e gerar uma imagem que contenha apenas a placa detectada. Antes disso, porém, convertemos a imagem para escala de cinza, de forma que seja representada por uma única matriz (H x W). A conversão para escala de cinza é feita pela biblioteca OpenCV.
+
+Depois disso, basta criar uma nova matriz apenas com os pixels cujas coordenadas $(x,y)$ obedecem às limitações: $x_1 \le x \le x_2$ e $y_1 \le y \le y_2$, sendo que $x_1,x_2,y_1,y_2$ são os limites da \textit{bounding box} na imagem original.
+
+\subsection{Correção de perspectiva}
+
+A correção de perspectiva é realizada pela biblioteca OpenCV em uma sequência de etapas:
+
+\begin{enumerate}
+    \item Definição das coordenadas dos pontos antes da transformação
+    \item Definição das coordenadas dos pontos depois da transformação
+    \item Geração da matriz de transformação
+    \item Transformação com base na imagem e na matriz
+\end{enumerate}
+
+Os pontos antes da transformação nada mais são do que as coordenadas dos pontos-chave encontrados pelo YOLO. A única questão é que eles precisam ser transformados para que a referência das coordenadas seja a imagem cortada, não a imagem original. A operação para essa transformação foi discutida no capítulo 4.
+
+Os pontos pós transformação nada mais são que os quatro cantos de uma imagem hipotética de dimensões $W_2 \times H_2$. Essa dimensão será a dimensão da imagem após a transformação, que foi definida como $500 \times 200$. Portanto os 4 pontos pós transformação são: $(0,0)$, $(499,0)$, $(499,199)$, $(0,199)$.
+
+Definidos os pontos pode ser gerada a matriz de transformação com base neles, o que é feito através de uma função do OpenCV. Em seguida, basta utilizar uma outra função do OpeCV para obter a imagem transformada com base na matriz de transformação, na imagem inicial (imagem cortada da placa) e nas dimensões desejadas da imagem final.
+
+Com isso, temos uma função que recebe uma imagem com dimensões $(w \times h)$ de uma placa e o \textit{output} do modelo YOLO e devolve uma imagem de dimensões $(500 \times 200)$ com a perspectiva da placa corrigida.
+
+\subsection{Remoção das bordas das placas}
 
 \section{Criação dos \textit{datasets} de caracteres e de placas}
 
