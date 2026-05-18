@@ -141,7 +141,18 @@ Definidos os pontos pode ser gerada a matriz de transformação com base neles, 
 
 Com isso, temos uma função que recebe uma imagem com dimensões $(w \times h)$ de uma placa e o \textit{output} do modelo YOLO e devolve uma imagem de dimensões $(500 \times 200)$ com a perspectiva da placa corrigida.
 
-\subsection{Remoção das bordas das placas}
+\subsection{Remoção das bordas das placas e binarização}
+
+A remoção das bordas das placas implica basicamente em cortar as imagens de acordo com as dimensões do tipo de placa. Para fazer isso basta limitar os pixels que devem fazer parte da imagem cortada. Considerando as coordenadas $(x,y)$ dos pixels basta seguir o padrão:
+
+\begin{gather}
+    c_l \le x \le 500 - c_r \\
+    c_t \le y \le 200 - c_b
+\end{gather}
+
+Sendo que $c_l$, $c_r$, $c_t$ e $c_b$ são a quantidade de pixels a cortar na esquerda, direita, topo e parte de baixo da image, respectivamente. Esses valores são diferentes para placas do tipo Brasil e Mercosul, como discutido no capítulo 4.
+
+
 
 \section{Criação dos \textit{datasets} de caracteres e de placas}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  18 MAY 2026 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  18 MAY 2026 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1792,38 +1792,37 @@ File: images/yolo-train.png Graphic file (type png)
 <use images/yolo-train.png>
 Package pdftex.def Info: images/yolo-train.png  used on input line 69.
 (pdftex.def)             Requested size: 455.0pt x 149.73027pt.
- [67 <./images/yolo-train.png>] [68] [69]
-<images/me-numeros.png, id=839, 859.5312pt x 357.0138pt>
+ [67 <./images/yolo-train.png>] [68] [69] [70]
+<images/me-numeros.png, id=847, 859.5312pt x 357.0138pt>
 File: images/me-numeros.png Graphic file (type png)
 <use images/me-numeros.png>
-Package pdftex.def Info: images/me-numeros.png  used on input line 154.
+Package pdftex.def Info: images/me-numeros.png  used on input line 165.
 (pdftex.def)             Requested size: 364.00139pt x 151.19226pt.
- [70]
 <images/me-letras.png, id=848, 859.5312pt x 357.0138pt>
 File: images/me-letras.png Graphic file (type png)
 <use images/me-letras.png>
-Package pdftex.def Info: images/me-letras.png  used on input line 161.
+Package pdftex.def Info: images/me-letras.png  used on input line 172.
 (pdftex.def)             Requested size: 364.00139pt x 151.19226pt.
 <images/br-numeros.png, id=849, 859.5312pt x 357.0138pt>
 File: images/br-numeros.png Graphic file (type png)
 <use images/br-numeros.png>
-Package pdftex.def Info: images/br-numeros.png  used on input line 168.
+Package pdftex.def Info: images/br-numeros.png  used on input line 179.
 (pdftex.def)             Requested size: 364.00139pt x 151.19226pt.
  [71 <./images/me-numeros.png> <./images/me-letras.png>]
-<images/br-letras.png, id=856, 859.5312pt x 357.0138pt>
+<images/br-letras.png, id=858, 859.5312pt x 357.0138pt>
 File: images/br-letras.png Graphic file (type png)
 <use images/br-letras.png>
-Package pdftex.def Info: images/br-letras.png  used on input line 175.
+Package pdftex.def Info: images/br-letras.png  used on input line 186.
 (pdftex.def)             Requested size: 364.00139pt x 151.19226pt.
-<images/training_curves_br.png, id=857, 933.2466pt x 360.8682pt>
+<images/training_curves_br.png, id=859, 933.2466pt x 360.8682pt>
 File: images/training_curves_br.png Graphic file (type png)
 <use images/training_curves_br.png>
-Package pdftex.def Info: images/training_curves_br.png  used on input line 184.
+Package pdftex.def Info: images/training_curves_br.png  used on input line 195.
 (pdftex.def)             Requested size: 455.0pt x 175.94043pt.
-<images/training_curves_me.png, id=858, 933.2466pt x 360.8682pt>
+<images/training_curves_me.png, id=860, 933.2466pt x 360.8682pt>
 File: images/training_curves_me.png Graphic file (type png)
 <use images/training_curves_me.png>
-Package pdftex.def Info: images/training_curves_me.png  used on input line 191.
+Package pdftex.def Info: images/training_curves_me.png  used on input line 202.
 (pdftex.def)             Requested size: 455.0pt x 175.94043pt.
  [72 <./images/br-numeros.png> <./images/br-letras.png> <./images/training_curves_br.png>]) [73 <./images/training_curves_me.png>]
 \openout2 = `chapters/6-chapter.aux'.
@@ -1880,17 +1879,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38409 strings out of 467871
- 722112 string characters out of 5418376
+ 38411 strings out of 467871
+ 722138 string characters out of 5418376
  1753778 words of memory out of 5000000
  66248 multiletter control sequences out of 15000+600000
  676537 words of font info for 210 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,117p,2558b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\aruav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurm10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (79 pages, 8251776 bytes).
+Output written on main.pdf (79 pages, 8252870 bytes).
 PDF statistics:
- 1346 PDF objects out of 1440 (max. 8388607)
- 308 named destinations out of 1000 (max. 500000)
+ 1348 PDF objects out of 1440 (max. 8388607)
+ 310 named destinations out of 1000 (max. 500000)
  47535 words of extra memory for PDF output out of 51595 (max. 10000000)
 
