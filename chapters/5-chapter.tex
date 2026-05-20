@@ -150,15 +150,88 @@ A remoção das bordas das placas implica basicamente em cortar as imagens de ac
     c_t \le y \le 200 - c_b
 \end{gather}
 
-Sendo que $c_l$, $c_r$, $c_t$ e $c_b$ são a quantidade de pixels a cortar na esquerda, direita, topo e parte de baixo da image, respectivamente. Esses valores são diferentes para placas do tipo Brasil e Mercosul, como discutido no capítulo 4.
+Sendo que $c_l$, $c_r$, $c_t$ e $c_b$ são a quantidade de pixels a cortar na esquerda, direita, topo e parte de baixo da imagem, respectivamente. Esses valores são diferentes para placas do tipo Brasil e Mercosul, como discutido no capítulo 4.
 
+A binarização, que utilizou o método de Sauvola, foi feita utilizando algumas funções diferentes do OpenCV. O primeiro passo foi gerar uma imagem na qual cada pixel era a média dos pixels vizinhos na imagem da placa. Para isso, foi utilizada uma função do OpenCV que faz exatamente essa tarefa a partir de uma imagem e um tamanho de janela, que para o nosso caso foi escolhido 201 pixels. Esse é um tamanho relativamente grande considerando que a imagem possui 500 pixels de largura, mas o propósito é justamente não permitir flutuação demais para que o resultado seja menos afetado por ruído e capture apenas a variação de luminosidade ao longo da imagem.
 
+Em seguida foi calculado a mesma coisa para o quadrado da imagem (a intensidade de cada pixel foi elevada ao quadrado). Por fim, utilizando simples operações matemáticas, foi calculado o limiar para cada pixel da imagem, e foi gerada uma imagem binarizada na qual cada pixel era 0 ou 1, a depender se o pixel da imagem original naquela posição era menor ou maior que o pixel na matriz de limiar para aquela posição.
+
+As equações para calculo da matriz de limiar foram discutidas mais a fundo no capítulo 2.
+
+\subsection{Separação dos caracteres}
+
+A implementação da separação de caracteres da imagem binarizada se baseou na seguinte sequência de eventos:
+
+\begin{enumerate}
+    \item É gerada uma estimativa dos pontos de separação, cada uma representada como uma coordenada \textit{x} da imagem da placa
+    \item A função itera por cada um desses pontos, tentando encontrar um ponto de divisão melhor nos seus arredores
+    \item Os pontos de divisão refinados são utilizados para dividir a imagem em \textit{n} pedaços, cada um contendo apenas um caractere
+    \item Cada imagem de caractere é "estampada" em uma imagem preta quadrada
+\end{enumerate}
+
+Para funcionar a função precisa dos seguintes parâmetros:
+
+\begin{itemize}
+    \item A imagem a ser separada
+    \item A quantidade de caracteres presentes naquela imagem
+    \item O tamanho da janela na qual um ponto de corte melhor será procurado (padronizado em 40)
+\end{itemize}
+
+A quantidade de caracteres presentes na imagem define o número de separações a ser feito. Isso é importante pois enquanto as placas do tipo Mercosul são separadas de uma só vez, as placas do tipo brasil são primeiro divididas em duas para que depois cada parte seja separada, como já discutido no capítulo 4.
+
+O tamanho da janela define a até quantos pixels de distância do ponto de separação inicialmente estimado será buscado um ponto de separação melhor. A avaliação dos candidatos a pontos de separação é simples: Cada ponto é uma coluna da imagem, sendo então somadas a intensidade de todos os pixels naquela coluna. Como a binarização já foi feita, pixels que não pertencem a nenhum caractere possuem valor 0, enquanto os que pertencem possuem valor 1. Portanto, a coluna cuja soma das intensidades dos pixels for menor (idealmente 0) é melhor para a divisão, pois provavelmente é um espaço vazio entre dois caracteres.
+
+Depois de dividir a imagem, porém, cada uma terá uma largura diferente. Isso é então padronizado ao gerar uma imagem quadrada preta $H \times H$ (onde $H$ é a altura da imagem da placa) e "estampando" a imagem com o caractere no meio dessa imagem. Isso garante que todas as imagens de caracteres terão as mesmas dimensões.
+
+\subsection{Limpeza das imagens de caracteres}
+
+Para a limpeza das imagens de caracteres foi utilizada a biblioteca \textit{scikit-image} do Python. Ela oferece uma função que, ao receber uma imagem binarizada, como são as imagens de caracteres, mapeia cada pixel branco (valor 1) como parte de um objeto, com base na continuidade. Todo pixel branco que está adjacente a um outro pixel branco faz parte do mesmo objeto que este. Dessa forma a imagem é dividida em vários objetos, e representada por uma matriz na qual cada pixel é um "rótulo", um valor inteiro que indica a qual objeto pertence. Pixels com valor zero são pixels pretos, portanto não pertencem a objeto nenhum.
+
+O \textit{scikit-image} então oferece uma outra função na qual recebe essa matriz de rótulos e calcula características dos objetos, como altura, largura, área, etc. A única que nos interessa é a área, pois ela é o melhor indicativo de qual é o maior objeto da imagem, que seria o caractere. Com base nisso, então, pixels que não pertencem ao objeto de maior área são eliminados da imagem do caractere, passando a ter valor zero. Isso elimina ruído e deixa a imagem do caractere mais limpa, minimizando a propensão à erros de classificação daquele caractere.
 
 \section{Criação dos \textit{datasets} de caracteres e de placas}
 
+Finalizados todos os algoritmos de processamento das imagens passa a ser possível criar os \textit{datasets} para o treinamento dos modelos de classificação. Como temos duas abordagens distintas de modelos, foram criados dois \textit{datasets}: Um com imagens de caracteres binarizadas e limpas e uma com imagens em escala de cinza de placas com perspectiva corrigida.
+
+Para criar o \textit{dataset} de caracteres todas as imagens do conjunto de treino e validação inicial fora submetidas ao \textit{pipeline} completo desenvolvido até aqui. Passaram pelo modelo YOLO, onde a placa foi detectada, foram cortadas para manter só a imagem da placa, convertidas para escala de cinza, tiveram sua perspectiva corrigida, passaram pela remoção de bordas, binarização, separação de caracteres e limpeza. Ao final de tudo, cada imagem de caractere foi rotulada com o caractere contido naquela imagem, que era sabido pelo fato de termos nos dados originais as informações das placas dos carros contidos neles. Todas as imagens foram então salvas em pastas de acordo com:
+
+\begin{itemize}
+    \item O tipo de caractere (número ou letra)
+    \item O tipo de placa (Brasil ou Mercosul)
+\end{itemize}
+
+Os nomes das imagens salvas foram compostos pelo caractere representado na imagem, o nome da imagem original da qual o caractere foi extraído e a posição do caractere na placa (0 - 6).
+
+O \textit{dataset} de placas teve um processo de criação mais simples. As imagens originais passaram pela detecção, corte, transformação para escala de cinza e correção de perspectiva, apenas. Com isso já se tinham imagens de placas com dimensões padronizadas, que foram então salvas em pastas separadas apenas pelo tipo de placa (Brasil, Mercosul). Os nomes das imagens continham os caracteres da placa e mais um código identificador.
+
 \section{Treinamento dos modelos de classificação de caracteres}
 
+Foram feitos dois treinamentos de modelos de classificação de caracteres. O primeiro de modelos de classificação de caracteres isolados, como os gerados pelo \textit{pipeline} completo de extração de caracteres, e o outro de modelos de extração e classificação, com intenção de classificar os caracteres direto das imagens de placas extraídas e com perspectiva corrigida. Ambos foram realizados utilizando a biblioteca PyTorch e ao final do treinamento exportados para o formato ONNX.
+
+Os treinamentos foram realizados utilizando o seguinte ciclo:
+
+\begin{enumerate}
+    \item \textit{Batch} de imagens é alimentado ao modelo
+    \item É calculado o \textit{Loss} do \textit{Batch} (\textit{Cross Entropy})
+    \item É realizado \textit{backpropagation} para cálculo do gradiente
+    \item Os pesos do modelo são atualizados
+\end{enumerate}
+
+Esses passos são repetidos até que o modelo tenha sido alimentado com todos os dados do \textit{dataset}. É então finalizada a época, o modelo é avaliado e tudo é feito novamente até que o número de épocas determinado inicialmente seja atingido.
+
 \subsection{Classificação de caracteres isolados}
+
+As características específicas do modelo de classificação de caracteres isolados são os seguintes parâmetros de treinamento:
+
+\begin{itemize}
+    \item \textit{Optimizer}: Adam com \textit{learning rate} de 0.001
+    \item Tamanho do \textit{batch}: 32
+    \item Número de épocas: 10
+\end{itemize}
+
+Foram treinados um total de quatro modelos distintos, cada um especializado em um tipo de caractere e um tipo de placa, seguindo a divisão feita na criação do \textit{dataset} de caracteres.
+
+As figuras \ref{fig:menumerostrain}, \ref{fig:meletrastrain}, \ref{fig:brnumerostrain} e \ref{fig:brletrastrain} mostram as curvas do \textit{Loss} de treinamento e validação, além da acurácia de validação de cada modelo ao longo das épocas de treinamento. Esses dados foram coletados ao fim de cada época com intenção de registrar a evolução do modelo ao longo do treinamento.
 
 \begin{figure}[H]
     \centering
@@ -190,6 +263,23 @@ Sendo que $c_l$, $c_r$, $c_t$ e $c_b$ são a quantidade de pixels a cortar na es
 
 \subsection{Extração e classificação simultânea}
 
+O treinamento dos modelos de extração e classificação seguiu um processo parecido. Esse modelo, diferente dos modelos de classificação de caracteres isolados, recebe uma imagem de placa e classifica todos os seus caracteres de uma só vez. O objetivo é que o modelo aprenda a identificar a posição dos caracteres e ao mesmo tempo classificá-los.
+
+Esse modelo, por ser maior e mais complexo, utilizou também algumas técnicas mais refinadas de treinamento. Uma delas foi o \textit{learning rate} variável, que aumenta ou diminui ao longo do treinamento. Outra foi o \textit{early stopping}, que interrompe o treinamento ao identificar que a performance está estagnada.
+
+Os parâmetros de treinamento foram:
+
+\begin{itemize}
+    \item \textit{Optimizer}: AdamW com \textit{learning rate} de 0.003 e \textit{weight decay} de 0.004
+    \item Tamanho do \textit{batch}: 64
+    \item Número de épocas: 100
+    \item Paciência: 20
+\end{itemize}
+
+A paciência determina a quantidade de épocas que podem ocorrer sem melhoras na acurácia do modelo. Após essa quantidade de épocas sem melhoria o treinamento é interrompido.
+
+Foram treinados dois modelos distintos, um para placas do tipo Brasil e outro para placas do tipo Mercosul. As figuras \ref{fig:train_br} e \ref{fig:train_me} mostram a evolução da \textit{Loss}, da acurácia por caractere e da acurácia por placa ao longo das épocas de treinamento.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{images/training_curves_br.png}
@@ -205,6 +295,14 @@ Sendo que $c_l$, $c_r$, $c_t$ e $c_b$ são a quantidade de pixels a cortar na es
 \end{figure}
 
 \section{Quantização e transformação dos modelos para formato compatível com o \textit{hardware}}
+
+Todos os modelos treinados foram convertidos para o formato ONNX, que pode ser utilizado para execução na placa Rock 3A, porém sem tirar proveito da NPU. Para que a NPU possa ser utilizada, é necessário que os modelos sejam convertidos para o formato RKNN. A Rockchip, fabricante do chip de processamento utilizado na Rock 3A, disponibiliza um \textit{software} na forma de uma biblioteca do python que permite a compilação dos modelos nesse formato. Porém, é necessário que o programa seja executado em um ambiente \textit{linux} da distribuição Ubuntu versão 24.
+
+É possível, no entanto, criar um ambiente com essas condições dentro do \textit{windows} ou outros sistemas operacionais através de um \textit{container} Docker. Um \textit{container} Docker é um ambiente isolado dentro de um computador no qual pode ser instalado \textit{software} sem afetar a máquina que contém o \textit{container}. Esse \textit{container} pode ter qualquer sistema operacional compatível com a máquina, incluindo o Ubuntu 24.
+
+Foi então criado um \textit{container} no qual foi instalado o python e todas as bibliotecas necessárias, incluindo o \textit{rknn toolkit}, responsável pela conversão.
+
+O código de conversão é um \textit{script} simples, que necessita apenas que se aponte para o arquivo ONNX de origem, se preencha algumas informações de configuração e aponte para o \textit{dataset} de quantização, caso se queira quantizar o modelo. A quantização tem potencial de aumentar consideravelmente a performance na NPU, sendo portanto altamente recomendada.
 
 \subsection{Criação dos datasets de quantização}
 
