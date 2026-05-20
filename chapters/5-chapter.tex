@@ -302,10 +302,32 @@ Todos os modelos treinados foram convertidos para o formato ONNX, que pode ser u
 
 Foi então criado um \textit{container} no qual foi instalado o python e todas as bibliotecas necessárias, incluindo o \textit{rknn toolkit}, responsável pela conversão.
 
-O código de conversão é um \textit{script} simples, que necessita apenas que se aponte para o arquivo ONNX de origem, se preencha algumas informações de configuração e aponte para o \textit{dataset} de quantização, caso se queira quantizar o modelo. A quantização tem potencial de aumentar consideravelmente a performance na NPU, sendo portanto altamente recomendada.
+O código de conversão é um \textit{script} simples, que necessita apenas que se aponte para o arquivo ONNX de origem, se preencha algumas informações de configuração e aponte para o \textit{dataset} de quantização, caso se queira quantizar o modelo. A quantização tem potencial de aumentar consideravelmente a performance na NPU, sendo portanto altamente recomendada. As configurações que devem ser informadas são basicamente o modelo do chip, o nível de otimização, o algoritmo de quantização e os valores de normalização dos dados.
+
+Como as imagens são carregadas como matrizes de números inteiros de 8 \textit{bits}, podem ser necessárias transformações de normalização nas imagens. No modelo YOLO, por exemplo, os pixels devem ser convertidos para valores reais de 0 a 1. Portanto, é necessário dividir os valores de 0 a 255 iniciais por 255. Isso deve ser informado para que a quantização funcione.
+
+\subsection{Resultados da conversão}
+
+O sucesso da conversão variou conforme o modelo:
+
+\begin{itemize}
+    \item YOLO: sucesso na conversão porém sem quantização
+    \item Modelo de caracteres isolados: sucesso na conversão e na quantização
+    \item Modelo de extração e classificação: falha na conversão
+\end{itemize}
+
+Não foi possível identificar o que causou a falha na quantização do YOLO e na conversão dos modelos de extração e classificação, tendo sido tentadas várias abordagens. No caso do YOLO, a quantização é finalizada e o modelo é exportado, mas ao executar na placa os resultados saiam errados, já no caso do modelo de classificação e extração a conversão nem concluiu.
+
+A conclusão que se chegou a respeito destes erros é que algo relativo à arquitetura dos modelos não é suportado, embora não se saiba exatamente o que.
+
+Apesar dessas falhas, a execução na placa ainda é possível com todos os modelos. Apenas não sendo possível executar na NPU o modelo que não foi convertido, sendo necessário o uso da CPU. Já o YOLO pode ser executado na NPU normalmente, perdendo apenas os ganhos de performance que a quantização poderia proporcionar.
 
 \subsection{Criação dos datasets de quantização}
 
+Os \textit{datasets} de quantização foram criados separando imagens do conjunto de treinamento de cada modelo, colocando em uma pasta separada e criando um arquivo de texto contendo o caminho de cada imagem. Para a quantização bastava apontar o caminho para este arquivo que o \textit{rknn toolkit} se encarregava do resto do processo.
+
 \section{Preparação do \textit{hardware}}
+
+A preparação da placa Rock 3A para execução do algoritmo envolveu alguns passos
 
 \section{Testes realizados}

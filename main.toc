@@ -89,7 +89,8 @@
 \contentsline {subsection}{\numberline {5.5.1}Classificação de caracteres isolados}{74}{subsection.5.5.1}%
 \contentsline {subsection}{\numberline {5.5.2}Extração e classificação simultânea}{75}{subsection.5.5.2}%
 \contentsline {section}{\numberline {5.6}Quantização e transformação dos modelos para formato compatível com o \textit {hardware}}{77}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Criação dos datasets de quantização}{78}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.1}Resultados da conversão}{78}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Criação dos datasets de quantização}{78}{subsection.5.6.2}%
 \contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{78}{section.5.7}%
 \contentsline {section}{\numberline {5.8}Testes realizados}{78}{section.5.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
