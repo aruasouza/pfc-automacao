@@ -328,6 +328,162 @@ Os \textit{datasets} de quantização foram criados separando imagens do conjunt
 
 \section{Preparação do \textit{hardware}}
 
-A preparação da placa Rock 3A para execução do algoritmo envolveu alguns passos
+A preparação da placa Rock 3A para execução do algoritmo envolveu os seguintes passos de configuração:
+
+\begin{enumerate}
+    \item Download do sistema operacional no computador
+    \item Gravação da imagem do sistema operacional em um cartão SD
+    \item Conexão de periféricos e \textit{boot} do dispositivo
+    \item Configuração de ssh
+    \item Habilitação da NPU
+    \item Instalação das bibliotecas necessárias
+    \item Download do código, modelos e dados de teste para o dispositivo
+\end{enumerate}
+
+\subsection{Download do sistema operacional no computador e gravação no cartão SD}
+
+A documentação do dispositivo Rock 3A inclui \textit{links} onde é possível fazer \textit{download} de algumas opções de imagens de sistemas operacionais que podem ser usados no Rock 3A. Essas imagens são arquivos que contém todo o conteúdo necessário para a instalação do sistema operacional no dispositivo.
+
+A imagem escolhida foi a Debian, pois é uma distribuição do \textit{linux} amplamente utilizada e com muito suporte. Após fazer o \textit{download} foi necessário descompactar o arquivo, para então gravá-lo em um cartão SD.
+
+Foi utilizado um cartão SD com 32 GB de capacidade. Para gravar a imagem foi necessário conectá-lo ao computador utilizando um adaptador para porta USB e instalar um \textit{software} chamado Balena Etcher, indicado na própria documentação do Rock 3A. Esse software realiza a instalação do sistema operacional no cartão SD com base no arquivo de imagem selecionado.
+
+\subsection{Conexão de periféricos e \textit{boot} do dispositivo}
+
+Ao inserir no dispositivo o cartão SD com o sistema operacional gravado, bastou conectá-lo a uma fonte para que o dispositivo ligasse e fizesse \textit{boot} do sistema operacional. Porém, para que fosse possível interagir com o dispositivo foi necessário conectar periféricos que realizem a interface humano-máquina: Um monitor, um \textit{mouse} e um teclado.
+
+Como a placa possui 3 entradas USB não foi problema conectar estes periféricos. Dessa forma passou a ser possível visualizar a área de trabalho no monitor, controlar o cursor e digitar comandos.
+
+\subsection{Configuração de SSH}
+
+Durante o desenvolvimento é conveniente poder acessar o Rock 3A a partir do PC de trabalho, sem precisar utilizar os periféricos conectados a ele. Para que isso fosse possível, foi configurado um servidor SSH no dispositivo. O sistema operacional já veio com o \textit{software} necessário, de forma que só foi preciso alterar um arquivo de configuração para habilitar a conexão ssh. Além disso, foi necessário conectar o dispositivo à rede da empresa através de um cabo de rede e descobrir o endereço IP do dispositivo dentro da rede, que estava na documentação.
+
+Com isso, o SSH estava configurado no dispositivo. Para conectar, foi instalado no PC de trabalho um \textit{software} de cliente SSH, que permite esse tipo de conexão e oferece uma boa interface para isso, o MobaXterm. Então, bastou conectar o PC à rede da empresa (mesma rede na qual o Rock 3A estava conectado) e na interface do MobaXterm criar uma nova conexão, na qual foi informado o IP do dispositivo, o nome do usuário e a senha. Finalizado isso, o MobaXterm abriu um terminal no PC onde era possível digitar qualquer comando, que seria então enviado e executado no dispositivo.
+
+Com isso configurado e funcionando, os periféricos puderam ser desconectados do dispositivo, mantendo apenas conectado o cabo de rede, pois qualquer comando poderia agora ser enviado remotamente através da conexão ssh criada.
+
+\subsection{Habilitação da NPU e instalação das bibliotecas necessárias}
+
+A NPU não vem habilitada por padrão, sendo necessário acessar um menu de configuração do Rock 3A para habilitá-la. Esse menu é acessado através do comando \textit{rsetup}, que leva para uma tela de configurações onde deve ser selecionada a opção \textit{"overlays"} e \textit{"manage overlays"}, depois navegar para a opção "NPU" e ativar. Por fim, é necessário reiniciar o dispositivo para que a configuração surta efeito.
+
+O python já vem instalado no sistema operacional, mas é necessário instalar algumas bibliotecas para que o algoritmo desenvolvido possa ser executado. As bibliotecas básicas são:
+
+\begin{itemize}
+    \item OpenCV
+    \item Numpy
+    \item Pillow
+    \item Scikit-Image
+    \item Onnx
+    \item Onnx Runtime
+\end{itemize}
+
+Elas permitem carregamento e manipulação de imagens, manipulação de vetores e matrizes, execução de modelos no formato ONNX e execução de todas as funções necessárias para as etapas do \textit{pipeline} de leitura de placas desenvolvido. Com essas bibliotecas já é possível executar a solução com os modelos na CPU, e todas podem ser instaladas através de um simples comando \textit{"pip install <nome>"}. 
+
+Para execução dos modelos na NPU, porém, é necessário instalar a biblioteca RKNN Toolkit Light. Essa difere do RKNN Toolkit tradicional pois serve apenas para executar modelos RKNN, não para realizar a conversão dos modelos para esse formato. Essa biblioteca possui um processo de instalação menos automático, sendo necessário acessar um repositório no \textit{github} onde ela se encontra e baixar um arquivo do tipo \textit{wheel} que corresponda à versão do python sendo utilizada (python 3.10). Com isso, basta executar o comando \textit{"pip install <arquivo>"}, passando o caminho para o arquivo \textit{wheel} que foi baixado.
+
+Para finalizar, o RKNN Toolkit ainda necessita que um arquivo adicional chamado \textit{librknn.so} seja baixado do repositório e colocado na pasta /usr/lib do sistema de arquivos.
+
+\subsection{Download do código, modelos e dados de teste para o dispositivo}
+
+Através da interface do MobaXterm conectado ao Rock 3A é possível navegar pelas pastas do dispositivo e fazer \textit{download} de arquivos do PC para estas pastas. Foi então feito \textit{download} dos seguintes itens:
+
+\begin{itemize}
+    \item Código python contendo o \textit{pipeline} completo de leitura de placas, que recebe uma imagem e devolve os caracteres
+    \item \textit{Script} de teste, que compara a placa devolvida pelo \textit{pipeline} com a placa verdadeira para todas as imagens do conjunto de teste e computa os tempos de processamento
+    \item Conjunto de dados de teste, composto por imagens de carros e os caracteres da placa correspondente
+    \item Modelo YOLO, modelos de classificação de caracteres isolados e modelos de extração e classificação no formato ONNX
+    \item Modelo YOLO e modelos de classificação de caracteres isolados no formato RKNN
+\end{itemize}
 
 \section{Testes realizados}
+
+Para realizar os testes do algoritmo completo, foi separado um conjunto de imagens do \textit{dataset} de teste separado inicialmente. O \textit{dataset} continha 1000 imagens, mas como algumas eram do mesmo carro, foram mantidas 849. As imagens foram colocadas em uma pasta separada e renomeadas, para que o nome da imagem fosse exatamente a placa contida no carro.
+
+Foi feito então um \textit{script} simples que pega cada uma dessas imagens, envia ao \textit{pipeline} desenvolvido de leitura de placas e compara o resultado obtido com a placa verdadeira, verificando assim se foi um acerto ou um erro. O \textit{script} também computa o tempo levado em cada etapa do \textit{pipeline}, detecção com o modelo YOLO, processamento da imagem e classificação dos caracteres.
+
+\subsection{Resultados dos testes}
+
+Os testes foram realizados em seis configurações distintas, combinando diferentes \textit{pipelines} e plataformas de \textit{hardware}. As duas alternativas de \textit{pipeline} avaliadas foram:
+
+\begin{itemize}
+    \item \textbf{Pipeline de caracteres isolados:} realiza a extração dos caracteres por meio de técnicas de processamento de imagem e os classifica individualmente com os modelos de classificação de caracteres.
+    \item \textbf{Pipeline de extração e classificação simultânea:} utiliza o modelo que recebe a imagem da placa completa e classifica todos os seus caracteres de uma só vez.
+\end{itemize}
+
+As plataformas avaliadas foram o PC (utilizando a CPU) e a placa Rock 3A, com execução tanto na CPU quanto na NPU. É importante ressaltar que, conforme discutido na seção anterior, o modelo de extração e classificação simultânea não pôde ser convertido para o formato RKNN, impossibilitando sua execução na NPU da Rock 3A. Da mesma forma, a quantização do modelo YOLO não foi bem-sucedida, de modo que nos testes na Rock 3A o YOLO é sempre executado sem quantização, independentemente do \textit{pipeline} utilizado.
+
+Dada essa restrição, os modelos de classificação de caracteres isolados foram os únicos convertidos e quantizados. Portanto, para o \textit{pipeline} de caracteres isolados na NPU da Rock 3A, todos os modelos são executados na NPU, apesar do YOLO não ser quantizado. Já para o \textit{pipeline} de extração e classificação simultânea na Rock 3A, o YOLO é executado na NPU e o modelo de extração e classificação na CPU.
+
+A Tabela \ref{tab:acuracia} apresenta os resultados de acurácia obtidos em cada configuração de teste, e a Tabela \ref{tab:tempos} apresenta os tempos médios de inferência por etapa do \textit{pipeline}. Nas tabelas o \textit{pipeline} de caracteres isolados foi chamado apenas de "caracteres", enquanto o de extração e classificação foi chamado de "placas", fazendo referência ao tipo de \textit{input} dos modelos de cada \textit{pipeline}.
+
+\begin{table}[H]
+    \centering
+    \caption{Acurácia por configuração de teste}
+    \label{tab:acuracia}
+    \begin{tabular}{llccc}
+        \hline
+        \textbf{Hardware} & \textbf{Pipeline} & \textbf{Acertos} & \textbf{Erros} & \textbf{Acurácia} \\
+        \hline
+        PC (CPU)           & Caracteres          & 727 & 122 & 85,63\% \\
+        PC (CPU)           & Placas     & 773 &  76 & 91,05\% \\
+        Rock 3A (CPU)      & Caracteres          & 727 & 122 & 85,63\% \\
+        Rock 3A (CPU)      & Placas     & 773 &  76 & 91,05\% \\
+        Rock 3A (NPU+CPU)  & Placas     & 773 &  76 & 91,05\% \\
+        Rock 3A (NPU)      & Caracteres & 728 & 121 & 85,75\% \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Tempos médios de inferência por etapa (ms)}
+    \label{tab:tempos}
+    \begin{tabular}{llcccc}
+        \hline
+        \textbf{Hardware} & \textbf{Pipeline} & \textbf{Detecção} & \textbf{Extração} & \textbf{Leitura} & \textbf{Total} \\
+        \hline
+        PC (CPU)           & Caracteres          & 151,91 &  21,54 &  22,70 & 196,15 \\
+        PC (CPU)           & Placas     &  57,24 &   4,40 &   8,84 &  70,48 \\
+        Rock 3A (CPU)      & Caracteres          & 727,39 &  81,99 &  26,93 & 836,31 \\
+        Rock 3A (CPU)      & Placas     & 718,93 &  18,05 &  58,64 & 795,63 \\
+        Rock 3A (NPU+CPU)  & Placas     & 395,81 &  13,10 &  55,20 & 464,10 \\
+        Rock 3A (NPU)      & Caracteres & 422,10 &  86,94 &  30,18 & 539,22 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Analisando os resultados de acurácia, é possível observar que o \textit{pipeline} de extração e classificação simultânea apresentou desempenho superior ao de caracteres isolados, atingindo 91,05\% de acurácia frente a 85,63\% obtidos pelo segundo. Essa diferença de aproximadamente 5,4 pontos percentuais pode ser atribuída ao fato de que o modelo de extração e classificação opera sobre a imagem da placa completa, sendo menos suscetível a erros introduzidos pelo algoritmo de segmentação de caracteres, que representa uma etapa adicional de processamento no \textit{pipeline} de caracteres isolados.
+
+Outro resultado relevante diz respeito à acurácia obtida com o \textit{pipeline} de caracteres isolados quantizado, executado na NPU da Rock 3A. A acurácia de 85,75\% foi praticamente idêntica à obtida pela versão não quantizada (85,63\%), demonstrando que o processo de quantização não introduziu perda perceptível de desempenho nos modelos de classificação, sendo portanto uma estratégia válida para ganho de eficiência computacional sem prejuízo à confiabilidade do sistema.
+
+A acurácia observada é consistente entre o PC e a Rock 3A para um mesmo \textit{pipeline} e mesmos modelos, o que era esperado, pois a plataforma de \textit{hardware} não interfere nos pesos dos modelos e, portanto, não altera os resultados das inferências.
+
+No que diz respeito aos tempos de inferência, o PC apresentou desempenho significativamente superior à Rock 3A em todos os cenários. O \textit{pipeline} de extração e classificação simultânea executado no PC foi o mais rápido, com tempo médio total de 70,48\,ms, enquanto o mesmo \textit{pipeline} na Rock 3A com CPU atingiu 795,63\,ms, um aumento de aproximadamente 11 vezes. Já o \textit{pipeline} de caracteres isolados no PC totalizou 196,15\,ms, contra 836,31\,ms na Rock 3A com CPU, representando um fator de aproximadamente 4,3 vezes.
+
+A comparação entre os dois \textit{pipelines} no PC revela uma diferença expressiva: o \textit{pipeline} de extração e classificação simultânea é cerca de 2,8 vezes mais rápido. Isso ocorre pois, além de eliminar o algoritmo de segmentação de caracteres, o modelo de extração e classificação realiza uma única inferência para toda a placa, enquanto o \textit{pipeline} de caracteres isolados realiza múltiplas inferências, uma por caractere. Na Rock 3A, contudo, a diferença entre os dois \textit{pipelines} executados inteiramente na CPU foi menos acentuada, de apenas 40\,ms aproximadamente, possivelmente em razão das diferenças na eficiência de execução dos modelos na arquitetura ARM do dispositivo.
+
+O uso da NPU na Rock 3A trouxe ganhos expressivos de velocidade em ambos os \textit{pipelines}. No \textit{pipeline} de caracteres isolados, a execução com todos os modelos na NPU, ainda que o YOLO sem quantização, resultou em uma redução de aproximadamente 35\% no tempo total em comparação com a execução inteiramente na CPU da mesma placa (539,22\,ms contra 836,31\,ms). Essa melhora se deve principalmente à aceleração da etapa de detecção, que passou de 727,39\,ms na CPU para 422,10\,ms na NPU, uma redução de cerca de 42\%.
+
+Para o \textit{pipeline} de extração e classificação simultânea, a utilização da NPU para a execução do YOLO, mantendo o modelo de extração e classificação na CPU, resultou no melhor desempenho entre as configurações testadas na Rock 3A, com tempo total de 464,10\,ms. Isso representa uma redução de aproximadamente 42\% em relação à versão com todos os modelos na CPU (795,63\,ms). A etapa de detecção caiu de 718,93\,ms para 395,81\,ms, evidenciando que a aceleração do YOLO na NPU é o principal fator de ganho de desempenho nesse cenário.
+
+A Tabela \ref{tab:comparativo} sintetiza a comparação entre os cenários avaliados, ordenados pelo tempo total de inferência, destacando a relação entre acurácia e velocidade de cada configuração.
+
+\begin{table}[H]
+    \centering
+    \caption{Comparativo geral entre configurações de teste}
+    \label{tab:comparativo}
+    \begin{tabular}{llcc}
+        \hline
+        \textbf{Hardware} & \textbf{Pipeline} & \textbf{Acurácia} & \textbf{Total (ms)} \\
+        \hline
+        PC (CPU)           & Placas     & 91,05\% &  70,48 \\
+        PC (CPU)           & Caracteres          & 85,63\% & 196,15 \\
+        Rock 3A (NPU+CPU)  & Placas     & 91,05\% & 464,10 \\
+        Rock 3A (NPU)      & Caracteres & 85,75\% & 539,22 \\
+        Rock 3A (CPU)      & Placas     & 91,05\% & 795,63 \\
+        Rock 3A (CPU)      & Caracteres          & 85,63\% & 836,31 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+De maneira geral, os resultados demonstram que o \textit{pipeline} de extração e classificação simultânea se mostrou superior tanto em acurácia quanto em velocidade no PC, sendo a configuração mais eficiente entre as avaliadas. Na Rock 3A, a combinação do YOLO na NPU com o modelo de extração e classificação na CPU entregou o melhor desempenho entre as opções do dispositivo, com 464,10\,ms e acurácia de 91,05\%. Essa configuração supera também o \textit{pipeline} de caracteres isolados com quantização (539,22\,ms e 85,75\%), que embora mais lento, representa a melhor alternativa quando apenas os modelos de classificação estão disponíveis no formato RKNN.

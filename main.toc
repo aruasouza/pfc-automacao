@@ -92,20 +92,31 @@
 \contentsline {subsection}{\numberline {5.6.1}Resultados da conversão}{78}{subsection.5.6.1}%
 \contentsline {subsection}{\numberline {5.6.2}Criação dos datasets de quantização}{78}{subsection.5.6.2}%
 \contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{78}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Testes realizados}{78}{section.5.8}%
+\contentsline {subsection}{\numberline {5.7.1}Download do sistema operacional no computador e gravação no cartão SD}{79}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Conexão de periféricos e \textit {boot} do dispositivo}{79}{subsection.5.7.2}%
+\contentsline {subsection}{\numberline {5.7.3}Configuração de SSH}{79}{subsection.5.7.3}%
+\contentsline {subsection}{\numberline {5.7.4}Habilitação da NPU e instalação das bibliotecas necessárias}{80}{subsection.5.7.4}%
+\contentsline {subsection}{\numberline {5.7.5}Download do código, modelos e dados de teste para o dispositivo}{81}{subsection.5.7.5}%
+\contentsline {section}{\numberline {5.8}Testes realizados}{81}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Resultados dos testes}{82}{subsection.5.8.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{79}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{85}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Síntese do problema, solução e resultados}{85}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Objetivos atingidos e limitações}{86}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Aprimoramentos possíveis}{86}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Impactos do projeto}{87}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Trabalhos futuros}{87}{section.6.5}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{80}{section*.52}%
+\contentsline {chapter}{REFERÊNCIAS}{89}{section*.55}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{82}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{91}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{83}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{92}{appendix.anexochapback.1}%
