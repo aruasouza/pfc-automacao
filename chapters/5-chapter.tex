@@ -338,9 +338,9 @@ Como as placas dos modelos Brasil e Mercosul possuem configurações diferentes,
 
 \begin{itemize}
     \item \textbf{\textit{Backbone}:} \\
-    O \textit{backbone} é responsável pela extração de \textit{features} da imagem e recebe como entrada um tensor de dimensão $(B, 1, 32, 100)$, onde $B$ é o tamanho do \textit{batch}. Ele é composto por uma sequência de blocos convolucionais e operações de \textit{max pooling} que progressivamente reduzem a resolução espacial e aumentam o número de canais. O bloco convolucional base utilizado, denominado \textit{ConvBNReLU}, é formado por uma camada \textit{Conv2d} seguida de \textit{Batch Normalization} e ativação ReLU.
+    O \textit{backbone} é responsável pela extração de características da imagem e recebe como entrada um tensor de dimensão $(B, 1, 32, 100)$, onde $B$ é o tamanho do \textit{batch}. Ele é composto por uma sequência de blocos convolucionais e operações de \textit{max pooling} que progressivamente reduzem a resolução espacial e aumentam o número de canais. O bloco convolucional base utilizado, denominado \textit{ConvBNReLU}, é formado por uma camada \textit{Conv2d} seguida de \textit{Batch Normalization} e ativação ReLU.
 
-    Além disso, o \textit{backbone} faz uso de blocos residuais (figura \ref{fig:bloco_residual}). Cada bloco residual é composto por dois blocos \textit{ConvBNReLU} encadeados, sendo que a saída do segundo é somada à entrada do bloco antes da ativação ReLU final. Essa conexão residual facilita o fluxo do gradiente durante o treinamento e permite que a rede aprenda transformações incrementais em vez de reconstruir a representação do zero em cada camada.
+    Além disso, o \textit{backbone} faz uso de blocos residuais (figura \ref{fig:bloco_residual}). Cada bloco residual é composto por um bloco \textit{ConvBNReLU} seguido de uma convolução e uma normalização de \textit{batch}, cuja saída é somada à entrada do bloco antes da ativação ReLU final. Essa conexão residual facilita o fluxo do gradiente durante o treinamento e permite que a rede aprenda transformações incrementais em vez de reconstruir a representação do zero em cada camada.
 
     \begin{figure}[H]
     \centering
@@ -538,11 +538,11 @@ A Tabela \ref{tab:acuracia} apresenta os resultados de acurácia obtidos em cada
 \label{tab:acuracia} 
 \begin{tabular}{llccc} \hline 
 \textbf{Hardware} & \textbf{Pipeline} & \textbf{Acertos} & \textbf{Erros} & \textbf{Acurácia} \\ \hline 
-PC (CPU)           & Caracteres          & 727 & 122 & 85,63\% \\ 
 PC (CPU)           & Placas     & 773 &  76 & 91,05\% \\ 
-Rock 3A (CPU)      & Caracteres          & 727 & 122 & 85,63\% \\ 
 Rock 3A (CPU)      & Placas     & 773 &  76 & 91,05\% \\ 
-Rock 3A (NPU+CPU)  & Placas     & 773 &  76 & 91,05\% \\ 
+Rock 3A (NPU+CPU)  & Placas     & 773 &  76 & 91,05\% \\ \hline
+PC (CPU)           & Caracteres          & 727 & 122 & 85,63\% \\ 
+Rock 3A (CPU)      & Caracteres          & 727 & 122 & 85,63\% \\ 
 Rock 3A (NPU)      & Caracteres & 728 & 121 & 85,75\% \\ \hline 
 \end{tabular} 
 \end{table}
@@ -551,12 +551,12 @@ Rock 3A (NPU)      & Caracteres & 728 & 121 & 85,75\% \\ \hline
 \centering \caption{Tempos médios de inferência por etapa (ms)} 
 \label{tab:tempos} 
 \begin{tabular}{llcccc} \hline 
-\textbf{Hardware} & \textbf{Pipeline} & \textbf{Detecção} & \textbf{Extração} & \textbf{Leitura} & \textbf{Total} \\ \hline 
-PC (CPU)           & Caracteres          & 151,91 &  21,54 &  22,70 & 196,15 \\ 
+\textbf{Hardware} & \textbf{Pipeline} & \textbf{Detecção} & \textbf{Extração} & \textbf{Leitura} & \textbf{Total} \\ \hline  
 PC (CPU)           & Placas     &  57,24 &   4,40 &   8,84 &  70,48 \\ 
-Rock 3A (CPU)      & Caracteres          & 727,39 &  81,99 &  26,93 & 836,31 \\ 
 Rock 3A (CPU)      & Placas     & 718,93 &  18,05 &  58,64 & 795,63 \\ 
-Rock 3A (NPU+CPU)  & Placas     & 395,81 &  13,10 &  55,20 & 464,10 \\ 
+Rock 3A (NPU+CPU)  & Placas     & 395,81 &  13,10 &  55,20 & 464,10 \\ \hline
+PC (CPU)           & Caracteres          & 151,91 &  21,54 &  22,70 & 196,15 \\
+Rock 3A (CPU)      & Caracteres          & 727,39 &  81,99 &  26,93 & 836,31 \\ 
 Rock 3A (NPU)      & Caracteres & 422,10 &  86,94 &  30,18 & 539,22 \\ \hline 
 \end{tabular} 
 \end{table}
@@ -582,11 +582,11 @@ A Tabela \ref{tab:comparativo} sintetiza a comparação entre os cenários avali
 \begin{tabular}{llcc} \hline 
 \textbf{Hardware} & \textbf{Pipeline} & \textbf{Acurácia} & \textbf{Total (ms)} \\ \hline 
 PC (CPU)           & Placas     & 91,05\% &  70,48 \\ 
+Rock 3A (CPU)      & Placas     & 91,05\% & 795,63 \\
+Rock 3A (NPU+CPU)  & Placas     & 91,05\% & 464,10 \\ \hline
 PC (CPU)           & Caracteres          & 85,63\% & 196,15 \\ 
-Rock 3A (NPU+CPU)  & Placas     & 91,05\% & 464,10 \\ 
-Rock 3A (NPU)      & Caracteres & 85,75\% & 539,22 \\ 
-Rock 3A (CPU)      & Placas     & 91,05\% & 795,63 \\ 
-Rock 3A (CPU)      & Caracteres          & 85,63\% & 836,31 \\ \hline 
+Rock 3A (CPU)      & Caracteres          & 85,63\% & 836,31 \\
+Rock 3A (NPU)      & Caracteres & 85,75\% & 539,22 \\ \hline
 \end{tabular} 
 \end{table}
 
