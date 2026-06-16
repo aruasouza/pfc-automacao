@@ -1,0 +1,67 @@
+\chapter{Conclusão}
+
+Neste capítulo são apresentadas as considerações finais do trabalho, sintetizando o problema abordado, a solução proposta e os principais resultados obtidos. Em seguida, discute-se o alcance dos objetivos inicialmente traçados, as limitações encontradas, possíveis aprimoramentos e os impactos do projeto. Por fim, são sugeridos trabalhos futuros que podem dar continuidade ao desenvolvimento realizado.
+
+\section{Síntese do problema, solução e resultados}
+
+O presente trabalho tratou do desenvolvimento de um sistema de leitura automática de placas de veículos para aplicações de controle de acesso, com foco em viabilizar uma solução de baixo custo executável em hardware acessível. O problema surgiu no contexto do produto \textit{Aegis Access Control} da Palmsoft Tecnologia, onde o alto custo das câmeras LPR comerciais (como o modelo VIP 5460 LPR IA da Intelbras) motivou a busca por alternativas econômicas, especialmente para condomínios autônomos de aluguel de curto prazo.
+
+A solução proposta consistiu em um \textit{pipeline} de visão computacional composto por três etapas principais: Detecção e classificação da placa utilizando o modelo YOLO26n-pose, processamento da imagem da placa (conversão para escala de cinza, correção de perspectiva, remoção de bordas, binarização adaptativa com método de Sauvola, segmentação e limpeza de caracteres) e classificação dos caracteres extraídos por meio de redes neurais convolucionais especializadas. Paralelamente, foi desenvolvida uma abordagem alternativa baseada em modelos de extração e classificação simultânea dos caracteres diretamente da imagem da placa.
+
+O desenvolvimento seguiu o padrão CRISP-DM e utilizou o \textit{dataset} RodoSol-ALPR. Os modelos foram treinados, exportados para ONNX e, quando possível, convertidos para o formato RKNN com quantização \textit{uint8} para execução na NPU da placa Radxa ROCK 3A (Rockchip RK3568).
+
+Os principais resultados obtidos foram:
+
+\begin{itemize}
+    \item Acurácia de 91,05\% com o \textit{pipeline} de extração e classificação simultânea e 85,63--85,75\% com o \textit{pipeline} de caracteres isolados;
+    \item Tempo de inferência no PC (CPU) de 70,48\,ms (pipeline simultâneo) e 196,15\,ms (caracteres isolados);
+    \item Na ROCK 3A, o melhor desempenho foi alcançado com YOLO na NPU + modelo simultâneo na CPU (464,10\,ms) e com todos os modelos do pipeline de caracteres isolados na NPU (539,22\,ms).
+\end{itemize}
+
+Esses resultados demonstram a viabilidade técnica da solução tanto em termos de precisão quanto de performance em hardware de baixo custo.
+
+\section{Objetivos atingidos e limitações}
+
+O trabalho cumpriu integralmente o objetivo geral de desenvolver um software de leitura automática de placas de veículos e validar a viabilidade funcional de sua execução na placa ROCK 3A. Foram atingidos todos os requisitos funcionais e não funcionais definidos, incluindo suporte aos dois padrões de placas brasileiras (Brasil e Mercosul), detecção da classe da placa, acurácia acima de 85\% e execução otimizada na NPU sempre que possível.
+
+A placa ROCK 3A demonstrou ser capaz de executar o sistema de forma satisfatória, com redução significativa de tempo de inferência quando se utiliza a NPU (ganhos de até 42\% na etapa de detecção). A quantização dos modelos de classificação de caracteres não gerou perda perceptível de acurácia, confirmando sua adequação para aplicações embarcadas.
+
+Entre as limitações encontradas destacam-se:
+
+\begin{itemize}
+    \item Dificuldades na conversão para RKNN de alguns modelos (especialmente o de extração e classificação simultânea e a quantização completa do YOLO), possivelmente por incompatibilidades de operações com o toolkit da Rockchip;
+    \item Tempo de inferência ainda elevado na ROCK 3A para aplicações de tempo real extremamente exigentes (embora adequado para a maioria dos cenários de controle de acesso);
+    \item Dependência de condições de iluminação e ângulo favoráveis, comum a sistemas de visão computacional baseados em imagens estáticas.
+\end{itemize}
+
+\section{Aprimoramentos possíveis}
+
+Diversas melhorias podem ser implementadas para elevar o desempenho e a robustez do sistema. Entre elas:
+
+\begin{itemize}
+    \item Aperfeiçoamento do algoritmo de segmentação de caracteres e experimentação de novas técnicas de binarização e filtragem de ruído;
+    \item Treinamento com maior volume de dados ou aplicação de técnicas de aumento de dados (data augmentation) para aumentar a robustez a variações de iluminação, sujeira e ângulos extremos;
+    \item Exploração de modelos mais recentes ou destilação de conhecimento para reduzir ainda mais o tamanho e latência dos modelos sem perda de acurácia;
+    \item Implementação de tracking temporal em vídeo para aumentar a confiabilidade através da combinação de múltiplos frames;
+    \item Otimização adicional da conversão para RKNN, possivelmente com suporte técnico da Rockchip ou uso de versões mais recentes do toolkit.
+\end{itemize}
+
+\section{Impactos do projeto}
+
+O projeto gera impactos positivos significativos para a Palmsoft Tecnologia e seus clientes. Do ponto de vista tecnológico, demonstra a viabilidade de soluções de IA em hardware de baixo custo, ampliando o portfólio da empresa em visão computacional e controle de acesso. Financeiramente, a redução drástica no custo por unidade (da ordem de R\$ 5.700--7.500 para valores próximos a algumas centenas de reais) torna o sistema acessível a condomínios menores, estacionamentos de médio porte e outras aplicações anteriormente inviáveis economicamente.
+
+Para os clientes finais (gestores de condomínios e estabelecimentos), o sistema proporciona maior comodidade, agilidade na entrada e saída de veículos e redução de custos operacionais. Organizacionamente, valida o uso de placas como a ROCK 3A em produtos da empresa, podendo acelerar o desenvolvimento de novas soluções de IA embarcadas.
+
+\section{Trabalhos futuros}
+
+O desenvolvimento realizado abre diversas possibilidades de continuidade. Sugere-se:
+
+\begin{itemize}
+    \item Construção de um protótipo completo de câmera LPR utilizando a ROCK 3A (ou versão superior), incluindo integração com o \textit{Aegis Access Control};
+    \item Expansão do sistema para leitura de placas de motocicletas e outros veículos;
+    \item Desenvolvimento de uma versão otimizada para múltiplas câmeras ou processamento em borda com agregação em nuvem;
+    \item Aplicação da mesma arquitetura em outros problemas de visão computacional, como contagem de veículos, detecção de irregularidades ou monitoramento de tráfego;
+    \item Publicação de partes do código e modelos como open-source, contribuindo para a comunidade de pesquisa em ALPR no Brasil.
+\end{itemize}
+
+Em suma, o presente Projeto Final de Curso demonstrou não apenas a viabilidade técnica e econômica da proposta, mas também pavimentou o caminho para o desenvolvimento de produtos inovadores e acessíveis na área de controle de acesso veicular.

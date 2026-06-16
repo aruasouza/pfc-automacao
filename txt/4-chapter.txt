@@ -121,27 +121,13 @@ Uma vez detectada a placa e conhecidas as coordenadas dos seus quatro cantos, um
     \item Limpeza das imagens de caracteres, removendo pixels de ruído desconectados do caractere principal.
 \end{enumerate}
 
-\subsection{Leitura da placa: caracteres isolados}
+\subsection{Leitura da placa: abordagem por caracteres isolados}
 
 Na primeira abordagem proposta para a leitura da placa, os caracteres extraídos individualmente pelo bloco de processamento são classificados por redes neurais convolucionais especializadas. Como a posição de cada caractere na placa determina se ele é uma letra ou um número, e como o padrão da placa é conhecido desde a etapa de detecção, é possível utilizar modelos distintos para cada combinação de tipo de caractere (letra ou número) e padrão de placa (Brasil ou Mercosul), resultando em quatro modelos de classificação. Essa especialização simplifica o problema de cada modelo individualmente e tende a produzir classificadores mais precisos.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\linewidth]{images/pipeline_caracteres_isolados.png}
-    \caption{Diagrama do \textit{pipeline} de classificação de caracteres isolados.}
-    \label{fig:pipelinecaracteresisolados}
-\end{figure}
-
-\subsection{Leitura da placa: extração e classificação simultâneas}
+\subsection{Leitura da placa: abordagem por extração e classificação simultâneas}
 
 Na segunda abordagem, um único modelo mais robusto recebe diretamente a imagem da placa --- após a correção de perspectiva --- e classifica todos os seus caracteres de uma só vez, sem necessidade das etapas de binarização, separação e limpeza de caracteres. Essa abordagem é mais simples do ponto de vista do \textit{pipeline} e elimina os possíveis erros introduzidos pelo algoritmo de segmentação de caracteres, mas exige um modelo de maior capacidade. São treinados dois modelos dessa modalidade, um para cada padrão de placa.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\linewidth]{images/pipeline_extracao_classificacao_simultanea.png}
-    \caption{Diagrama do \textit{pipeline} de extração e classificação simultânea.}
-    \label{fig:pipelinesimultaneo}
-\end{figure}
 
 \section{Execução na placa Rock 3A}
 

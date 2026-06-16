@@ -282,25 +282,32 @@ As características específicas do modelo de classificação de caracteres isol
 
 Foram treinados um total de quatro modelos distintos, cada um especializado em um tipo de caractere e um tipo de placa, seguindo a divisão feita na criação do \textit{dataset} de caracteres. Os modelos de classificação de caracteres têm a atribuição de receber uma imagem contendo um único caractere e classificá-lo entre as classes possíveis para aquele modelo. Como já é previamente conhecido, com base na posição dos caracteres, quando um caractere é uma letra ou um número, é possível criar modelos separados para classificação de letras e de números. Além disso, como também é sabido qual o modelo da placa, já que isso é inferido pelo modelo de detecção de objetos, é possível também que cada modelo seja especializado em caracteres do modelo Brasil ou do modelo Mercosul.
 
-A figura \ref{fig:diagrama_letras} mostra o diagrama da rede neural utilizadas na classificação de letras e na classificação de números. A única diferença entre as duas é que a saída da rede de números é um vetor de 10 elementos, representando os 10 algarismos existentes, enquanto a rede de letras é um vetor de 26 valores, representando cada letra do alfabeto.
+As figuras \ref{fig:diagrama_letras} e \ref{fig:diagrama_numeros} mostram os diagramas das redes neurais utilizadas na classificação de letras e na classificação de números. A única diferença entre as duas é que a saída da rede de números é um vetor de 10 elementos, representando os 10 algarismos existentes, enquanto a rede de letras é um vetor de 26 valores, representando cada letra do alfabeto.
 
 Os tipos de camadas utilizadas na rede neural seguindo a notação das figuras foram:
 \begin{itemize}
-\item \textbf{Conv2d}: Camada convolucional, definida pelo tamanho da saída, dimensões do \textit{kernel} (k) e \textit{padding} (p);
-\item \textbf{Linear}: Camada linear \textit{fully connected}, definida pela dimensão da saída.
+\item \textbf{Conv}: Camada convolucional
+\item \textbf{Gemm}: Camada linear \textit{fully connected}
 \end{itemize}
 Além disso foram utilizadas as operações:
 \begin{itemize}
-\item \textbf{Relu}: Rectified Linear Unit;
-\item \textbf{MaxPool2d}: Max pooling, definido pelas dimensões do \textit{kernel} (k) e \textit{stride};
-\item \textbf{Reshape}: Modificação da forma do tensor, definido pela forma de saída.
+\item \textbf{Relu}: Rectified Linear Unit
+\item \textbf{MaxPool}: Max pooling
+\item \textbf{Reshape}: Modificação da forma do tensor
 \end{itemize}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\linewidth]{images/cnn_architecture.png}
-\caption{Diagrama da rede neural de classificação de caracteres}
+\includegraphics[width=0.4\linewidth]{images/br-letras.onnx.png}
+\caption{Diagrama da rede neural de classificação de letras}
 \label{fig:diagrama_letras}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{images/br-numeros.onnx.png}
+\caption{Diagrama da rede neural de classificação de números}
+\label{fig:diagrama_numeros}
 \end{figure}
 
 As figuras \ref{fig:menumerostrain}, \ref{fig:meletrastrain}, \ref{fig:brnumerostrain} e \ref{fig:brletrastrain} mostram as curvas do \textit{Loss} de treinamento e validação, além da acurácia de validação de cada modelo ao longo das épocas de treinamento. Esses dados foram coletados ao fim de cada época com intenção de registrar a evolução do modelo ao longo do treinamento.
@@ -330,83 +337,10 @@ As figuras \ref{fig:menumerostrain}, \ref{fig:meletrastrain}, \ref{fig:brnumeros
 \end{figure}
 
 \subsection{Extração e classificação simultânea}
-O treinamento dos modelos de extração e classificação seguiu um processo parecido. Esse modelo, diferente dos modelos de classificação de caracteres isolados, recebe uma imagem de placa e classifica todos os seus caracteres de uma só vez. O objetivo é que o modelo aprenda a identificar a posição dos caracteres e ao mesmo tempo classificá-los.
+O treinamento dos modelos de extração e classificação seguiu um processo parecido. Esse modelo, diferente dos modelos de classificação de caracteres isolados, recebe uma imagem de placa e classifica todos os seus caracteres de uma só vez. O objetivo é que o modelo aprenda a identificar a posição dos caracteres e ao mesmo tempo classificá-los. 
 
-Esses modelos devem extrair e classificar os caracteres diretamente da placa cortada da imagem original após a detecção pelo YOLO. A única transformação a ser feita na placa antes de alimentar para esse modelo é a transformação de perspectiva, pois esta garante uma padronização muito maior das placas enviadas ao modelo. A saída desses modelos é um conjunto de 7 vetores, cada um representando um dos caracteres da placa. Cada vetor é composto por 10 ou 26 valores, a depender se aquele vetor representa um número ou uma letra, o que depende da posição do caractere que aquele vetor representa.
-
-Como as placas dos modelos Brasil e Mercosul possuem configurações diferentes, devem ser feitos dois modelos, um para cada tipo de placa. Esses modelos possuem uma arquitetura consideravelmente mais complexa que os modelos de classificação de caracteres isolados, podendo ser dividida em três blocos principais:
-
-\begin{itemize}
-    \item \textbf{\textit{Backbone}:} \\
-    O \textit{backbone} é responsável pela extração de \textit{features} da imagem e recebe como entrada um tensor de dimensão $(B, 1, 32, 100)$, onde $B$ é o tamanho do \textit{batch}. Ele é composto por uma sequência de blocos convolucionais e operações de \textit{max pooling} que progressivamente reduzem a resolução espacial e aumentam o número de canais. O bloco convolucional base utilizado, denominado \textit{ConvBNReLU}, é formado por uma camada \textit{Conv2d} seguida de \textit{Batch Normalization} e ativação ReLU.
-
-    Além disso, o \textit{backbone} faz uso de blocos residuais (figura \ref{fig:bloco_residual}). Cada bloco residual é composto por dois blocos \textit{ConvBNReLU} encadeados, sendo que a saída do segundo é somada à entrada do bloco antes da ativação ReLU final. Essa conexão residual facilita o fluxo do gradiente durante o treinamento e permite que a rede aprenda transformações incrementais em vez de reconstruir a representação do zero em cada camada.
-
-    \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{images/bloco_residual.png}
-    \caption{Diagrama do bloco residual}
-    \label{fig:bloco_residual}
-    \end{figure}
-
-    A sequência completa do \textit{backbone} é apresentada na tabela \ref{tab:backbone}, que mostra cada operação e as dimensões do tensor após cada uma delas.
-
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{| m{5cm} | m{4cm} |}
-            \hline
-            Operação & Dimensão de saída \\
-            \hline \hline
-            Entrada & $(B, 1, 32, 100)$ \\
-            \hline
-            \textit{ConvBNReLU}$(1 \to 32)$ & $(B, 32, 32, 100)$ \\
-            \hline
-            \textit{ConvBNReLU}$(32 \to 32)$ & $(B, 32, 32, 100)$ \\
-            \hline
-            \textit{MaxPool2d}$(2{\times}2)$ & $(B, 32, 16, 50)$ \\
-            \hline
-            \textit{ConvBNReLU}$(32 \to 64)$ & $(B, 64, 16, 50)$ \\
-            \hline
-            \textit{ResidualBlock}$(64)$ & $(B, 64, 16, 50)$ \\
-            \hline
-            \textit{MaxPool2d}$(2{\times}2)$ & $(B, 64, 8, 25)$ \\
-            \hline
-            \textit{ConvBNReLU}$(64 \to 128)$ & $(B, 128, 8, 25)$ \\
-            \hline
-            \textit{ResidualBlock}$(128)$ & $(B, 128, 8, 25)$ \\
-            \hline
-            \textit{MaxPool2d}$(2{\times}2, \text{pad}=1)$ & $(B, 128, 4, 13)$ \\
-            \hline
-            \textit{ConvBNReLU}$(128 \to 256)$ & $(B, 256, 4, 13)$ \\
-            \hline
-            \textit{ResidualBlock}$(256)$ & $(B, 256, 4, 13)$ \\
-            \hline
-            \textit{MaxPool2d}$(2{\times}2)$ & $(B, 256, 2, 6)$ \\
-            \hline
-            \textit{ConvBNReLU}$(256 \to 256)$ & $(B, 256, 2, 6)$ \\
-            \hline
-            \textit{AdaptiveAvgPool2d}$(1{\times}7)$ & $(B, 256, 1, 7)$ \\
-            \hline
-        \end{tabular}
-        \caption{Sequência de operações do \textit{backbone} e dimensões dos tensores}
-        \label{tab:backbone}
-    \end{table}
-
-    \item \textbf{\textit{Average Pooling} adaptativo:} \\
-    A última operação do \textit{backbone} é um \textit{AdaptiveAvgPool2d} com saída de dimensão $(1 \times 7)$, que reduz a dimensão espacial vertical para 1 e a horizontal para 7 --- uma coluna por caractere da placa. Após um \textit{squeeze} na dimensão vertical, o tensor resultante tem dimensão $(B, 256, 7)$, onde cada uma das 7 posições contém um vetor de 256 \textit{features} que representa um caractere. Essa operação é a peça central da arquitetura: ela realiza implicitamente a separação dos caracteres, dispensando qualquer algoritmo explícito de segmentação.
-
-    \item \textbf{Cabeçalhos de classificação:} \\
-    Os 7 vetores de \textit{features} são então processados por 7 cabeçalhos independentes (\textit{heads}), um para cada posição de caractere. Cada cabeçalho é composto por uma camada \textit{Linear}$(256 \to 128)$, seguida de ReLU, \textit{Dropout} e uma segunda camada \textit{Linear}$(128 \to C_i)$, onde $C_i$ é o número de classes daquela posição: 26 para posições de letra e 10 para posições de dígito. Essa especialização por posição elimina predições estruturalmente inválidas (como uma letra em posição de dígito) e reduz o espaço de busca de cada cabeçalho individualmente.
-\end{itemize}
-
-A figura \ref{fig:arquitetura_completa} apresenta o diagrama da arquitetura completa da rede.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\linewidth]{images/plate_ocr_net.png}
-\caption{Diagrama da arquitetura completa da rede de extração e classificação simultânea}
-\label{fig:arquitetura_completa}
-\end{figure}
+Esses modelos devem extrair e classificar os caracteres diretamente da placa cortada da imagem original após a detecção pelo YOLO. A única transformação a ser feita na placa antes de alimentar para esse modelo é a transformação de perspectiva, pois esta garante uma padronização muito maior das placas enviadas ao modelo. A saída desses modelos é um conjunto de 7 vetores, cada um representando um dos caracteres da placa. Cada vetor é composto por 10 ou 26 valores, a depender se aquele vetor representa um número ou uma letra, o que depende da posição do caractere que aquele vetor representa. 
+Como as placas dos modelos Brasil e Mercosul possuem configurações diferentes, devem ser feitos dois modelos, um para cada tipo de placa. Esses modelos possuem uma arquitetura consideravelmente mais complexa que os modelos de classificação de caracteres isolados, podendo ser dividida em três blocos principais.
 
 Esse modelo, por ser maior e mais complexo, utilizou também algumas técnicas mais refinadas de treinamento. Uma delas foi o \textit{learning rate} variável, que aumenta ou diminui ao longo do treinamento. Outra foi o \textit{early stopping}, que interrompe o treinamento ao identificar que a performance está estagnada.
 
@@ -457,7 +391,7 @@ A conclusão que se chegou a respeito destes erros é que algo relativo à arqui
 Apesar dessas falhas, a execução na placa ainda é possível com todos os modelos. Apenas não sendo possível executar na NPU o modelo que não foi convertido, sendo necessário o uso da CPU. Já o YOLO pode ser executado na NPU normalmente, perdendo apenas os ganhos de performance que a quantização poderia proporcionar.
 
 \subsection{Datasets de quantização}
-Os \textit{datasets} de quantização foram criados separando imagens do conjunto de treinamento de cada modelo, colocando em uma pasta separada e criando um arquivo de texto contendo o caminho de cada imagem. Para a quantização bastava apontar o caminho para este arquivo que o \textit{rknn toolkit} se encarregava do resto do processo. No caso do YOLO, os dados de quantização são imagens de carros retiradas do conjunto de treino desse modelo, enquanto para os modelos de classificação são utilizadas imagens dos respectivos \textit{datasets} de caracteres ou de placas criados anteriormente.
+Os \textit{datasets} de quantização foram criados separando imagens do conjunto de treinamento de cada modelo, colocando em uma pasta separada e criando um arquivo de texto contendo o caminho de cada imagem. Para a quantização bastava apontar o caminho para este arquivo que o \textit{rknn toolkit} se encarregava do resto do processo.
 
 \section{Preparação do \textit{hardware}}
 A preparação da placa Rock 3A para execução do algoritmo envolveu os seguintes passos de configuração:

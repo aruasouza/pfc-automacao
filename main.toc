@@ -5,118 +5,97 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{17}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Contexto do trabalho}{17}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Recursos utilizados}{18}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Placa Radxa ROCK 3A}{18}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Metodologia}{19}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Planejamento do modelo de leitura de placas}{19}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Planejamento da execução dos modelos na placa ROCK 3A}{21}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Planejamento das etapas do projeto}{21}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}Preparação dos dados}{22}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}Treinamento do modelo de detecção de placas}{22}{subsection.1.3.5}%
-\contentsline {subsection}{\numberline {1.3.6}Desenvolvimento de algoritmo de pré-processamento e extração de caracteres}{23}{subsection.1.3.6}%
-\contentsline {subsection}{\numberline {1.3.7}Geração de \textit {datasets} de caracteres e placas}{23}{subsection.1.3.7}%
-\contentsline {subsection}{\numberline {1.3.8}Treinamento de modelos de classificação de caracteres}{24}{subsection.1.3.8}%
-\contentsline {subsection}{\numberline {1.3.9}Conversão dos modelos para formato compatível com NPU}{25}{subsection.1.3.9}%
-\contentsline {subsection}{\numberline {1.3.10}Teste dos modelos no computador e na placa}{25}{subsection.1.3.10}%
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{15}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Estrutura do documento}{16}{section.1.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Fundamentação teórica}}{26}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Treinamento de modelos de aprendizado de máquina}{26}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Etapas do padrão CRISP-DM}{26}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Redes Neurais e Backpropagation}{28}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Redes Neurais Convolucionais}{30}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Modelos de detecção de objetos}{32}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Modelos YOLO}{33}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Detecção de pontos chave}{34}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Técnicas de transformação de imagem para visão computacional}{35}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Transformação de perspectiva}{35}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Limiarização adaptativa}{36}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Segmentação de caracteres}{37}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Filtragem de componentes conexos}{37}{subsection.2.5.4}%
-\contentsline {section}{\numberline {2.6}\textit {Neural Processing Unit}}{38}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Quantização de redes neurais}{39}{section.2.7}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Fundamentação teórica}}{18}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Mineração de dados}{18}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}CRISP-DM}{18}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Redes neurais e \textit {backpropagation}}{20}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Redes neurais convolucionais}{22}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Detecção de objetos}{24}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}YOLO}{25}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Detecção de pontos-chave}{26}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Técnicas de processamento de imagem}{27}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Transformação de perspectiva}{27}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Limiarização adaptativa}{28}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Segmentação de caracteres}{29}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Filtragem de componentes conexos}{29}{subsection.2.5.4}%
+\contentsline {section}{\numberline {2.6}\textit {Neural Processing Unit}}{30}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Quantização de redes neurais}{31}{section.2.7}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Descrição do Problema e Requisitos Técnicos}}{41}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Descrição da Empresa}{41}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Motivação}{42}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Análise do problema}{43}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Criação do algoritmo de leitura automática de placas de carros}{43}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Teste do algoritmo desenvolvido na placa Rock 3A}{44}{subsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.2.1}\textit {Neural Processing Unit} da placa Rock 3A}{45}{subsubsection.3.3.2.1}%
-\contentsline {section}{\numberline {3.4}Requisitos da solução}{46}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}RF1: \textit {Software} de Detecção Automática de Placas}{46}{subsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.1.1}Requisitos não funcionais:}{46}{subsubsection.3.4.1.1}%
-\contentsline {subsection}{\numberline {3.4.2}RF2: Execução na Placa Rock 3A}{46}{subsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.2.1}Requisitos não funcionais:}{47}{subsubsection.3.4.2.1}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Descrição do problema e requisitos técnicos}}{33}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Descrição da empresa}{33}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Motivação}{34}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Descrição do problema}{35}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Criação do algoritmo de leitura automática de placas}{35}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Teste do algoritmo na placa Rock 3A}{36}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}NPU da placa Rock 3A}{37}{subsubsection.3.3.2.1}%
+\contentsline {section}{\numberline {3.4}Requisitos da solução}{38}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}RF1: software de leitura automática de placas}{38}{subsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.1}Requisitos não funcionais}{39}{subsubsection.3.4.1.1}%
+\contentsline {subsection}{\numberline {3.4.2}RF2: execução na placa Rock 3A}{39}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}Requisitos não funcionais}{39}{subsubsection.3.4.2.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Solução Proposta e Metodologia Utilizada}}{48}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Metodologia de desenvolvimento}{48}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Análise dos dados}{50}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Características do objeto}{50}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Características do \textit {dataset} utilizado}{51}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}\textit {Pipeline} de leitura de placas}{52}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Modelo de detecção de objetos e pontos-chave}{53}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Algoritmo de processamento da imagem}{54}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}Conversão para escala de cinza}{55}{subsubsection.4.3.2.1}%
-\contentsline {subsubsection}{\numberline {4.3.2.2}Extração da placa com base na \textit {bounding box}}{55}{subsubsection.4.3.2.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.3}Transformação de perspectiva}{56}{subsubsection.4.3.2.3}%
-\contentsline {subsubsection}{\numberline {4.3.2.4}Remoção das bordas}{57}{subsubsection.4.3.2.4}%
-\contentsline {subsubsection}{\numberline {4.3.2.5}Binarização}{58}{subsubsection.4.3.2.5}%
-\contentsline {subsubsection}{\numberline {4.3.2.6}Separação dos caracteres}{59}{subsubsection.4.3.2.6}%
-\contentsline {subsubsection}{\numberline {4.3.2.7}Limpeza das imagens de caracteres}{60}{subsubsection.4.3.2.7}%
-\contentsline {subsection}{\numberline {4.3.3}Modelos de classificação de caracteres}{61}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Modelos de extração e classificação de caracteres}{62}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}Conversão para execução na placa Rock 3A}{63}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Metodologia de teste}{64}{section.4.5}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Solução proposta}}{40}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Metodologia de desenvolvimento}{40}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Descrição dos dados}{41}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Características das placas veiculares}{41}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Características do \textit {dataset} utilizado}{42}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}\textit {Pipeline} de leitura de placas}{43}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detecção e classificação da placa}{44}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Processamento da placa}{44}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Leitura da placa: caracteres isolados}{45}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Leitura da placa: extração e classificação simultâneas}{46}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Execução na placa Rock 3A}{47}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Metodologia de teste}{47}{section.4.5}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Desenvolvimento e Análise dos Resultados Obtidos}}{65}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Preparação dos dados}{65}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Organização dos dados}{66}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Treinamento do modelo de detecção de placas}{66}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Exportação do modelo YOLO}{68}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3}Implementação do algoritmo de extração de caracteres}{68}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Inferência com o modelo de detecção de placas}{68}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Criação de nova imagem contendo apenas a placa}{70}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Correção de perspectiva}{70}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Remoção das bordas das placas e binarização}{71}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Separação dos caracteres}{71}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Limpeza das imagens de caracteres}{72}{subsection.5.3.6}%
-\contentsline {section}{\numberline {5.4}Criação dos \textit {datasets} de caracteres e de placas}{73}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Treinamento dos modelos de classificação de caracteres}{73}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Classificação de caracteres isolados}{74}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Extração e classificação simultânea}{75}{subsection.5.5.2}%
-\contentsline {section}{\numberline {5.6}Quantização e transformação dos modelos para formato compatível com o \textit {hardware}}{77}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Resultados da conversão}{78}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Criação dos datasets de quantização}{78}{subsection.5.6.2}%
-\contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{78}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Download do sistema operacional no computador e gravação no cartão SD}{79}{subsection.5.7.1}%
-\contentsline {subsection}{\numberline {5.7.2}Conexão de periféricos e \textit {boot} do dispositivo}{79}{subsection.5.7.2}%
-\contentsline {subsection}{\numberline {5.7.3}Configuração de SSH}{79}{subsection.5.7.3}%
-\contentsline {subsection}{\numberline {5.7.4}Habilitação da NPU e instalação das bibliotecas necessárias}{80}{subsection.5.7.4}%
-\contentsline {subsection}{\numberline {5.7.5}Download do código, modelos e dados de teste para o dispositivo}{81}{subsection.5.7.5}%
-\contentsline {section}{\numberline {5.8}Testes realizados}{81}{section.5.8}%
-\contentsline {subsection}{\numberline {5.8.1}Resultados dos testes}{82}{subsection.5.8.1}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Desenvolvimento e Análise dos Resultados Obtidos}}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Preparação dos dados}{49}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Organização dos dados}{50}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Modelo de detecção de placas}{50}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Exportação do YOLO}{52}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Algoritmo de extração de caracteres}{52}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Inferência com o YOLO}{53}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Criação de imagem da placa}{54}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Correção de perspectiva}{55}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Remoção das bordas e binarização}{56}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Separação dos caracteres}{59}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Limpeza dos caracteres}{61}{subsection.5.3.6}%
+\contentsline {section}{\numberline {5.4}Criação dos \textit {datasets} de caracteres e de placas}{61}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Modelos de classificação de caracteres}{62}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Classificação de caracteres isolados}{63}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Extração e classificação simultânea}{66}{subsection.5.5.2}%
+\contentsline {section}{\numberline {5.6}Transformação dos modelos para formato compatível com o \textit {hardware}}{72}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Resultados da conversão}{73}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Datasets de quantização}{73}{subsection.5.6.2}%
+\contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{73}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Sistema operacional}{74}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Conexão de periféricos e \textit {boot} do dispositivo}{74}{subsection.5.7.2}%
+\contentsline {subsection}{\numberline {5.7.3}Configuração de SSH}{74}{subsection.5.7.3}%
+\contentsline {subsection}{\numberline {5.7.4}Habilitação da NPU e instalação das bibliotecas}{75}{subsection.5.7.4}%
+\contentsline {subsection}{\numberline {5.7.5}Download do código para o dispositivo}{76}{subsection.5.7.5}%
+\contentsline {section}{\numberline {5.8}Testes realizados}{76}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Resultados dos testes}{77}{subsection.5.8.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{85}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Síntese do problema, solução e resultados}{85}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Objetivos atingidos e limitações}{86}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Aprimoramentos possíveis}{86}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Impactos do projeto}{87}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Trabalhos futuros}{87}{section.6.5}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{80}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Síntese do problema, solução e resultados}{80}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Objetivos atingidos e limitações}{81}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Aprimoramentos possíveis}{81}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Impactos do projeto}{82}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Trabalhos futuros}{82}{section.6.5}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{89}{section*.55}%
+\contentsline {chapter}{REFERÊNCIAS}{84}{section*.57}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{91}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{86}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{92}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{87}{appendix.anexochapback.1}%
