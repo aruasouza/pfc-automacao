@@ -19,10 +19,10 @@
 \contentsline {subsection}{\numberline {2.4.2}Detecção de pontos-chave}{26}{subsection.2.4.2}%
 \contentsline {section}{\numberline {2.5}Técnicas de processamento de imagem}{27}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Transformação de perspectiva}{27}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Limiarização adaptativa}{28}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.2}Limiarização adaptativa}{29}{subsection.2.5.2}%
 \contentsline {subsection}{\numberline {2.5.3}Segmentação de caracteres}{29}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Filtragem de componentes conexos}{29}{subsection.2.5.4}%
-\contentsline {section}{\numberline {2.6}\textit {Neural Processing Unit}}{30}{section.2.6}%
+\contentsline {subsection}{\numberline {2.5.4}Filtragem de componentes conexos}{30}{subsection.2.5.4}%
+\contentsline {section}{\numberline {2.6}\textit {Neural Processing Unit}}{31}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Quantização de redes neurais}{31}{section.2.7}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Descrição do problema e requisitos técnicos}}{33}{chapter.3}%
