@@ -399,13 +399,20 @@ Como as placas dos modelos Brasil e Mercosul possuem configurações diferentes,
     Os 7 vetores de \textit{features} são então processados por 7 cabeçalhos independentes (\textit{heads}), um para cada posição de caractere. Cada cabeçalho é composto por uma camada \textit{Linear}$(256 \to 128)$, seguida de ReLU, \textit{Dropout} e uma segunda camada \textit{Linear}$(128 \to C_i)$, onde $C_i$ é o número de classes daquela posição: 26 para posições de letra e 10 para posições de dígito. Essa especialização por posição elimina predições estruturalmente inválidas (como uma letra em posição de dígito) e reduz o espaço de busca de cada cabeçalho individualmente.
 \end{itemize}
 
-A figura \ref{fig:arquitetura_completa} apresenta o diagrama da arquitetura completa da rede.
+As figuras \ref{fig:arquitetura_completa} e \ref{fig:arquitetura_simp} apresentam o diagrama da arquitetura completa da rede. A figura \ref{fig:arquitetura_completa} mostra com precisão o conteúdo de cada camada, enquanto a figura \ref{fig:arquitetura_simp} é um diagrama simplificado mas que explicita a divisão da rede em 7 cabeçalhos distintos, um para cada caractere a ser classificado.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{images/plate_ocr_net.png}
 \caption{Diagrama da arquitetura completa da rede de extração e classificação simultânea}
 \label{fig:arquitetura_completa}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{images/plate_ocr_architecture_v2.png}
+\caption{Diagrama simplificado da rede de extração e classificação simultânea}
+\label{fig:arquitetura_simp}
 \end{figure}
 
 Esse modelo, por ser maior e mais complexo, utilizou também algumas técnicas mais refinadas de treinamento. Uma delas foi o \textit{learning rate} variável, que aumenta ou diminui ao longo do treinamento. Outra foi o \textit{early stopping}, que interrompe o treinamento ao identificar que a performance está estagnada.

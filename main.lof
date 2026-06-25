@@ -33,5 +33,6 @@
 \contentsline {figure}{\numberline {31}{\ignorespaces Curvas de treinamento do modelo de classificação de letras em placas do tipo Brasil}}{66}{figure.caption.45}%
 \contentsline {figure}{\numberline {32}{\ignorespaces Diagrama do bloco residual}}{68}{figure.caption.46}%
 \contentsline {figure}{\numberline {33}{\ignorespaces Diagrama da arquitetura completa da rede de extração e classificação simultânea}}{70}{figure.caption.48}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Brasil}}{71}{figure.caption.49}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Mercosul}}{72}{figure.caption.50}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Diagrama simplificado da rede de extração e classificação simultânea}}{71}{figure.caption.49}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Brasil}}{72}{figure.caption.50}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Curvas de treinamento do modelo de classificação em placas do tipo Mercosul}}{72}{figure.caption.51}%

@@ -70,32 +70,32 @@
 \contentsline {section}{\numberline {5.6}Transformação dos modelos para formato compatível com o \textit {hardware}}{72}{section.5.6}%
 \contentsline {subsection}{\numberline {5.6.1}Resultados da conversão}{73}{subsection.5.6.1}%
 \contentsline {subsection}{\numberline {5.6.2}Datasets de quantização}{73}{subsection.5.6.2}%
-\contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{73}{section.5.7}%
+\contentsline {section}{\numberline {5.7}Preparação do \textit {hardware}}{74}{section.5.7}%
 \contentsline {subsection}{\numberline {5.7.1}Sistema operacional}{74}{subsection.5.7.1}%
 \contentsline {subsection}{\numberline {5.7.2}Conexão de periféricos e \textit {boot} do dispositivo}{74}{subsection.5.7.2}%
-\contentsline {subsection}{\numberline {5.7.3}Configuração de SSH}{74}{subsection.5.7.3}%
+\contentsline {subsection}{\numberline {5.7.3}Configuração de SSH}{75}{subsection.5.7.3}%
 \contentsline {subsection}{\numberline {5.7.4}Habilitação da NPU e instalação das bibliotecas}{75}{subsection.5.7.4}%
 \contentsline {subsection}{\numberline {5.7.5}Download do código para o dispositivo}{76}{subsection.5.7.5}%
-\contentsline {section}{\numberline {5.8}Testes realizados}{76}{section.5.8}%
+\contentsline {section}{\numberline {5.8}Testes realizados}{77}{section.5.8}%
 \contentsline {subsection}{\numberline {5.8.1}Resultados dos testes}{77}{subsection.5.8.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{80}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Síntese do problema, solução e resultados}{80}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Objetivos atingidos e limitações}{81}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Aprimoramentos possíveis}{81}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Impactos do projeto}{82}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Trabalhos futuros}{82}{section.6.5}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Conclusão}}{81}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Síntese do problema, solução e resultados}{81}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Objetivos atingidos e limitações}{82}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Aprimoramentos possíveis}{82}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Impactos do projeto}{83}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Trabalhos futuros}{83}{section.6.5}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{REFERÊNCIAS}{84}{section*.57}%
+\contentsline {chapter}{REFERÊNCIAS}{85}{section*.58}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{86}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 1}}{87}{appendix.A}%
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{87}{appendix.anexochapback.1}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Descrição 2}}{88}{appendix.anexochapback.1}%
