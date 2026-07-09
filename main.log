@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  25 JUN 2026 20:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  6 JUL 2026 13:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1462,44 +1462,43 @@ l.13
 
 
 ]
-<beforetext/Ficha_Catalografica.pdf, id=19, 597.55246pt x 845.19763pt>
+<beforetext/Ficha_Catalografica.pdf, id=19, 597.51233pt x 845.0471pt>
 File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
 <use beforetext/Ficha_Catalografica.pdf>
 Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf  used on input line 19.
-(pdftex.def)             Requested size: 597.551pt x 845.19557pt.
-<beforetext/Ficha_Catalografica.pdf, id=21, page=1, 597.55246pt x 845.19763pt>
+(pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
+<beforetext/Ficha_Catalografica.pdf, id=21, page=1, 597.51233pt x 845.0471pt>
 File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
 <use beforetext/Ficha_Catalografica.pdf, page 1>
 Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
-(pdftex.def)             Requested size: 597.551pt x 845.19557pt.
+(pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
 File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
 <use beforetext/Ficha_Catalografica.pdf, page 1>
 Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
-(pdftex.def)             Requested size: 597.57834pt x 845.23425pt.
+(pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
 File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
 <use beforetext/Ficha_Catalografica.pdf, page 1>
 Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
-(pdftex.def)             Requested size: 597.57834pt x 845.23425pt.
+(pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
 File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
 <use beforetext/Ficha_Catalografica.pdf, page 1>
 Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
-(pdftex.def)             Requested size: 597.57834pt x 845.23425pt.
+(pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
 File: beforetext/Ficha_Catalografica.pdf Graphic file (type pdf)
 <use beforetext/Ficha_Catalografica.pdf, page 1>
 Package pdftex.def Info: beforetext/Ficha_Catalografica.pdf , page1 used on input line 19.
-(pdftex.def)             Requested size: 597.57834pt x 845.23425pt.
+(pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
  [2
 
- <./beforetext/Ficha_Catalografica.pdf>]
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 50.
- [3
+ <./beforetext/Ficha_Catalografica.pdf>] [3
 
 ] [4
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 96.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 96.
  [5
 
 
@@ -1548,24 +1547,24 @@ LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 45.
  [12
 
-] [13]) [14])
+]) [13])
 \openout2 = `chapters/1-chapter.aux'.
 
  (chapters/1-chapter.tex
 Cap\'{\i }tulo 1.
-[15
+[14
 
 
 
 ])
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 213.
- [16] [17]
+ [15] [16]
 \openout2 = `chapters/2-chapter.aux'.
 
  (chapters/2-chapter.tex
 Cap\'{\i }tulo 2.
-[18
+[17
 
 
 
@@ -1573,238 +1572,238 @@ Cap\'{\i }tulo 2.
 ]
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 42.
-<images/crisp.png, id=412, 308.352pt x 313.17pt>
+<images/crisp.png, id=396, 308.352pt x 313.17pt>
 File: images/crisp.png Graphic file (type png)
 <use images/crisp.png>
 Package pdftex.def Info: images/crisp.png  used on input line 50.
 (pdftex.def)             Requested size: 227.5pt x 231.05882pt.
- [19] [20 <./images/crisp.png>] [21]
-<images/convolution.png, id=458, 1124.2pt x 633.36626pt>
+ [18] [19 <./images/crisp.png>] [20]
+<images/convolution.png, id=443, 1124.2pt x 633.36626pt>
 File: images/convolution.png Graphic file (type png)
 <use images/convolution.png>
 Package pdftex.def Info: images/convolution.png  used on input line 156.
 (pdftex.def)             Requested size: 364.00139pt x 205.06844pt.
- [22]
-<images/cnn.png, id=473, 1104.125pt x 373.395pt>
+ [21]
+<images/cnn.png, id=458, 1104.125pt x 373.395pt>
 File: images/cnn.png Graphic file (type png)
 <use images/cnn.png>
 Package pdftex.def Info: images/cnn.png  used on input line 171.
 (pdftex.def)             Requested size: 455.0pt x 153.8735pt.
- [23 <./images/convolution.png>] [24 <./images/cnn.png>]
-<images/object-detection.png, id=492, 875.27pt x 588.1975pt>
+ [22 <./images/convolution.png>] [23 <./images/cnn.png>]
+<images/object-detection.png, id=476, 875.27pt x 588.1975pt>
 File: images/object-detection.png Graphic file (type png)
 <use images/object-detection.png>
 Package pdftex.def Info: images/object-detection.png  used on input line 198.
 (pdftex.def)             Requested size: 364.00139pt x 244.61797pt.
- [25 <./images/object-detection.png>]
-<images/yolo-diagrama.png, id=504, 632.3625pt x 411.33675pt>
+ [24 <./images/object-detection.png>]
+<images/yolo-diagrama.png, id=489, 632.3625pt x 411.33675pt>
 File: images/yolo-diagrama.png Graphic file (type png)
 <use images/yolo-diagrama.png>
 Package pdftex.def Info: images/yolo-diagrama.png  used on input line 219.
 (pdftex.def)             Requested size: 364.00139pt x 236.7804pt.
-<images/kp_detection.png, id=510, 803.0pt x 536.0025pt>
+<images/kp_detection.png, id=495, 803.0pt x 536.0025pt>
 File: images/kp_detection.png Graphic file (type png)
 <use images/kp_detection.png>
 Package pdftex.def Info: images/kp_detection.png  used on input line 234.
 (pdftex.def)             Requested size: 364.00139pt x 242.97368pt.
- [26 <./images/yolo-diagrama.png>] [27 <./images/kp_detection.png>]
-<images/perspective-transform.png, id=524, 466.74374pt x 290.2845pt>
+ [25 <./images/yolo-diagrama.png>] [26 <./images/kp_detection.png>]
+<images/perspective-transform.png, id=509, 466.74374pt x 290.2845pt>
 File: images/perspective-transform.png Graphic file (type png)
 <use images/perspective-transform.png>
 Package pdftex.def Info: images/perspective-transform.png  used on input line 317.
 (pdftex.def)             Requested size: 364.00139pt x 226.39441pt.
- [28 <./images/perspective-transform.png>] [29]
-<images/regions.png, id=549, 281.1303pt x 281.1303pt>
+ [27 <./images/perspective-transform.png>] [28]
+<images/regions.png, id=534, 281.1303pt x 281.1303pt>
 File: images/regions.png Graphic file (type png)
 <use images/regions.png>
 Package pdftex.def Info: images/regions.png  used on input line 370.
 (pdftex.def)             Requested size: 227.5pt x 227.4998pt.
- [30 <./images/regions.png>]
-<images/npu.jpg, id=560, 348.3414pt x 228.855pt>
+ [29 <./images/regions.png>]
+<images/npu.jpg, id=544, 348.3414pt x 228.855pt>
 File: images/npu.jpg Graphic file (type jpg)
 <use images/npu.jpg>
 Package pdftex.def Info: images/npu.jpg  used on input line 389.
 (pdftex.def)             Requested size: 455.0pt x 298.95016pt.
- [31 <./images/npu.jpg>]) [32]
+ [30 <./images/npu.jpg>]) [31]
 \openout2 = `chapters/3-chapter.aux'.
 
  (chapters/3-chapter.tex
 Cap\'{\i }tulo 3.
-[33
+[32
 
 
 
 
-] [34]
+] [33]
 Overfull \hbox (2.42705pt too wide) in paragraph at lines 62--63
 []\T1/phv/b/n/12 (-10) Velocidade: \T1/phv/m/n/12 (-10) Para mui-tas apli-ca-ções, a ve-lo-ci-dade é crí-tica, es-pe-ci-al-mente quando
  []
 
-[35]
-<images/rock3a.png, id=597, 1204.5pt x 903.375pt>
+[34]
+<images/rock3a.png, id=582, 1204.5pt x 903.375pt>
 File: images/rock3a.png Graphic file (type png)
 <use images/rock3a.png>
 Package pdftex.def Info: images/rock3a.png  used on input line 73.
 (pdftex.def)             Requested size: 455.0pt x 341.24599pt.
- [36 <./images/rock3a.png>] [37] [38]) [39]
+ [35 <./images/rock3a.png>] [36] [37]) [38]
 \openout2 = `chapters/4-chapter.aux'.
 
  (chapters/4-chapter.tex
 Cap\'{\i }tulo 4.
-[40
+[39
 
 
 
 
 ]
-<images/placa-br.jpg, id=622, 744.7825pt x 241.90375pt>
+<images/placa-br.jpg, id=607, 744.7825pt x 241.90375pt>
 File: images/placa-br.jpg Graphic file (type jpg)
 <use images/placa-br.jpg>
 Package pdftex.def Info: images/placa-br.jpg  used on input line 33.
 (pdftex.def)             Requested size: 364.00139pt x 118.23119pt.
-<images/placavermelha-br.png, id=623, 384.43625pt x 131.49126pt>
+<images/placavermelha-br.png, id=608, 384.43625pt x 131.49126pt>
 File: images/placavermelha-br.png Graphic file (type png)
 <use images/placavermelha-br.png>
 Package pdftex.def Info: images/placavermelha-br.png  used on input line 40.
 (pdftex.def)             Requested size: 364.00139pt x 124.51068pt.
- [41 <./images/placa-br.jpg>]
-<images/placa-me.jpg, id=629, 3088.53876pt x 1003.75pt>
+ [40 <./images/placa-br.jpg>]
+<images/placa-me.jpg, id=614, 3088.53876pt x 1003.75pt>
 File: images/placa-me.jpg Graphic file (type jpg)
 <use images/placa-me.jpg>
 Package pdftex.def Info: images/placa-me.jpg  used on input line 51.
 (pdftex.def)             Requested size: 364.00139pt x 118.28525pt.
- [42 <./images/placavermelha-br.png> <./images/placa-me.jpg>]
+ [41 <./images/placavermelha-br.png> <./images/placa-me.jpg>]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<images/exemplo-input.png, id=640, 372.1905pt x 216.0873pt>
+<images/exemplo-input.png, id=624, 372.1905pt x 216.0873pt>
 File: images/exemplo-input.png Graphic file (type png)
 <use images/exemplo-input.png>
 Package pdftex.def Info: images/exemplo-input.png  used on input line 79.
 (pdftex.def)             Requested size: 364.00139pt x 211.33215pt.
- [43 <./images/exemplo-input.png>] [44]
-<images/pipeline_caracteres_isolados.png, id=654, 2730.2pt x 2504.35625pt>
+ [42 <./images/exemplo-input.png>] [43]
+<images/pipeline_caracteres_isolados.png, id=639, 2730.2pt x 2504.35625pt>
 File: images/pipeline_caracteres_isolados.png Graphic file (type png)
 <use images/pipeline_caracteres_isolados.png>
 Package pdftex.def Info: images/pipeline_caracteres_isolados.png  used on input line 130.
 (pdftex.def)             Requested size: 455.0pt x 417.328pt.
- [45]
-<images/pipeline_extracao_classificacao_simultanea.png, id=666, 2730.2pt x 1878.01625pt>
+ [44]
+<images/pipeline_extracao_classificacao_simultanea.png, id=651, 2730.2pt x 1878.01625pt>
 File: images/pipeline_extracao_classificacao_simultanea.png Graphic file (type png)
 <use images/pipeline_extracao_classificacao_simultanea.png>
 Package pdftex.def Info: images/pipeline_extracao_classificacao_simultanea.png  used on input line 141.
 (pdftex.def)             Requested size: 455.0pt x 312.95418pt.
- [46 <./images/pipeline_caracteres_isolados.png>]) [47 <./images/pipeline_extracao_classificacao_simultanea.png>] [48]
+ [45 <./images/pipeline_caracteres_isolados.png>]) [46 <./images/pipeline_extracao_classificacao_simultanea.png>] [47]
 \openout2 = `chapters/5-chapter.aux'.
 
  (chapters/5-chapter.tex
 Cap\'{\i }tulo 5.
-[49
+[48
 
 
 
 
-] [50]
+] [49]
 Overfull \hbox (10.7712pt too wide) in paragraph at lines 57--66
  [][] 
  []
 
-[51]
-<images/yolo-train.png, id=704, 1076.1003pt x 354.123pt>
+[50]
+<images/yolo-train.png, id=689, 1076.1003pt x 354.123pt>
 File: images/yolo-train.png Graphic file (type png)
 <use images/yolo-train.png>
 Package pdftex.def Info: images/yolo-train.png  used on input line 78.
 (pdftex.def)             Requested size: 455.0pt x 149.73027pt.
- [52 <./images/yolo-train.png>] [53]
-<images/exemplo-gray.png, id=722, 372.1905pt x 216.0873pt>
+ [51 <./images/yolo-train.png>] [52]
+<images/exemplo-gray.png, id=707, 372.1905pt x 216.0873pt>
 File: images/exemplo-gray.png Graphic file (type png)
 <use images/exemplo-gray.png>
 Package pdftex.def Info: images/exemplo-gray.png  used on input line 126.
 (pdftex.def)             Requested size: 273.00278pt x 158.50076pt.
- [54 <./images/exemplo-gray.png>]
-<images/extracao_placa.png, id=730, 1445.4pt x 511.9125pt>
+ [53 <./images/exemplo-gray.png>]
+<images/extracao_placa.png, id=714, 1445.4pt x 511.9125pt>
 File: images/extracao_placa.png Graphic file (type png)
 <use images/extracao_placa.png>
 Package pdftex.def Info: images/extracao_placa.png  used on input line 135.
 (pdftex.def)             Requested size: 455.0pt x 161.14394pt.
- [55 <./images/extracao_placa.png>]
-<images/trans-perspec.png, id=741, 1445.4pt x 325.96782pt>
+ [54 <./images/extracao_placa.png>]
+<images/trans-perspec.png, id=726, 1445.4pt x 325.96782pt>
 File: images/trans-perspec.png Graphic file (type png)
 <use images/trans-perspec.png>
 Package pdftex.def Info: images/trans-perspec.png  used on input line 162.
 (pdftex.def)             Requested size: 455.0pt x 102.61076pt.
- [56 <./images/trans-perspec.png>]
-<images/corte-placa-br.png, id=753, 1445.4pt x 813.0375pt>
+ [55 <./images/trans-perspec.png>]
+<images/corte-placa-br.png, id=738, 1445.4pt x 813.0375pt>
 File: images/corte-placa-br.png Graphic file (type png)
 <use images/corte-placa-br.png>
 Package pdftex.def Info: images/corte-placa-br.png  used on input line 178.
 (pdftex.def)             Requested size: 455.0pt x 255.93448pt.
-<images/corte-placa-me.png, id=754, 1445.4pt x 813.0375pt>
+<images/corte-placa-me.png, id=739, 1445.4pt x 813.0375pt>
 File: images/corte-placa-me.png Graphic file (type png)
 <use images/corte-placa-me.png>
 Package pdftex.def Info: images/corte-placa-me.png  used on input line 185.
 (pdftex.def)             Requested size: 455.0pt x 255.93448pt.
- [57 <./images/corte-placa-br.png (PNG copy)>]
-<images/corte-placas.png, id=760, 1445.4pt x 813.0375pt>
+ [56 <./images/corte-placa-br.png (PNG copy)>]
+<images/corte-placas.png, id=745, 1445.4pt x 813.0375pt>
 File: images/corte-placas.png Graphic file (type png)
 <use images/corte-placas.png>
 Package pdftex.def Info: images/corte-placas.png  used on input line 194.
 (pdftex.def)             Requested size: 455.0pt x 255.93448pt.
- [58 <./images/corte-placa-me.png (PNG copy)> <./images/corte-placas.png (PNG copy)>]
-<images/placa-binarizada.png, id=766, 372.1905pt x 126.4725pt>
+ [57 <./images/corte-placa-me.png (PNG copy)> <./images/corte-placas.png (PNG copy)>]
+<images/placa-binarizada.png, id=751, 372.1905pt x 126.4725pt>
 File: images/placa-binarizada.png Graphic file (type png)
 <use images/placa-binarizada.png>
 Package pdftex.def Info: images/placa-binarizada.png  used on input line 205.
 (pdftex.def)             Requested size: 455.0pt x 154.61076pt.
- [59 <./images/placa-binarizada.png>]
-<images/separacao-chars.png, id=777, 1445.4pt x 813.0375pt>
+ [58 <./images/placa-binarizada.png>]
+<images/separacao-chars.png, id=762, 1445.4pt x 813.0375pt>
 File: images/separacao-chars.png Graphic file (type png)
 <use images/separacao-chars.png>
 Package pdftex.def Info: images/separacao-chars.png  used on input line 232.
 (pdftex.def)             Requested size: 455.0pt x 255.93448pt.
- [60 <./images/separacao-chars.png (PNG copy)>]
-<images/clean-objects.png, id=784, 1445.4pt x 813.0375pt>
+ [59 <./images/separacao-chars.png (PNG copy)>]
+<images/clean-objects.png, id=768, 1445.4pt x 813.0375pt>
 File: images/clean-objects.png Graphic file (type png)
 <use images/clean-objects.png>
 Package pdftex.def Info: images/clean-objects.png  used on input line 246.
 (pdftex.def)             Requested size: 273.00278pt x 153.56068pt.
- [61 <./images/clean-objects.png (PNG copy)>] [62]
-<images/cnn_architecture.png, id=798, 2730.2pt x 3452.9pt>
+ [60 <./images/clean-objects.png (PNG copy)>] [61]
+<images/cnn_architecture.png, id=783, 2730.2pt x 3452.9pt>
 File: images/cnn_architecture.png Graphic file (type png)
 <use images/cnn_architecture.png>
 Package pdftex.def Info: images/cnn_architecture.png  used on input line 301.
 (pdftex.def)             Requested size: 364.00139pt x 460.32584pt.
- [63]
-<images/me-numeros.png, id=807, 859.5312pt x 357.0138pt>
+ [62]
+<images/me-numeros.png, id=792, 859.5312pt x 357.0138pt>
 File: images/me-numeros.png Graphic file (type png)
 <use images/me-numeros.png>
 Package pdftex.def Info: images/me-numeros.png  used on input line 309.
 (pdftex.def)             Requested size: 455.0pt x 188.99304pt.
- [64 <./images/cnn_architecture.png>]
-<images/me-letras.png, id=813, 859.5312pt x 357.0138pt>
+ [63 <./images/cnn_architecture.png>]
+<images/me-letras.png, id=798, 859.5312pt x 357.0138pt>
 File: images/me-letras.png Graphic file (type png)
 <use images/me-letras.png>
 Package pdftex.def Info: images/me-letras.png  used on input line 315.
 (pdftex.def)             Requested size: 455.0pt x 188.99304pt.
-<images/br-numeros.png, id=814, 859.5312pt x 357.0138pt>
+<images/br-numeros.png, id=799, 859.5312pt x 357.0138pt>
 File: images/br-numeros.png Graphic file (type png)
 <use images/br-numeros.png>
 Package pdftex.def Info: images/br-numeros.png  used on input line 321.
 (pdftex.def)             Requested size: 455.0pt x 188.99304pt.
- [65 <./images/me-numeros.png> <./images/me-letras.png>]
-<images/br-letras.png, id=821, 859.5312pt x 357.0138pt>
+ [64 <./images/me-numeros.png> <./images/me-letras.png>]
+<images/br-letras.png, id=806, 859.5312pt x 357.0138pt>
 File: images/br-letras.png Graphic file (type png)
 <use images/br-letras.png>
 Package pdftex.def Info: images/br-letras.png  used on input line 327.
 (pdftex.def)             Requested size: 455.0pt x 188.99304pt.
- [66 <./images/br-numeros.png> <./images/br-letras.png>]
-<images/bloco_residual.png, id=830, 2730.2pt x 2328.7pt>
+ [65 <./images/br-numeros.png> <./images/br-letras.png>]
+<images/bloco_residual.png, id=814, 2730.2pt x 2328.7pt>
 File: images/bloco_residual.png Graphic file (type png)
 <use images/bloco_residual.png>
 Package pdftex.def Info: images/bloco_residual.png  used on input line 347.
 (pdftex.def)             Requested size: 364.00139pt x 310.4523pt.
- [67]
+ [66]
 Underfull \hbox (badness 10000) in paragraph at lines 380--380
 []|\T1/phv/m/sl/12 (+10) ConvBNReLU$\T1/phv/m/n/12 (+10) (128 \OMS/cmsy/m/n/12 !
  []
@@ -1814,64 +1813,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 386--386
 []|\T1/phv/m/sl/12 (+10) ConvBNReLU$\T1/phv/m/n/12 (+10) (256 \OMS/cmsy/m/n/12 !
  []
 
-[68 <./images/bloco_residual.png>]
-<images/plate_ocr_net.png, id=845, 2730.2pt x 4898.3pt>
+[67 <./images/bloco_residual.png>]
+<images/plate_ocr_net.png, id=830, 2730.2pt x 4898.3pt>
 File: images/plate_ocr_net.png Graphic file (type png)
 <use images/plate_ocr_net.png>
 Package pdftex.def Info: images/plate_ocr_net.png  used on input line 406.
 (pdftex.def)             Requested size: 364.00139pt x 653.02037pt.
- [69]
-<images/plate_ocr_architecture_v2.png, id=850, 2730.2pt x 2087.8pt>
+ [68]
+<images/plate_ocr_architecture_v2.png, id=835, 2730.2pt x 2087.8pt>
 File: images/plate_ocr_architecture_v2.png Graphic file (type png)
 <use images/plate_ocr_architecture_v2.png>
 Package pdftex.def Info: images/plate_ocr_architecture_v2.png  used on input line 413.
 (pdftex.def)             Requested size: 364.00139pt x 278.33655pt.
- [70 <./images/plate_ocr_net.png>]
-<images/training_curves_br.png, id=858, 933.2466pt x 360.8682pt>
+ [69 <./images/plate_ocr_net.png>]
+<images/training_curves_br.png, id=843, 933.2466pt x 360.8682pt>
 File: images/training_curves_br.png Graphic file (type png)
 <use images/training_curves_br.png>
 Package pdftex.def Info: images/training_curves_br.png  used on input line 432.
 (pdftex.def)             Requested size: 455.0pt x 175.94043pt.
- [71 <./images/plate_ocr_architecture_v2.png>]
-<images/training_curves_me.png, id=864, 933.2466pt x 360.8682pt>
+ [70 <./images/plate_ocr_architecture_v2.png>]
+<images/training_curves_me.png, id=849, 933.2466pt x 360.8682pt>
 File: images/training_curves_me.png Graphic file (type png)
 <use images/training_curves_me.png>
 Package pdftex.def Info: images/training_curves_me.png  used on input line 438.
 (pdftex.def)             Requested size: 455.0pt x 175.94043pt.
- [72 <./images/training_curves_br.png> <./images/training_curves_me.png>] [73] [74] [75] [76] [77] [78]) [79] [80]
+ [71 <./images/training_curves_br.png> <./images/training_curves_me.png>] [72] [73] [74] [75] [76] [77]) [78] [79]
 \openout2 = `chapters/6-chapter.aux'.
 
  (chapters/6-chapter.tex
 Cap\'{\i }tulo 6.
-[81
+[80
 
 
 
 
-] [82]
+] [81]
 Overfull \hbox (12.89417pt too wide) in paragraph at lines 57--58
 []\T1/phv/m/n/12 (-10) O de-sen-vol-vi-mento re-a-li-zado abre di-ver-sas pos-si-bi-li-da-des de con-ti-nu-i-dade. Sugere-
  []
 
-) [83] [84] [85
+) [82] [83] [84
 
 
-
-] (aftertext/apendice_a.tex [86]
-AP\^ENDICE A.
-) (aftertext/anexo_a.tex [87
 
 ]
-ANEXO A.
-)
 
 Package glossaries Warning: No \printnoidxglossary or \printnoidxglossaries
  found. (Remove \makenoidxglossaries if you don't want any glossaries.)
 This document will not have a glossary.
 
-[88
-
-]
+[85]
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
@@ -1895,17 +1886,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38408 strings out of 467871
- 722367 string characters out of 5418376
- 1753265 words of memory out of 5000000
- 66229 multiletter control sequences out of 15000+600000
+ 38375 strings out of 467871
+ 721540 string characters out of 5418376
+ 1754265 words of memory out of 5000000
+ 66209 multiletter control sequences out of 15000+600000
  676785 words of font info for 217 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,117p,2558b,4447s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\aruav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurm10.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/aruav/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (89 pages, 8190319 bytes).
+Output written on main.pdf (86 pages, 8183580 bytes).
 PDF statistics:
- 1379 PDF objects out of 1440 (max. 8388607)
- 319 named destinations out of 1000 (max. 500000)
- 47481 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1349 PDF objects out of 1440 (max. 8388607)
+ 314 named destinations out of 1000 (max. 500000)
+ 47465 words of extra memory for PDF output out of 51595 (max. 10000000)
 
